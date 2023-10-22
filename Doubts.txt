@@ -1,0 +1,70 @@
+//PreIncrement and PostIncrement
+class Hello {
+    public static void main (String arg[])
+    {
+      int a = 50 ;
+      int ans = a++ ;  //ans = a = a+1 ; ans = 50 a = 51
+      int ans_1 = ++a ;// ans_1 = a+1 ;since a is already 51 in previous statement now again increments by 1 
+      System.out.println(ans); //50
+      System.out.println(ans_1);//52
+
+    }
+}
+
+***************************************
+//Ternary Operator - To Find Largest of 3 Numbers 
+
+//We can directly print the ternary operator using sout 
+class Hello {
+    public static void main (String arg[])
+    {
+      int a = 10 ;
+      int b = 122 ;
+      int c = 14 ;
+      System.out.println(a>b ? a : b>c ? b : c);
+    }
+}
+//But below is not possible === > void cannot be converted to int
+class Hello {
+    public static void main (String arg[])
+    {
+      int a = 10 ;
+      int b = 122 ;
+      int c = 14 ;
+      int result = a>b ? a : b>c ? b : System.out.println(c) ;
+      System.out.println(result);
+    }
+}
+
+//Ternary Operator - To Find Odd or Even Numbers 
+// Getting Error String cannot be converted to Int
+
+class Hello {
+    public static void main (String arg[])
+    {
+      int n= 200 ;
+      int result = n%2 == 0 ? "even" : "odd" ;
+      System.out.println(result);
+    }
+}
+//To avoid above one replace int by var 
+class Hello {
+    public static void main (String arg[])
+    {
+      int n= 200 ;
+      var result = n%2 == 0 ? "even" : "odd" ;
+      System.out.println(result);
+    }
+}
+//Note : Also var result ; cannot be present individually 
+//Below throws this error --- > (cannot use 'var' on variable without initializer)
+class Hello {
+    public static void main (String arg[])
+    {
+      int n= 200 ;
+      var result;
+      result = n%2 == 0 ? "even" : "odd" ;
+      System.out.println(result);
+    }
+}
+
