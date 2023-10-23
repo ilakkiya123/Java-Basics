@@ -1,0 +1,28 @@
+//Switch Statement 
+class Hello {
+    public static void main (String arg[])
+    {
+      int n= 3 ;
+      switch(n){
+        case 1 :
+          System.out.println("Kitkat");
+          break ;
+        case 2 :
+          System.out.println("Munch");
+          break ;
+        case 3 :
+          System.out.println("DairyMilk");
+          break ;
+        case 4 :
+          System.out.println("Alpenlibie");
+          break ;
+        case 5 :
+          System.out.println("Lottie Choco Pie");
+          break ;
+        default :
+          System.out.println("Vendor Machine Number Entered is out of stock ");
+      }
+    }
+}
+//******************************************************************************
+//While Loop
