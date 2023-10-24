@@ -63,4 +63,88 @@ Iteration i : 1
 Out Of while : 0
 
 //********************************************************************************
+Do While - Though if the condt fails it executes atleast once 
+class Hello {
+  public static void main (String arg []){
+    int i = 7 ;
+    do{
+      System.out.println("i : " + i);
+      i++;
+    }while (i<=4);
+    System.out.println("Out Of Do While : " + i );
+  }
+}
+
+************************************************************************************
+//For Loop - To print 5 working days and the working hrs 
+class Hello {
+  public static void main (String arg []){
+    int i;
+    for (i=1 ;i <=5 ;i++){
+      System.out.println("DAY : " + i );
+      int j = 9 ;
+         for (j=1 ; j<=9 ; j++)
+         {
+          System.out.println("   HRS : " + (j+8) + "-" + (j+9));
+         }
+    }
+  }
+}
+
+O/P :
+DAY : 1
+   HRS : 9-10
+   HRS : 10-11
+   HRS : 11-12
+   HRS : 12-13
+   HRS : 13-14
+   HRS : 14-15
+   HRS : 15-16
+   HRS : 16-17
+   HRS : 17-18
+DAY : 2
+   HRS : 9-10
+   HRS : 10-11
+   HRS : 11-12
+   HRS : 12-13
+   HRS : 13-14
+   HRS : 14-15
+   HRS : 15-16
+   HRS : 16-17
+   HRS : 17-18
+DAY : 3
+   HRS : 9-10
+   HRS : 10-11
+   HRS : 11-12
+   HRS : 12-13
+   HRS : 13-14
+   HRS : 14-15
+   HRS : 15-16
+   HRS : 16-17
+   HRS : 17-18
+DAY : 4
+   HRS : 9-10
+   HRS : 10-11
+   HRS : 11-12
+   HRS : 12-13
+   HRS : 13-14
+   HRS : 14-15
+   HRS : 15-16
+   HRS : 16-17
+   HRS : 17-18
+DAY : 5
+   HRS : 9-10
+   HRS : 10-11
+   HRS : 11-12
+   HRS : 12-13
+   HRS : 13-14
+   HRS : 14-15
+   HRS : 15-16
+   HRS : 16-17
+   HRS : 17-18
+
+**************************************************************************
+For --- > For counting purpose and the values are defined then we can use this loop 
+While --- > Files concept , like execute until End Of File 
+Do While --- > Rarely Used , to execute atleast once even though the condition failed
 
