@@ -1,0 +1,122 @@
+Arithmetic Operators :
++ , - , * , / , %
+******************************************************
+//shortcuts 
+       // Increment value by 1 
+       int a = a + 1 ; // a++ 
+       int b = b - 1 ; // b--
+       //Increment the same number by differnt value 
+        int c = c+10 ; // c+=10
+*******************************************************
+//Pre and Post Increment 
+class Hello {
+    public static void main (String arg[])
+    {
+       int a = 10 ;
+       //shortcut if we are increasing by 1 or decresing by 1 
+       a++ ; // post increment
+       a-- ; // post decrement
+
+       ++a ; // pre increment
+       --a ; // pre decrement
+       System.out.println(a);
+    }
+}
+*******************************************************************************
+When we fetch value from another variable we will get different values for pre and post increment 
+class Hello {
+    public static void main (String arg[])
+    {
+       int a = 10 ;
+       int b = a-- ;
+       System.out.println(a);  // 9
+       System.out.println(b);  // 10 ie : (b = (a=(a-1))
+
+       int c = 10 ;
+       int d = --c ;
+       System.out.println(c);  // 9
+       System.out.println(d);  // 9
+
+    }
+}
+********************************************************************************
+Relational Operators :
+> , < , >= , <= , ! , != , == 
+
+********************************************************************************
+To compare 2 Relational Operators we use Logical Operators :
+
+&& ===> AND  ;; || ===> OR ;; ! ===> NOT 
+
+Bitwise Operator - Compares each bit and provides its decimal value as output 
+Logical Operator - Copares 2 Relational Operators and based on that return boolean values 
+Note : 
+If the operands are integers the operator is bitwise 
+If the operands are boolean the operator is logical 
+
+*********
+Shorthand Operator :
+It checks the first operand only .For AND If the first operand is false it doesnt check for the next and directly returns false or execute other block .
+AND 
+T F F
+F T F
+F F F
+T T T
+
+It checks the first operand only .For OR If the first operand is true it doesnt check for the next and directly returns trie or execute other block .
+AND 
+T F T
+F T T
+T T T
+F F F 
+
+Example :
+class Hello {
+    public static void main (String arg[])
+    {
+       int a= 12 ;
+       int s= 6 ;
+       if(a>15 && (((++s)==13))){
+            System.out.println(s);
+       }
+       else {
+        System.out.println("false");
+        System.out.println(s);
+       }
+    }
+}
+O/P :[It doesnt check for the 2nd condition]
+false 
+6 
+*********************************************************************************
+Ternary Operator :
+Syntax :
+(a>b ? a : b)
+
+Example 1 : To find the largest of 3 numbers :
+class Hello {
+    public static void main (String arg[])
+    {
+      int a = 60 ;
+      int b = 100 ;
+      int c = 30 ;
+      int largest =  ((a>b) ? (a>c ? a : c) : (b>c ? b : c));
+      System.out.println("Largest among 3 is : " + largest);
+    }
+}
+O/P : It prints the largest among 3 numbers 
+
+Example 2 : To check whether the given number is odd or even :
+class Hello {
+    public static void main (String arg[])
+    {
+      int n = 99 ;
+      var result = (n%2 == 0 ) ? "even" : "odd" ;
+      System.out.println(n + ":" + result);
+    }
+}
+O/P : It prints whether the given number is odd or even 
+
+
+
+**********************************************************************************
