@@ -80,3 +80,22 @@ class Hello {
     System.out.println("Out Of Do While : " + i );
   }
 }
+
+**********************************************************
+Why it throws error when I didnt specify datatype inside method 
+class Sum{
+  int i;
+  int j;
+  public void Addition(i,j){
+     System.out.println(i+j);
+  }
+}
+
+class Hello{
+  public static void main (String arg[]){
+    int a = 10;
+    int b = 20;
+    Sum s = new Sum();//created a new object
+    s.Addition(10,20);//calling Addition Method from Hello Class by giving s as reference variable of Sum class
+  }
+}
