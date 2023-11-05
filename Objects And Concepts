@@ -15,3 +15,23 @@ class Hello{
 }
 
 **********************************************************
+Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
+class Addition {
+   public void add(int i,int j){
+       System.out.println("addTwo : " + (i+j));
+   }
+   public void add(int i,int j,int k){
+       System.out.println("addTwo : " + (i+j+k));
+   }
+}
+class Hello {
+  public static void main(String args[]){
+    int a =10;
+    int b =20;
+    int c =30;
+    int d =40;
+    Addition obj = new Addition() ;
+    obj.add(a,b);
+    obj.add(a,b,c);
+}
+}
