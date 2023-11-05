@@ -1,0 +1,17 @@
+Create new Object 
+class Sum{
+  public void Addition(int i,int j){
+     System.out.println(i+j);
+  }
+}
+
+class Hello{
+  public static void main (String arg[]){
+    int a = 10;
+    int b = 20;
+    Sum s = new Sum();//created a new object
+    s.Addition(a,b);//calling Addition Method from Hello Class by giving s as reference variable of Sum class
+  }
+}
+
+**********************************************************
