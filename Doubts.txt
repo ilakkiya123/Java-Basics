@@ -99,3 +99,9 @@ class Hello{
     s.Addition(10,20);//calling Addition Method from Hello Class by giving s as reference variable of Sum class
   }
 }
+******************************************************
+doubt -
+javac Hello.java
+java Hello
+
+But shortcut java Hello.java didnt work when after creating new class 
