@@ -1,3 +1,12 @@
+//Logical Doubts :
+1) JRE present in latest jdk 
+2) Env Variable 
+
+//Explicit Conversion 
+int i = 128;
+byte b = (byte) i;
+getting doubt - https://stackoverflow.com/questions/28351898/explicit-conversion-from-int-to-byte-in-java
+
 //PreIncrement and PostIncrement
 class Hello {
     public static void main (String arg[])
