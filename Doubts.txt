@@ -7,6 +7,8 @@ int i = 128;
 byte b = (byte) i;
 getting doubt - https://stackoverflow.com/questions/28351898/explicit-conversion-from-int-to-byte-in-java
 
+************************************************************************
+
 //PreIncrement and PostIncrement
 class Hello {
     public static void main (String arg[])
@@ -19,7 +21,18 @@ class Hello {
 
     }
 }
+----------------------------------------------------------------------
 
+class Hello {
+  public static void main (String arg[]){
+  int a = 10 ;
+  int b = a++ ; //(b = (a=(a+1)))
+  int c = b++ ;//If this line commented it gives different value else gives different value 
+  System.out.println("b : " + b);
+  System.out.println("c : " + c);//same here 
+  }
+
+}
 ***************************************
 //Ternary Operator - To Find Largest of 3 Numbers 
 
