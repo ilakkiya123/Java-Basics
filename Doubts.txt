@@ -33,6 +33,23 @@ class Hello {
   }
 
 }
+--------------------------------------------------------------------------------------
+While loop doubt : 
+class Hello {
+  public static void main (String args[]){
+    
+    while (true){
+      System.out.println("Inside while : ");
+    }
+     System.out.println("Outside while ");
+  }
+}
+
+error : 
+Hello.java:7: error: unreachable statement
+     System.out.println("Outside while ");
+     ^
+1 error
 ***************************************
 //Ternary Operator - To Find Largest of 3 Numbers 
 
