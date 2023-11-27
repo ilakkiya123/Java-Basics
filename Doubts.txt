@@ -106,6 +106,10 @@ class Hello {
       System.out.println(result);
     }
 }
+---------------------------------------------------------------------------------------
+To write bitwise operator in if else loop ---> check 
+How really a jvm looks .
+Why filename and class should be same when giving as public 
 
 *********************************************************
 Do While Loop while running in debug mode I got doubt 
