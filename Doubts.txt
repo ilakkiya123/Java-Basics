@@ -38,7 +38,7 @@ While loop doubt :
 class Hello {
   public static void main (String args[]){
     
-    while (true){
+    while(true){
       System.out.println("Inside while : ");
     }
      System.out.println("Outside while ");
