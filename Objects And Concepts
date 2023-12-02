@@ -16,6 +16,11 @@ class Hello{
 
 **********************************************************
 Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
+
+//1)No of Arguments in method
+//2)Different datatypes for the argument 
+//3)But changing datatype of method just throws error 
+
 class Addition {
    public void add(int i,int j){
        System.out.println("addTwo : " + (i+j));
@@ -35,3 +40,13 @@ class Hello {
     obj.add(a,b,c);
 }
 }
+
+---------------------------------------------------------------
+instance variable --- > It has scope inside the entire class , which means once you change a value in a method in a class then that change will reflect in 
+other method also if the particular instance is used .
+                  ---> Instance Variable part of Heap Memory .
+
+
+local variable ---> It has scope inside the method of a particular class .
+               --- > Local Variable part of stack (Methods) .
+               
