@@ -1,0 +1,183 @@
+//Array 
+To store multiple values in a single place with single variable , which reduces remembering multiple variables instaed just remember only a single Array variable .
+In simple terms , Array is an object which has similar type of elements which has contigous memory location .
+
+Declare Array in Java :
+int num[];
+int[] num;
+int []num;
+
+//Initialize with predefined values / or with predefined size 
+int num[] = {3,5,9};
+int num_1[] = new int[6];// If we only declare size or dimension of Array , then initial values will be '0'
+
+//Array in java is index based , first element stored in 0th index
+num  ===>3 5 9
+index ==>0 1 2
+
+//To update particular value in Array 
+int num[1] = 10 ;
+//New Updated Array === > num{3,10,9}
+
+-------------------------------------------------------------
+//To Print Single Dimensional Array 
+class Hello {
+  public static void main (String args[]){
+    int num[] = new int[4];//initialized with '0' for all 4 index 
+    for(int i =0 ;i<4;i++){
+      System.out.print(num[i] + " ");
+    }
+  }
+}
+--------------------------------------------------------------------------
+//To print 1D Array with assigning values manually 
+class Hello {
+  public static void main (String args[]){
+    int num[] = new int[4];
+    num[0] = 7;
+    num[1] = 10;
+    num[2] = 15;
+    num[3] = 20;
+    for(int i =0 ;i<4;i++){
+      System.out.print(num[i] + " ");
+    }
+  }
+}
+
+Output : 7 10 15 20 
+----------------------------------------------------------------------------
+//Now I am randomly assigning values using Math.random()
+class Hello {
+  public static void main (String args[]){
+    int num[] = new int[4];
+    for(int i =0 ;i<4;i++){
+       num[i] = (int)(Math.random()*10) ;
+      System.out.print(num[i] + " ");
+    }
+  }
+}
+
+//Same using Math.random() variable ,Enhanced For loop 
+class Hello {
+  public static void main (String args[]){
+    int num[] = new int[4];
+    for(int n:num ){
+       n = (int)(Math.random()*10) ;
+      System.out.print(n + " ");
+    }
+  }
+}
+-------------------------------------------------------------------------------------
+//2D Array , Two Dimensional Array 
+int num[][]; // Declare
+
+int num[][] = new int [3][4]; //Giving Dimensions 
+
+//To print using for loop 
+class Hello {
+  public static void main (String args[]){
+    int num[][] = new int[3][4];
+    for(int i =0 ;i<3;i++){
+      for(int j = 0 ;j<4;j++){
+        System.out.print((int)(Math.random()*10) + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+//2D Array ,using Math.random() variable , with Enhanced For loop
+class Hello {
+  public static void main (String args[]){
+    int num[][] = new int[3][4];
+    for (int n[] : num){
+       for(int m : n){
+        m =  (int)(Math.random()*10);
+        System.out.print( m + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+Output :
+9 6 5 8 
+9 1 6 1 
+5 8 0 4 
+---------------------------------------------------------------------------------------
+//Jagged Array --- > An Array in which each rows have different columns 
+//Member of Arrays can be of different sizes .
+class Hello {
+  public static void main (String args[]){
+    int num[][] = new int[3][];
+    num[0] = new int [2];
+    num[1] = new int [4];
+    num[2] = new int [6];
+    //(num.length);//it shows the number of rows in num Array
+    //(num[i].length);//it shows in particular array what is the size 
+    for(int i =0 ;i<num.length;i++){
+      for(int j = 0 ;j<num[i].length;j++){
+        System.out.print((int)(Math.random()*10) + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+//Jaggged Array with Enhanced For Loop 2D Array 
+
+class Hello {
+  public static void main (String args[]){
+    int num[][] = new int[3][];
+    num[0] = new int [2];
+    num[1] = new int [4];
+    num[2] = new int [6];
+    for(int n[] : num){
+      for(int m : n){
+        System.out.print((int)(Math.random()*10) + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+Output :
+5 1 
+2 8 9 6 
+4 8 5 3 2 1
+-------------------------------------------------------------------------------------------
+//3D Array with Enhanced For Loop 
+class Hello {
+  public static void main (String args[]){
+    int num[][][] = new int[3][4][5];
+    // num[0][0] = new int [2];
+    // num[1] = new int [6];
+    // num[2] = new int [4];
+    for(int n[][] : num){
+      for(int m[] : n){
+        for(int k : m){
+           System.out.print((int)(Math.random()*10) + " ");
+        }
+        System.out.println();
+      }
+      System.out.println();
+    }
+      System.out.println();
+    }
+}
+
+Output :
+1 8 8 0 9 
+0 6 8 0 2 
+4 6 5 5 5 
+4 7 8 9 5 
+
+7 6 9 9 5 
+2 0 1 4 3 
+8 9 7 4 9 
+5 7 0 1 9 
+
+7 1 3 9 5 
+8 7 6 9 0 
+2 1 3 9 8 
+7 1 2 1 8 
