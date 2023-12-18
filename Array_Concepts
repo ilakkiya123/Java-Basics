@@ -1,5 +1,5 @@
 //Array 
-To store multiple values in a single place with single variable , which reduces remembering multiple variables instaed just remember only a single Array variable .
+To store multiple values in a single place with single variable , which reduces remembering multiple variables instead just remember only a single Array variable .
 In simple terms , Array is an object which has similar type of elements which has contigous memory location .
 
 Declare Array in Java :
@@ -12,6 +12,7 @@ int num[] = {3,5,9};
 int num_1[] = new int[6];// If we only declare size or dimension of Array , then initial values will be '0'
 
 //Array in java is index based , first element stored in 0th index
+//last index = length - 1 (As index value starts with '0' value )
 num  ===>3 5 9
 index ==>0 1 2
 
@@ -72,6 +73,19 @@ class Hello {
 int num[][]; // Declare
 
 int num[][] = new int [3][4]; //Giving Dimensions 
+
+
+//To Print the values previously assigned in 2D Array 
+class Hello {
+  public static void main (String args[]){
+   
+      int num [][] = {{1,5,9,2},{7,0,8,2},{0,2,6,2}};
+      for (int i=0;i<3;i++){
+        for (int j=0;j<4;j++){
+          System.out.print(num[i][j] + " ");
+        }
+        System.out.println();
+      }
 
 //To print using for loop 
 class Hello {
