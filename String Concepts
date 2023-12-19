@@ -1,10 +1,19 @@
 //Strings 
 
-//Collection of characters - String is a 
+//Collection of characters - String is a class and not a primitive datatype
 //Normal way of storing string in a variable 
 class Hello {
   public static void main (String args[]){
     String name = "Ilakkiya" ;
+    System.out.println(name);
+  }
+}
+
+-----------------------------------------------------------------------------------
+//Since it comes under class type , usually we use 'new' keyword
+class Hello {
+  public static void main (String args[]){
+    String name = new String("Ilakkiya") ;
     System.out.println(name);
   }
 }
