@@ -195,3 +195,79 @@ Output :
 8 7 6 9 0 
 2 1 3 9 8 
 7 1 2 1 8 
+
+
+----------------------------------------------------------------------------------
+//Array of Objects 
+class Student {
+ String name ;
+ int age ;
+
+}
+class Hello {
+  public static void main (String args[]){
+    Student s1 = new Student();//For student class s1 is one of the references
+    s1.name = "Kavs";
+    s1.age = 25 ;
+
+    Student s2 = new Student();//For student class s2 is one of the references
+    s2.name = "Ravi";
+    s2.age = 60 ;
+
+    Student s3 = new Student();//For student class s3 is one of the references
+    s3.name = "Sundari";
+    s3.age = 42 ;
+
+    Student studs[] = new Student[3];//Array Of Objects ==> which has the space for object references 
+    studs[0] = s1;
+    studs[1] = s2;
+    studs[2] = s3;
+
+    for (int i=0 ;i<studs.length ;i++){
+      System.out.println(studs[i].name + ": " + studs[i].age);
+    }
+  }
+}
+
+Output :
+Kavs: 25
+Ravi: 60
+Sundari: 42
+
+-----------------------------------------------------------------------------------
+//Enhanced For Loop with Array of objects 
+class Student {
+ String name ;
+ int age ;
+
+}
+class Hello {
+  public static void main (String args[]){
+    Student s1 = new Student();//For student class s1 is one of the references
+    s1.name = "Kavs";
+    s1.age = 25 ;
+
+    Student s2 = new Student();//For student class s2 is one of the references
+    s2.name = "Ravi";
+    s2.age = 60 ;
+
+    Student s3 = new Student();//For student class s3 is one of the references
+    s3.name = "Sundari";
+    s3.age = 42 ;
+
+    Student studs[] = new Student[3];//Array Of Objects ==> which has the space for object references 
+    studs[0] = s1;
+    studs[1] = s2;
+    studs[2] = s3;
+  
+    for (Student s : studs){
+      System.out.println(s.name + " " + s.age);
+    }
+
+  }
+}
+
+Output :
+Kavs 25
+Ravi 60
+Sundari 42
