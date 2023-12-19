@@ -1,1 +1,10 @@
+//Strings 
 
+//Collection of characters - String is a 
+//Normal way of storing string in a variable 
+class Hello {
+  public static void main (String args[]){
+    String name = "Ilakkiya" ;
+    System.out.println(name);
+  }
+}
