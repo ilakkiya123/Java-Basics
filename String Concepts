@@ -1,6 +1,6 @@
 //Strings 
 
-//Collection of characters - String is a class and not a primitive datatype
+//String is an object that represents sequence of characters and not a primitive datatype so it starts with upper case unlike (int,double,boolean ...)
 //Normal way of storing string in a variable 
 class Hello {
   public static void main (String args[]){
@@ -17,3 +17,47 @@ class Hello {
     System.out.println(name);
   }
 }
+
+-----------------------------------------------------------------------------------
+String Methods :
+
+class Hello {
+  public static void main (String args[]){
+    String name = "Ilakkiya is my name";
+    System.out.println(name.concat(" And Kavya is my sister"));//concat method
+    System.out.println("Hi!!! " + name);//String append using '+' operator
+    System.out.println(name.hashCode());//String hashcode
+    System.out.println(name.charAt(12));//charAt helps to find the char present at given index number including space starts with '0' index
+    System.out.println(name.indexOf("my"));//indexOf helps to find the particular string position 
+  }
+}
+-------------------------------------------------------------------------------------
+String Buffer :(Usually StringBuffer capacity is 16 character capacity )
+//To make continous memory allocation , it creates 16 extra character space along with length of the string 
+class Hello {
+  public static void main (String args[]){
+    StringBuffer s = new StringBuffer("Ilakkiya"); // Makes Mutable Strings
+    System.out.println(s.capacity()); // Now capcity 24 - > 16(Default capacity)+8(Ilakkiya) 
+  }
+}
+
+---------------------------------------------------------------------------------------
+String Buffer :
+class Hello {
+  public static void main (String args[]){
+    StringBuffer s = new StringBuffer("Ilakkiya");
+    System.out.println(s.capacity());
+    System.out.println(s.length());
+    System.out.println(s.append((" Ravindran")));
+    System.out.println(s.insert(9, "Kavya "));
+    System.out.println(s.deleteCharAt(5));
+    String str = s.toString() ;
+    System.out.println(str);
+    s.setLength(30);
+    s.ensureCapacity(15);
+    System.out.println(s.length());
+    System.out.println(s.capacity());
+  }
+}
+
+
