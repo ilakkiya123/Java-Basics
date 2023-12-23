@@ -1,1 +1,3 @@
+Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
+
 
