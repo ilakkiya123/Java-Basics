@@ -259,4 +259,34 @@ class Hello{
   }
 }
 
+****************************************************************************************
+To call static method with class name , and explicitly provide the object reference as generally nonstatic var cannot be passed to static method 
 
+class Student{
+  String name;
+  static int age;
+   public void show(){
+    System.out.println("Show method : ");
+   }
+//Here we have passed obj reference to pass the parameters of obj object 
+    public static void show1(Student obj){
+      System.out.println("Static show method : ");
+      System.out.println("name is : " + obj.name + " Age is : " + age );
+    }
+}
+class Hello{
+  public static void main (String args[]){
+    Student obj = new Student();
+    obj.name = "Ilaks";
+    Student.age = 23;
+
+    Student obj2 = new Student();
+    obj2.name = "Kavs" ;
+    Student.age = 25;
+    
+    obj.show();
+    obj2.show();
+
+    Student.show1(obj);//Indirectly given the values of obj in static method to print nonstatic variable contents .
+  }
+}
