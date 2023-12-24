@@ -150,7 +150,8 @@ java Hello
 But shortcut java Hello.java didnt work when after creating new class 
 
 ******************************************************************************************
-Doubt : Why giving static string stud_name takes common name in b obj . 
+Doubt : We have given "static String stud_name" but havent assigned any value , but still it takes and assign the b.section value to both 'a' and 'b' object . Why not 'a' object .
+
 class School{
     String std ;
     String section;
@@ -172,7 +173,6 @@ class Hello {
     b.section = "C" ;
     b.std = "XII";
 
-
     a.showDetails();
     b.showDetails();
    
@@ -182,3 +182,5 @@ O/P :
 The student name is : Kavya And Section is : A And Standard is : X
 The student name is : Kavya And Section is : C And Standard is : XII
 }
+
+
