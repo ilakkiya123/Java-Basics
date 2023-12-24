@@ -148,3 +148,37 @@ javac Hello.java
 java Hello
 
 But shortcut java Hello.java didnt work when after creating new class 
+
+******************************************************************************************
+Doubt : Why giving static string stud_name takes common name in b obj . 
+class School{
+    String std ;
+    String section;
+    static String stud_name ;
+
+    public void showDetails(){
+      System.out.println("The student name is : " + stud_name + " And Section is : " + section + " And Standard is : " + std);
+    }
+}
+class Hello {
+  public static void main (String args[]){
+    School a = new School();
+    a.stud_name = "Ilakkiya";
+    a.section = "A" ;
+    a.std = "X";
+
+    School b = new School();
+    b.stud_name = "Kavya";
+    b.section = "C" ;
+    b.std = "XII";
+
+
+    a.showDetails();
+    b.showDetails();
+   
+  }
+
+O/P :
+The student name is : Kavya And Section is : A And Standard is : X
+The student name is : Kavya And Section is : C And Standard is : XII
+}
