@@ -1,3 +1,80 @@
-Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
+//Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
+
+//Static Block contains Static variable 
+
+class School{
+    String std ;
+    static String section;
+    String stud_name ;
+
+    public void showDetails(){
+      System.out.println("The student name is : " + stud_name + " And Section is : " + section + " And Standard is : " + std);
+    }
+    //static block contains static variable , which is common for all the objects .
+    static {
+       section = "B" ;
+    }
+
+}
+class Hello {
+  public static void main (String args[]){
+    School a = new School();
+    a.stud_name = "Ilakkiya";
+    a.std = "X";
+
+    School b = new School();
+    b.stud_name = "Kavya";
+    b.std = "XII";
+    
+    a.showDetails();
+    b.showDetails();
+
+    School.section = "D";
+   
+  }
+}
+
+O/P :
+The student name is : Ilakkiya And Section is : B And Standard is : X
+The student name is : Kavya And Section is : B And Standard is : XII
+
+[Here the static block is assigned with section value as "B" , So it is commonly taken by both objects 'a' and 'b']
 
 
+--------------------------------------------------------------------------------------------
+
+class School{
+    String std ;
+    static String section;
+    String stud_name ;
+
+    public void showDetails(){
+      System.out.println("The student name is : " + stud_name + " And Section is : " + section + " And Standard is : " + std);
+    }
+
+    static {
+       section = "B" ;
+    }
+
+}
+class Hello {
+  public static void main (String args[]){
+    School a = new School();
+    a.stud_name = "Ilakkiya";
+    a.std = "X";
+
+    School b = new School();
+    b.stud_name = "Kavya";
+    b.std = "XII";
+    
+    School.section = "D"; // Here before calling the showDetails method , static variable is override with section as 'D value' .
+
+    a.showDetails();
+    b.showDetails();
+   
+  }
+}
+
+O/P :
+The student name is : Ilakkiya And Section is : B And Standard is : X
+The student name is : Kavya And Section is : B And Standard is : XII
