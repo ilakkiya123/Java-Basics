@@ -1,6 +1,8 @@
 //Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
 
 //Static Block contains Static variable 
+//Static Block Executes only once during the class loading .The static Block always executes first before the main method() in java ,because the compiler 
+stores them in memory at the time of class loading before the object creation .
 
 class School{
     String std ;
@@ -78,3 +80,183 @@ class Hello {
 O/P :
 The student name is : Ilakkiya And Section is : B And Standard is : X
 The student name is : Kavya And Section is : B And Standard is : XII
+
+------------------------------------------------------------------------------------------------------------------
+//Whenever we create a new object the constructor gets called , but class loads only once and once class loads static block is also initialised only once .
+class School{
+    String std ;
+    static String section;
+    String stud_name ;
+
+    public void showDetails(){
+      System.out.println("The student name is : " + stud_name + " And Section is : " + section + " And Standard is : " + std);
+    }
+
+    static {
+       section = "B" ;
+       System.out.println("In Static Block : ");
+    }
+    //Constructor
+    public School(){
+      System.out.println("In Constructor : ");
+    }
+
+}
+class Hello {
+  public static void main (String args[]){
+    School a = new School();
+    a.stud_name = "Ilakkiya";
+    a.std = "X";
+
+    School b = new School();
+    b.stud_name = "Kavya";
+    b.std = "XII";
+    
+    School.section = "D";
+
+    // a.showDetails();
+    // b.showDetails();
+   
+  }
+}
+
+O/P :(So here static block comes only once and constructor comes twice ,as we have 2 objects .)
+In Static Block : 
+In Constructor : 
+In Constructor : 
+
+**********************************************************************************************
+Execution Flow btw Static / Non Static and Default Constrauctor :
+
+//Hello Class created
+class Hello { 
+
+  //static block - present below class and above main method or in different class - Once class loads static block contents are stored in memory before obj creation .
+  static{
+    System.out.println("In Static block :");
+  }
+
+  //Default Constructor - Once obj created it calls def constructor 
+  public Hello(){
+    System.out.println("In Default Constructor :");
+  }
+  public static void main (String args[]){
+     Hello h1 = new Hello();
+  }
+}
+
+*****************************************************************************************************
+=>Once we compile , byte code is converted to .class file , which means class is loaded into the memory .
+=>Static Block is stored in memory when class gets loaded .
+
+class Hello {
+  static{
+    System.out.println("Hello class static block ::: ");
+  }
+  public static void main (String args[]) throws ClassNotFoundException{
+    
+  }
+}
+
+O/P :
+Hello class static block ::: 
+
+-----------------------------------------------------------------------------------------
+Assume we have another class as Hi and it also has static block ,
+=>Here print statement in "class Hi" is not executed .Because it executes when class file loads before main method (),but class Hi is not present in main method 
+in case object of this class present then it will execute static block first .
+
+class Hi{
+   static {
+    System.out.println("Hi class static block ::: ");
+  }
+}
+class Hello {
+  static{
+    System.out.println("Hello class static block ::: ");
+  }
+  public static void main (String args[]) throws ClassNotFoundException{
+
+  }
+}
+
+O/P :
+Hello class static block ::: 
+
+---------------------------------------------------------------------------------------------------
+
+Manually writing code to load class with specifying class name :
+
+class Hi{
+   static {
+    System.out.println("Hi class static block ::: ");
+  }
+}
+class Hello {
+  static{
+    System.out.println("Hello class static block ::: ");
+  }
+  public static void main (String args[]) throws ClassNotFoundException{
+    Class.forName("Hi");//Class.class for this we want to write exception 
+  }
+}
+
+O/P :
+Hello class static block ::: 
+Hi class static block ::: 
+
+---------------------------------------------------------------------------------------------------------
+Static Method :
+Note : 
+1)non-static method method() cannot be referenced from a static context 
+class Student{
+  String name;
+  int age;
+   public void show(){
+    System.out.println("Show method : ");
+   }
+    public static void show1(){
+      System.out.println("Static show method : ");
+      System.out.println("Age is : " + age);
+    }
+}
+class Hello{
+  public static void main (String args[]){
+    Student obj = new Student();
+    obj.age = 23;
+
+    Student obj2 = new Student();
+    obj2.age = 25;
+    
+    Student.show();//non static method when we try to call with class name - error throws like this -> non-static method method() cannot be referenced from a static context .
+    Student.show1();//static method can be accessed with the class name itself 
+  }
+}
+
+2)non-static variable age cannot be referenced from a static context (simple word : Inside a static block a non static variables cannot be used )
+
+class Student{
+  String name;
+  int age;//non static variable 
+   public void show(){
+    System.out.println("Show method : ");
+   }
+    public static void show1(){
+      System.out.println("Static show method : ");
+      System.out.println("Age is : " + age);
+    }
+}
+class Hello{
+  public static void main (String args[]){
+    Student obj = new Student();
+    obj.age = 23;
+
+    Student obj2 = new Student();
+    obj2.age = 25;
+    
+    obj.show();
+    obj2.show1();//non static variable passing inside a static block
+  }
+}
+
+
