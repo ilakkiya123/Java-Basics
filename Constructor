@@ -1,0 +1,4 @@
+Constructor :-
+==>It is a special method with its name as the name of the class name .
+==>Everytime when we create an object , constructor gets called .
+==>Constructor never returns anything .
