@@ -1,0 +1,62 @@
+Encapsulation - A class variable's are hidden from other class and can only be accessed by the methood's of the class in which it is present .
+
+We make the variables as private , so the var cant be accessed from main method , So we create a new method in this class itself .
+class Music{
+    private String name="Flute";
+    private int price=10;
+    
+    public int getPrice(){
+      return price*5;
+    }
+    public String getName(){
+      return name;
+    }
+}
+class Hello {
+  public static void main (String args[]){
+     Music obj = new Music();
+     System.out.println(obj.getName() + " : " + obj.getPrice());
+  }
+}
+But drawback in the above is we cant assign the values in main method() .
+**************************************************************************************************
+
+//Since we cant assign a value for a private variable in main method() , we pass the value through setMethod() and we get the value from setMethod() and assign to private variable and get the value via 
+getMethod() and return to main method () by doing necessary things required .
+
+class Music{
+    private String name;
+    private int price;
+    
+    public void setPrice(int p){
+      price = p ;
+    }
+    public int getPrice(){
+      return price*5;
+    }
+
+    public void setName(String n){
+       name = n ;
+    }
+
+    public String getName(){
+      return name;
+    }
+
+}
+class Hello {
+  public static void main (String args[]){
+     Music obj = new Music();
+     obj.setPrice(10);
+     obj.setName("Ilakkiya");
+     System.out.println(obj.getName() + " : " + obj.getPrice());
+  }
+}
+
+Note : 
+Note : Music.price , Music.name is invisible .
+Hello.java:24: error: name has private access in Music
+     obj.name = "Ilak" ;
+        ^
+Hello.java:25: error: price has private access in Music
+     obj.price = 10;
