@@ -290,3 +290,13 @@ class Hello{
     Student.show1(obj);//Indirectly given the values of obj in static method to print nonstatic variable contents .
   }
 }
+
+-----------------------------------------------------------------------------------------------
+Static Method :
+Note : main method is a static method , If we remove static , then it is a non static method ,to access non static method we need to create object .
+Since our main method is the starting point of execution , and if static keyword not present , then object cannot be created . So to avoid that we are using
+static keyword .
+
+public static void main (String args[]){
+
+}
