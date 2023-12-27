@@ -1,4 +1,4 @@
-Encapsulation - A class variable's are hidden from other class and can only be accessed by the methood's of the class in which it is present .
+Encapsulation - A class variable's are hidden from other class and can only be accessed by the methood's of the class in which it is present .We are binding datas and methods (Encapsulating ) .
 
 We make the variables as private , so the var cant be accessed from main method , So we create a new method in this class itself .
 class Music{
