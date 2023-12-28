@@ -4,6 +4,44 @@
 //Static Block Executes only once during the class loading .The static Block always executes first before the main method() in java ,because the compiler 
 stores them in memory at the time of class loading before the object creation .
 
+----------------------------------------------------------------------------------------------------------------------
+static variable easy explanation :(static var means if a value is assigned to cost then that will be shared by all the object refernce which is having 
+cost value or in simple terms it is shared by all objects )
+class Hi {
+  String name ;
+  static int cost=100 ; //Here 1) cost value is 100 . So it will be shared by all objects until it is overrided by other value assigned to same cost var .
+  
+  public void showAmt(){
+     System.out.println("name : " + name + " cost : "+ cost);
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     Hi h1 = new Hi();
+     h1.name = "Ilakkiya";
+     h1.cost = 10 ;//Here 2)cost is assigned 
+
+     Hi h3 = new Hi();
+     h3.cost = 19 ;//Here 3)cost is again assigned a new val
+
+     Hi h2 = new Hi();
+     h2.name = "Kavya";
+     h2.cost = 20 ;//Here 4)cost is assigned a final value after which nothing is assigned for this cost variable .So it will give an output of 20 for all 
+3 references (h1.cost , h2.cost , h3.cost)
+
+     h1.showAmt();
+     h2.showAmt();
+     h3.showAmt();
+  }
+}
+Note : static is common for all objects , but not a constant one .
+O/P :
+
+name : Ilakkiya cost : 20
+name : Kavya cost : 20
+name : null cost : 20
+-----------------------------------------------------------------------------
+
 class School{
     String std ;
     static String section;
