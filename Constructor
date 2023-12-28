@@ -2,3 +2,7 @@ Constructor :-
 ==>It is a special method with its name as the name of the class name .
 ==>Everytime when we create an object , constructor gets called .
 ==>Constructor never returns anything .
+
+
+Note : Every Constructor(includes pa) in java has a method in java and that is a super() method .First statement of constructor is super().
+super() --- > Calls the constructor of super class .
