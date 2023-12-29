@@ -1,3 +1,13 @@
+Naming Convention :
+
+JAVA always follows camelcase .
+
+//class and interface - Hello , Calc (first letter caps)
+//method - showDetail , playMusic 
+//variables - age , marks_1
+//constant - DATA , MY_DATA
+
+*******************************************************
 Arithmetic Operators :
 + , - , * , / , %
 ******************************************************
