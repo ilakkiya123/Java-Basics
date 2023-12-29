@@ -3,6 +3,107 @@ Constructor :-
 ==>Everytime when we create an object , constructor gets called .
 ==>Constructor never returns anything .
 
+Types Of Constructor : 
+*Default Constructor 
+*Parametrized Constructor 
 
-Note : Every Constructor(includes pa) in java has a method in java and that is a super() method .First statement of constructor is super().
+class House{
+    String name ;
+    int year ;
+    //Default Constructor 
+    public House(){
+      System.out.println("In Constructor : ");
+    }
+    //Parametrized Constructor 
+    public House(String n , int y){
+      System.out.println("The name of my home is : " + n + " and built year is : " + y);
+    }
+}
+class Hello {
+  public static void main(String args[]){
+     House h1 = new House();
+     House h2 = new House("Anbagam" , 2014);
+  }
+}
+
+--------------------------------------------------------------------------------------------------
+this Keyword in constructors :
+
+class Colours{
+  String color;
+  public Colours(){
+    System.out.println("In Default Constructor : ");
+  }
+  public Colours(String color){
+    this.color = color; // mistake which I did is not assigned local variable color to instance var
+    System.out.println(this.color + " : In Para Constructor : ");//Directly printed only this.color
+  }
+  
+}
+class Hello {
+  public static void main (String args[]){
+    Colours c1 = new Colours();
+    Colours c2 = new Colours("Green");
+
+  }
+}
+
+O/P :
+In Default Constructor : 
+Green : In Para Constructor : 
+
+---------------------------------------------------------------------------------------------------------------
+this keyword and super() method 
+
+class A {
+   public A(){
+    System.out.println("In A");
+   }
+}
+class B extends A{
+  public B(){
+    System.out.println("In B ");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     B obj = new B();
+  }
+}
+
+O/P : 
+In A
+In B 
+
+Note : Here we are creating an object for B class , but we are seeing value from A constructor . Because subclass always calls a super class and it prints
+that value as well .
+
+Note : Every Constructor(includes parametrized constructor) in java has a method in java and that is a super() method .First statement of constructor is super().
 super() --- > Calls the constructor of super class .
+
+class A {
+   public A(){
+    super();
+    System.out.println("In A");
+   }
+   public A(int n){
+    super();
+    System.out.println("In A in int");
+   }
+}
+class B extends A{
+  public B(){
+    super();
+    System.out.println("In B ");
+  }
+  public B(int n){
+    super();
+    System.out.println("In B in int");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     B obj = new B(8);
+     //A obj1= new A();
+  }
+}
