@@ -62,3 +62,20 @@ java Hello
 
 O/P:
 30 30 60 3 25
+
+*******************************************************************
+Single Inheritance : Consists of 1 parent class and 1 child class . Child Class Inheterits parent class's method and data variables .   Calc(parent Class) <- Advcalc(child class)
+Multi Level Inheritance : It has the involvement of atleast 2 or more than 2 classes .One class inherits methods and dats from parent class , And now the subclass becomes the base class for the newly created 
+class.  Calc(parent Class) <- Advcalc(child class)
+                              Advcalc(parent class) <- VeryAdvClass(child class)
+
+*************************************************************************************************
+Why Multiple Inheritance is not possible in Java ?
+
+A(parent)         B(parent)
+x()               x()    ->Common Method in both A and B parent 
+
+        C(child)
+
+If suppose there is a common method in both A and B , then C.x() is a problem .Compiler doesnt know which super class method to execute ,and that leads to an ambiguity .
+So for that purpose , Java doesnt support Multiple Inheritance but multilevel inheritance is possible .
