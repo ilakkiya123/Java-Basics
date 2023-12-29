@@ -78,8 +78,10 @@ In B
 Note : Here we are creating an object for B class , but we are seeing value from A constructor . Because subclass always calls a super class and it prints
 that value as well .
 
-Note : Every Constructor(includes parametrized constructor) in java has a method in java and that is a super() method .First statement of constructor is super().
+Note : Every Constructor(includes parametrized constructor) in java has a method in java and that is a super() method .
+First statement of constructor is super().
 super() --- > Calls the constructor of super class .
+this() ---> calls the default constructor of existing class .
 
 class A {
    public A(){
@@ -107,3 +109,40 @@ class Hello {
      //A obj1= new A();
   }
 }
+
+----------------------------------------------------------------------------------------
+Every class in java extends object class .
+super() --- > Calls the constructor of super class .
+this() ---> calls the default constructor of existing class .
+
+
+class A extends Object{
+   public A(){
+    super();//this calls the constructor of Object Class
+    System.out.println("In A");
+   }
+   public A(int n){
+    super();
+    System.out.println("In A in int");
+   }
+}
+class B extends A{
+  public B(){
+    super();
+    System.out.println("In B ");
+  }
+  public B(int n){
+    this();//calls the default constructor here it is B class 
+    System.out.println("In B in int");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     B obj = new B(8);
+  }
+}
+
+O/P : 
+In A
+In B 
+In B in int
