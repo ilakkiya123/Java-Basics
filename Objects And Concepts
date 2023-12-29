@@ -49,4 +49,36 @@ other method also if the particular instance is used .
 
 local variable ---> It has scope inside the method of a particular class .
                --- > Local Variable part of stack (Methods) .
+
+--------------------------------------------------------------------------------------------
+Ananymous Object : 
+
+class A{
+   public A(){
+      System.out.println("Object created : ");
+   }
+
+   public void show(){
+    System.out.println("In show method ");
+   }
+}
+class Hello {
+  public static void main (String args[]){
+     //A obj = new A();// this line has 2 steps 
+     //A obj - reference variable for class A 
+     //new A() - creates a new Object otherwise called as Ananymous Object 
+
+     new A().show();
+     new A().show();// if we use individually new A() , then we cant reuse this object .Everytime new Object gets created .
+
+
+
+  }
+}
+
+O/P :
+Object created : 
+In show method 
+Object created : 
+In show method 
                
