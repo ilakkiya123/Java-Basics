@@ -1,2 +1,82 @@
 Packages : 
 In Java whichever inbuilt classes we use belongs to a package .
+
+Package is something like a folder . Since for this example main method we are getting some features from Calc.java and AdvCalc.java .we can combinely
+put this under a folder simply named as tools .
+
+tools
+ ->Calc.java
+ ->AdvCalc.java
+
+Note : In other classes we will write -----> package <under which folder present>
+       For main method to have connection with other class , as now other class present in diff folder , we put like ---> import tools.Calc
+
+//Hello.java
+import tools.Calc;  
+import tools.AdvCalc;
+
+
+class Hello {
+  public static void main (String args[]) {
+
+    ArrayList a1 = new ArrayList();
+     Calc c2 = new Calc();
+     AdvCalc c1 = new AdvCalc();
+     int r1 = c1.add(10,20 );
+     int r2 = c1.sub(50,20 );
+     int r3 = c1.mul(3,20 );
+     int r4 = c1.div(60,20 );
+    System.out.println(r1 + " " + r2 + " " + r3 + " " + r4 );
+  }
+}
+
+//Calc.java
+package tools;
+public class Calc {
+   
+   public int add(int n1, int n2) {
+      return n1 + n2;
+   }
+
+   public int sub(int n1, int n2) {
+      return n1 - n2;
+   }
+}
+
+//AdvCalc.java
+package tools;
+public class AdvCalc extends Calc {
+
+   public int mul(int n1 , int n2) {
+      return n1 * n2;
+   }
+
+   public int div(int n1, int n2) {
+      return n1 / n2;
+   }
+}
+
+
+----------------------------------------------------------------------------------------------------------
+Note : In Java whichever inbuilt classes we use belongs to a package .
+
+for eg : 
+import java.util.ArrayList;  --- > folder path where ArrayList class is present .
+ArrayList a1 = new ArrayList(); 
+
+------------------------------------------------------------------------------------------------------------
+For eg below given is the folder structure :
+
+1)import other.*;  -----> * here indicates only the files other folder .Here it is Home.java .  Not includes directories 
+2)import other.tools.*;   -----> * here indicates the files under tools folder.
+
+other
+   ->Home.java
+   ->tools 
+        ->Calc.java
+        ->Advcalc.java
+
+************************************************************************************************************
+In Company when we are doing project they will have packages with names as below ,
+
+package com.google.database;   // they will reverse their domain name and use .
