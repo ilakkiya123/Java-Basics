@@ -1,0 +1,64 @@
+//Super - Sub Class , base - derived class , parent - child class
+Inheritance - Use the features of super class 
+
+
+//Note : Like Below we have 2 classes Calc and Hello . But when we compile we can see only Hello.class file and not Calc.class file as its object is not present .
+class Calc{
+  public int add(int n1 , int n2){
+      return n1+n2;
+  }
+
+  public int sub(int n1 , int n2){
+      return n1-n2;
+  }
+}
+class Hello {
+  public static void main (String args[]){
+      //Calc c1 = new Calc(); //when I remove this commented line , then calc class also gets loaded .
+  }
+}
+
+****************************************************************************************************
+Hello.java
+class Calc{
+  public int add(int n1 , int n2){
+      return n1+n2;
+  }
+
+  public int sub(int n1 , int n2){
+      return n1-n2;
+  }
+}
+
+class Hello {
+  public static void main (String args[]) throws ClassNotFoundException{
+     VeryAdvCalc c1 = new VeryAdvCalc();
+     int r1 = c1.add(10,20 );
+     int r2 = c1.sub(50,20 );
+     int r3 = c1.mul(3,20 );
+     int r4 = c1.div(60,20 );
+     int r5 = c1.power(5,2);
+     System.out.println(r1 + " " + r2 + " " + r3 + " " + r4 + " " + r5);
+  }
+}
+Advcalc.java
+class Advcalc extends Calc{
+   public int mul(int n1 , int n2){
+      return n1*n2;
+  }
+
+  public int div(int n1 , int n2){
+      return n1/n2;
+  }
+}
+VeryAdvCalc.java
+class VeryAdvCalc extends Advcalc{
+    public int power(int n1 , int n2){
+        return (int)(Math.pow(n1, n2));
+    }
+}
+javac Hello.java
+java Hello
+
+O/P:
+30 30 60 3 25
