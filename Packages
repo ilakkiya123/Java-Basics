@@ -79,4 +79,26 @@ other
 ************************************************************************************************************
 In Company when we are doing project they will have packages with names as below ,
 
+import java.lang.System;  ------ > System.out.println("");it comes under this package .
 package com.google.database;   // they will reverse their domain name and use .
+
+Note : If we want to make data , outside the package always make it public .Mostly we have methods as public .
+Access Modifiers : 
+
+public --- > Can be accessed anywhere in the code , from different package , different class , different package subclass .
+private ---> Can be accessed only in the present class , Not anyother class though present in same package .
+default ---> Can be accessed within the package .
+
+class A {
+int marks =10 ;  // Not having either private or public prefix 
+}
+
+protected -->Can be accessed in same package , same class , different package in a subclass .But not in different package non subclass .
+
+
+Tips :
+=>We cannot have 2 public classes in a single file .
+=>Class -  public 
+=>insta var - private 
+=>method public 
+=>method / var access in subclass other pack - protected
