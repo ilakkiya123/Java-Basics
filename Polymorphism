@@ -8,6 +8,9 @@ Method overloading and Method overriding are the two core concepts in java . The
 //Here the obj reference is same , method show() is same , but when it is called with diff object , the behaviour is different .
 //irrespective of the type of object .
 //And this is acceptable only when we chave inheritance concept , Parent class having child class .
+//A obj = new A() ; obj .show();  ---> A class show gets called .
+//A obj = new B() ; obj .show();  ---> B class show gets called .
+//A obj = new C() ; obj .show();  ---> C class show gets called .
 
 Dynamic Method Dispatch : 
 class A{
@@ -40,6 +43,32 @@ class Hello {
       obj = new C();
       obj.show();
 
+
+  }
+}
+
+********************************************************************************
+Upcasting and Downcasting :
+class A{
+   public void show(){
+     System.out.println("In A show : ");
+   }
+}
+class B extends A{
+    public void show2(){
+    System.out.println("In B show : ");
+    }
+}
+
+
+class Hello {
+  public static void main (String args[]){
+    A obj = (A) new B(); // Upcasting - telling the object B - refer to A  
+    obj.show();
+
+    //we are not creating a new Object instead making the obj reference is of type B , by having diff object reference name alone , bt not creating new object .
+    B obj2 = (B)obj;
+    obj2.show2();  // Downcasting obj reference var previously had type A now we have explicitly brought that down to B type .
 
   }
 }
