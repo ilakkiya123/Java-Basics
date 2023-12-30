@@ -1,0 +1,82 @@
+Interface - It is a blueprint of Class .It has final and static , abstract methods  .
+          - It uses implements keyword , which gets the abstract methods only.
+          - Suppose If we want to have access variables , then it should be static and final .static so that with class name itself we can access .
+
+Tips :
+class - class =>extends
+class - interface =>implements
+interface - interface =>extends
+
+interface A{
+  String name = "Ilakkiya";
+  int age = 23;
+  public void show();
+  public void config();
+}
+
+
+class B implements A{
+  public void show(){
+    System.out.println("In show ::: ");
+  }
+  public void config(){
+    System.out.println("In config ::: ");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     A obj = new B();
+     obj.show();
+     obj.config();
+     System.out.println(A.name +" - " + A.age);
+  }
+}
+
+O/P :
+In show ::: 
+In config ::: 
+Ilakkiya - 23
+
+-----------------------------------------------------------------------------------------------------
+Whether Class supports Multiple Interface ?
+ans : yes 
+
+
+interface X {
+  public void run();
+  public void walk();
+}
+
+interface Y {
+  public void sleep();
+}
+
+interface Z extends Y{
+}
+
+class B implements X,Z{
+  public void run(){
+     System.out.println("Running ...");
+  }
+  public void walk(){
+     System.out.println("Walking ...");
+  }
+  public void sleep(){
+    System.out.println("Sleeping ....");
+  }
+  
+}
+class Hello {
+  public static void main (String args[]){
+     X obj = new B(); // Since type 'X' not aware of sleep() , we are creating to obj for same B with different obj reference of type Y .
+     obj.run();
+     obj.walk();
+     Y obj1 = new B();
+     obj1.sleep();
+  }
+}
+
+O/P : 
+Running ...
+Walking ...
+Sleeping ....
