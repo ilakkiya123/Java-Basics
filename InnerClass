@@ -1,0 +1,25 @@
+class A{
+  int a ;
+  String name ;
+
+  public void show(){
+    System.out.println("In A show : ");
+  }
+  class B{
+
+  public void show1(){
+     System.out.println("In inner class show : ");
+  }
+  }
+}
+
+class Hello {
+  public static void main (String args[]){
+    A obj = new A();
+    obj.show();
+
+    A.B obj1 = obj.new B();  // B is inside A , So it should be called as A.B and accessed from the A class object reference so obj.new B()
+    obj1.show1();
+  }
+}
+
