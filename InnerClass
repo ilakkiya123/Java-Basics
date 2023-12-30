@@ -1,3 +1,7 @@
+//Inner Class - when we have inner class and when we try to compile we see a new file as A$B.class file is generated , which means B class belongs to A class .
+class A{
+   class B {}
+}
 class A{
   int a ;
   String name ;
@@ -23,3 +27,35 @@ class Hello {
   }
 }
 
+-----------------------------------------------------------------------------------------------------------------
+//We can access by the class name itself when we make the inner class as static 
+
+class A{
+  int a ;
+  String name ;
+
+  public void show(){
+    System.out.println("In A show : ");
+  }
+
+  static class B{
+  public void show1(){
+     System.out.println("In inner class show : ");
+  }
+  }
+  
+}
+
+class Hello {
+  public static void main (String args[]){
+    A obj = new A();
+    obj.show();
+
+    A.B obj1 = new A.B();
+    obj1.show1();
+  }
+}
+
+O/P :
+In A show : 
+In inner class show : 
