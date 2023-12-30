@@ -80,3 +80,39 @@ O/P :
 Running ...
 Walking ...
 Sleeping ....
+
+***********************************************************************************************************
+class Instruments {
+   public void playMusic(){
+
+   }
+}
+class Flute extends Instruments{
+  public void playMusic(){
+    System.out.println("Playing Flute ... ");
+  }
+}
+
+class Violin extends Instruments{
+  public void playMusic(){
+    System.out.println("Playing Violin ... ");
+  }
+}
+
+class Musician{
+  public void playInstrument(Instruments v1){
+    v1.playMusic();
+  }
+} 
+
+class Hello {
+  public static void main(String args[]){
+     Instruments v1 = new Violin(); //Here we write Instruments to get all the variables , v1 ov=bj reference of Violin object
+     Instruments f1 = new Flute();
+
+     Musician m1 = new Musician();
+     m1.playInstrument(v1);
+  }
+}
+
+
