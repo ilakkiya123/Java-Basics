@@ -149,3 +149,42 @@ O/P :
 In A
 In B 
 In B in int
+
+Object Class :
+
+Every time when we try to print object , it calls toString method
+Object has many methods it in , for eg : toString , equals()
+
+class Fruits {
+  String name ;
+  int price ;
+
+//toString --- It is already present in Object class , but as we know first it will check in existing class then will go to super class (here it is Object class) .So this toString method only get executes.
+  public String toString(){
+    return name + " : " + price;
+  }
+
+//our equals method checks only the values , It is always better to go with the IDE source generate equals.
+  public boolean equals(Fruits obj){
+     return (this.name.equals(obj.name)) && (this.price == obj.price); // here we didnt put if else to print T/F bcoz String itself compares and returns T/F
+  }
+
+}
+
+class Hello {
+  public static void main (String args[]){
+    Fruits c1 = new Fruits();
+    c1.name = "Watermelon";
+    c1.price = 100;
+
+    Fruits c2 = new Fruits();
+    c2.name = "Watermelon";
+    c2.price = 100;
+    System.out.println(c1.equals(c2));//when before defining our equals() method we got false bcoz the equal() method present in Object class compares both values as well as hash code .
+    System.out.println(c1);
+  }
+}
+
+O/P :
+true
+Watermelon : 100
