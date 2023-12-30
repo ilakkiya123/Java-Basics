@@ -1,0 +1,88 @@
+Final - variable , method , class 
+
+//Once we assigned value we cant reassign .The value is final .
+class Hello {
+  public static void main (String args[]){
+    final int marks;
+    marks = 100;
+
+    System.out.println("Marks : " + marks );
+  }
+}
+
+Final Class - To Stop Inherting data from parent class , we cant use extend of this class here after .
+
+final class A {
+  int price = 100;
+  public void show(){
+    System.out.println("In A show ::: ");
+  }
+}
+
+class B extends A{
+   
+}
+class Hello {
+  public static void main (String args[]){
+    
+   System.out.println("");
+
+  }
+}
+
+Final Method - To avoid overriding concept , we use final method .
+
+class Calc {
+  public void show(){
+    System.out.println("By Ilaks ");
+  }
+
+  public void add(int a , int b){
+     System.out.println("In A ::: " + (a+b));
+  }
+}
+
+class Advcalc extends Calc{
+   public void show(){
+    System.out.println("By Venu ");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+    
+    Advcalc c1 = new Advcalc();
+    c1.show();
+    c1.add(6,9);
+  }
+}
+
+O/P :(Here somebody used my add method and have taken the credit by having their name , to avoid this I have made that method as final )
+By Venu 
+In A ::: 15
+
+//So after changing code looks like below one --- >
+class Calc {
+  final public void show(){
+    System.out.println("By Ilaks ");
+  }
+
+  public void add(int a , int b){
+     System.out.println("In A ::: " + (a+b));
+  }
+}
+
+class Advcalc extends Calc{
+
+}
+class Hello {
+  public static void main (String args[]){
+    
+    Advcalc c1 = new Advcalc();
+    c1.show();
+    c1.add(6,9);
+  }
+}
+
+O/P :
+By Ilaks 
+In A ::: 15
