@@ -115,4 +115,39 @@ class Hello {
   }
 }
 
+------------------------------------------------------------------------------------------
+Here for the above objects we have replaced normal class with interface as the Instruments method is not implemented .
 
+interface Instruments {
+   public abstract void playMusic();
+}
+class Flute implements Instruments{
+  public void playMusic(){
+    System.out.println("Playing Flute ... ");
+  }
+}
+
+class Violin implements Instruments{
+  public void playMusic(){
+    System.out.println("Playing Violin ... ");
+  }
+}
+
+class Musician{
+  public void playInstrument(Instruments v1){
+    v1.playMusic();
+  }
+} 
+
+class Hello {
+  public static void main(String args[]){
+     Violin v1 = new Violin(); 
+     Instruments f1 = new Flute();
+
+     Musician m1 = new Musician();
+     m1.playInstrument(v1);
+  }
+}
+
+O/P :
+Playing Violin ... 
