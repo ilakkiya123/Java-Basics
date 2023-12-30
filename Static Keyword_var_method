@@ -338,3 +338,5 @@ static keyword .
 public static void main (String args[]){
 
 }
+
+Note : static class is acceptable only when it comes as an inner class
