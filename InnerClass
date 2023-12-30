@@ -56,6 +56,43 @@ class Hello {
   }
 }
 
+------------------------------------------------------------------------------------------
+Anonymous Inner Class :
+Note : Usually we cannot access an abstract class from main method , here also we are not accessing abstract class , instead an ananymous class.
+       In ananymous class we can have n number of abstract methods . 
+
+abstract class A{
+ abstract public void show();
+ abstract public void config();
+}
+
+class Hello {
+  public static void main (String args[]){
+    A obj = new A(){
+      public void show(){
+        System.out.println("new show : ");
+      }
+
+      public void config(){
+        System.out.println("new config : ");
+      }
+    };
+    obj.show();
+    obj.config();
+  }
+}
+
+O/P :
+new show : 
+new config :
+
+
+
+
+O/P : 
+new show : 
+
+
 O/P :
 In A show : 
 In inner class show : 
