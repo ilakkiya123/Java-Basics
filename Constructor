@@ -56,12 +56,15 @@ Green : In Para Constructor :
 this keyword and super() method 
 
 class A {
+   
    public A(){
+    super();//Default it is present 
     System.out.println("In A");
    }
 }
 class B extends A{
   public B(){
+    super();
     System.out.println("In B ");
   }
 }
@@ -80,7 +83,7 @@ that value as well .
 
 Note : Every Constructor(includes parametrized constructor) in java has a method in java and that is a super() method .
 First statement of constructor is super().
-super() --- > Calls the constructor of super class .
+super() --- > Calls the constructor of super class .Present inside a constructor .
 this() ---> calls the default constructor of existing class .
 
 class A {
