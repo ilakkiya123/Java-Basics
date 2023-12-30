@@ -1,0 +1,42 @@
+Abstract : 
+1)Abstarct method - only the declaration of the method is present .To indicate that we provide an abstract keyword .
+          -> abstract public void drive();
+2)Abstract method should be present in an abstract class 
+          ->abstract class Car { }
+3)An Object cannot be created for an abstract class .
+4)The newly created class which extends from Car should mandatoriy define the abstract method of parent class .If it cannot define then it also should given with prefix of abstract.
+5)Abstract class - method declaration is present . Concrete class - method definition of abstract method is present 
+
+abstract class Car{
+abstract public void drive();
+abstract public void accelerate();
+public void playMusic(){
+  System.out.println("Playing Music ....");
+}
+}
+abstract class Zen extends Car{
+   public void drive(){
+    System.out.println("Zens drives ::: ");
+   }
+}
+
+//Concrete Class
+class ZenEstilo extends Zen{
+  public void accelerate(){
+    System.out.println("Speed gets increased ...");
+  }
+}
+
+class Hello {
+  public static void main (String args[]){
+   Car c1 = new ZenEstilo();
+   c1.drive();
+   c1.playMusic();
+   c1.accelerate();
+  }
+}
+
+Note :
+Abstract class can have both abstract method and non abstract method .
+It can have only abstract method 
+It can have only non abstract method .
