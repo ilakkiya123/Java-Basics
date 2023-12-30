@@ -1,0 +1,5 @@
+Polymorphism ---> (Poly - Many) + (Morphism - Behavior )
+
+Method Overloading - Compile time
+Method overriding - Runtime
+Method overloading and Method overriding are the two core concepts in java . They are the way to polymorphism in java .
