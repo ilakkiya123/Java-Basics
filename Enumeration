@@ -84,3 +84,159 @@ Note : As like other classes in enum there is no inheritance , we cant use exten
 
 //Enum By default has a Enum Class 
 System.out.println(s.getClass().getSuperclass()); ------  class java.lang.Enum
+
+---------------------------------------------------------------------------------------------------------------
+If we got doubt , How object() ---> is a constructor have the below example for reference .
+
+class Fruits{
+    public Fruits(){
+
+    }
+}
+
+class Apple extends Fruits{
+    public Apple(String name ,String color){
+         System.out.println(name + " : " +color);
+    }
+}
+class Banana extends Fruits{
+    public Banana(String name,String color){
+       System.out.println(name + " : " +color);
+    }
+}
+
+class Hello {
+  public static void main (String args[]){
+    Fruits f1 = new Apple("Apple" , "red");
+    f1 = new Banana("Banana" , "yellow");
+    
+    
+  }
+}  
+-----------------------------------------------------------------------------------------------
+Enum Methods ,Constructors , private variables 
+
+//enum is a special class , class name - Fruits .So constructor creates with Fruits
+enum Fruits {
+  Apple("red"),Orange("orange"),Banana("yellow"),Grapes("green") ;
+  private String colour;
+
+  private Fruits(String colour) {
+    this.colour = colour;
+  }
+
+  public String getColour() {
+    return colour;
+  }
+
+  public void setColour(String colour) {
+    this.colour = colour;
+  }
+
+}
+
+
+class Hello{
+  public static void main(String[] args) {
+    Fruits f1 = Fruits.Grapes;
+    System.out.println(f1 + " : " + f1.getColour());
+  }
+}
+
+//O/P :
+Grapes : green
+
+*******************************************************************
+To get all values in the List :
+//enum is a special class , class name - Fruits .So constructor creates with Fruits
+enum Fruits {
+  Apple("red"),Orange("orange"),Banana("yellow"),Grapes("green") ;
+  private String colour;
+
+  private Fruits(String colour) {
+    this.colour = colour;
+  }
+
+  public String getColour() {
+    return colour;
+  }
+
+  public void setColour(String colour) {
+    this.colour = colour;
+  }
+
+}
+
+
+class Hello{
+  public static void main(String[] args) {
+    // Fruits f1 = Fruits.Grapes;
+    // System.out.println(f1 + " : " + f1.getColour());
+
+    Fruits arr[] = Fruits.values();
+    // for (int i=0;i<arr.length;i++){
+    //   System.out.println(arr[i] + " : " + arr[i].getColour());
+    // }
+    for(Fruits n:arr){
+      System.out.println(n + " : " + n.getColour());
+    }
+
+  }
+}
+
+O/P : 
+Apple : red
+Orange : orange
+Banana : yellow
+Grapes : green
+
+************************************************************************************
+
+//enum is a special class , class name - Fruits .So constructor creates with Fruits
+enum Fruits {
+  Apple("red"),Orange("orange"),Banana,Grapes("green") ;//Since here banana is not having parameter errors throws ,need to create default constructor
+  private String colour;
+
+ 
+
+  private Fruits() {
+    // this.colour = "Yellow";
+  }
+
+//We have created private Constructor .Since we are using obj and var in same class .
+  private Fruits(String colour) {
+    this.colour = colour;
+  }
+
+  public String getColour() {
+    return colour;
+  }
+
+  public void setColour(String colour) {
+    this.colour = colour;
+  }
+
+}
+
+
+class Hello{
+  public static void main(String[] args) {
+    // Fruits f1 = Fruits.Grapes;
+    // System.out.println(f1 + " : " + f1.getColour());
+
+    Fruits arr[] = Fruits.values();
+    // for (int i=0;i<arr.length;i++){
+    //   System.out.println(arr[i] + " : " + arr[i].getColour());
+    // }
+    for(Fruits n:arr){
+      System.out.println(n + " : " + n.getColour());
+    }
+
+  }
+}
+
+O/P :
+Apple : red
+Orange : orange
+Banana : null
+Grapes : green
