@@ -60,6 +60,38 @@ class B extends A{
     }
 }
 
+************************************************************************************************
+Class Leader and Assistant own example :
+
+class A{
+  int age ;
+  String name ;
+  public void show(){
+    System.out.println("In show ::: " + name + " : " + age );
+  }
+}
+class B extends A{
+  public void display(){
+    System.out.println("In display ::: " + name + " : " + age );
+  }
+}
+class Hello {
+  public static void main(String args[]){
+    A obj = new B();
+    obj.age = 10 ;
+    obj.name = "Ilaks" ;
+    obj.show();
+
+    B obj1 = (B)obj ;
+    obj1.age = 15;
+    obj1.name="Kavs";
+    obj1.display();
+    
+  }
+}
+
+
+*************************************************************************************************
 
 class Hello {
   public static void main (String args[]){
