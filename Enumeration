@@ -1,0 +1,86 @@
+Enum - enum is  a special class , that represents group of constants similar to Final(unchangeable var). 
+==> Enumeration is a short name for enum , specifically Listed.Enum Constants are public , static , final
+Enum with For loop :
+
+enum Status{
+  Running , Completed , Pending , Waiting ;//Are all objects - named constants
+}
+class Hello {
+  public static void main(String args[]){
+     Status s = Status.Pending; // only the list present in Status class can be added .
+     System.out.println("Index of " + s + " : "+ s.ordinal());//s currently have pending to check index of Pending we use ordinal .ordinal starts with index 0 .
+     Status arr[] = Status.values(); // gives as a list of all the values
+    
+     for (int i=0 ; i<arr.length;i++){
+      System.out.println(i + " : " + arr[i]);
+     }
+  }
+}
+
+Enum with If Else Block 
+
+enum Status{
+  Running , Completed , Pending , Waiting ;//Are all objects - named constants
+}
+class Hello {
+  public static void main(String args[]){
+     Status s = Status.Completed; // only the list present in Status class can be added .
+     System.out.println("Index of " + s + " : "+ s.ordinal());//s currently have pending to check index of Pending we use ordinal .ordinal starts with index 0 .
+     Status arr[] = Status.values(); // gives as a list of all the values
+    
+     //s == "Running" - Here If I try to give like this , It says - Incompatible operand types String and Status 
+     if (s == Status.Running){
+        System.out.println("Pls wait , its running !!! ");
+     }
+     else if (s == Status.Completed){
+        System.out.println("Hurray Completed!!! ");
+     }
+     else if (s == Status.Pending){
+        System.out.println("Pls wait , its pending !!! ");
+     }
+     else {
+      System.out.println("Wait Pls !!! ");
+     }
+  }
+}
+
+O/P :
+Index of Completed : 1
+Hurray Completed!!! 
+
+----------------------------------------------------------------------------------
+Enum with switch ()
+
+enum Status{
+  Running , Completed , Pending , Waiting ;//Are all objects - named constants
+}
+class Hello {
+  public static void main(String args[]){
+     Status s = Status.Completed; // only the list present in Status class can be added .
+     System.out.println("Index of " + s + " : "+ s.ordinal());//s currently have pending to check index of Pending we use ordinal .ordinal starts with index 0 .
+     
+    switch (s.ordinal()) {  //switch(s)
+      case 0: //case Running :
+        System.out.println("Pls wait , its running !!! ");
+        break;
+      case 1: //case Completed
+        System.out.println("Hurray Completed!!! ");
+        break;
+      case 2: //case Pending
+        System.out.println("Pls wait , its pending !!! ");
+        break;
+      case 3://case Waiting
+        System.out.println("Wait Pls !!! ");
+        break;    
+      default:
+        System.out.println("Pls Enter validate Status: ");
+        break;
+     }
+    }
+  }
+
+Note : As like other classes in enum there is no inheritance , we cant use extend keyword .
+=== > we can define method , constructors , create own var is possible 
+
+//Enum By default has a Enum Class 
+System.out.println(s.getClass().getSuperclass()); ------  class java.lang.Enum
