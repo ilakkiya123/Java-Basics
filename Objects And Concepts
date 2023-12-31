@@ -123,3 +123,24 @@ class Hello {
   }
 }
 
+//Annonation - It is a metadata , which provides information to guide the java interpreter during code translation .
+class A{
+public void show(){
+  System.out.println("In show A");
+}
+}
+class B extends A{
+  @Override //Indicates the compiler - suppose if we mistakenly given wrong name compilere guides us
+public void show(){
+  System.out.println("In show B");
+}
+}
+
+class Hello{
+  public static void main(String[] args) {
+    A obj = new B();
+    obj.show();
+  }
+}
+
+
