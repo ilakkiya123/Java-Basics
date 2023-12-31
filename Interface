@@ -244,6 +244,7 @@ lamda expression with parameters return type : int
 
 //Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
 @FunctionalInterface
+//Here If we have more than 2 methods ,ananymous cant decide which method to call , So it should have only 1 method
 interface A{
   public int show(int i , int j);
 }
@@ -251,7 +252,7 @@ interface A{
 
 class Hello {
   public static void main (String args[]){
-Here it had return statement , but it is not required as it is an expression after lamda expression it directly returns the value     
+//Here it had return statement , but it is not required as it is an expression after lamda expression it directly returns the value     
 A obj = (i , j ) -> (i+j);
      int result = obj.show(8,9);
      System.out.println(result);
@@ -261,3 +262,8 @@ A obj = (i , j ) -> (i+j);
 Tips :
 *Lambda Expression works only with Functional Interface .
 
+Types Of Interface :
+1)Normal Interface -Interface which has two or more than two abstract methods in Interface .
+2)Functional Interface or SAM - Interface which has only one method .
+3)Marker Interface - serialization and deserialization concept comes .
+object datas are stored in hardware and requires it takes data from hardware .(Game restart)
