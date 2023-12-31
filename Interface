@@ -151,3 +151,113 @@ class Hello {
 
 O/P :
 Playing Violin ... 
+
+//Functional Interface :
+//Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
+@FunctionalInterface
+interface A{
+  public void show();
+  //public void run(); - After giving annotation it guides us like mistakenly we have written more than one method in interface .
+}
+
+
+class B implements A{
+  public void show(){
+    System.out.println("In show ::: ");
+  }
+}
+class Hello {
+  public static void main (String args[]){
+     A obj = new B();
+     obj.show();
+  }
+}
+
+we can also do the above with ananymous object 
+
+//Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
+@FunctionalInterface
+interface A{
+  public void show();
+  //public void run(); - After giving annotation it guides us like mistakenly we have written more than one method in interface .
+}
+
+
+// class B implements A{
+//   public void show(){
+//     System.out.println("In show ::: ");
+//   }
+// }
+class Hello {
+  public static void main (String args[]){
+    //we are not creating new class to write impl so that we can access by creating obj for a class , instead ananymous obj
+     A obj = new A(){
+        public void show(){
+    System.out.println("New show ::: ");
+  }
+     };
+     obj.show();
+  }
+}
+
+O/P : 
+New show :::
+
+***************************************************************************************
+Lambada Expression : Similar to Arrow fn in javascript 
+//Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
+@FunctionalInterface
+interface A{
+  public void show();
+}
+
+
+class Hello {
+  public static void main (String args[]){
+    //For single line statement we can remove curly bracket as well 
+     A obj = ()->System.out.println("New Show ::: ");
+     obj.show();
+  }
+}
+
+lamda expression with parameters return type : void 
+//Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
+@FunctionalInterface
+interface A{
+  public void show(int i );
+}
+
+
+class Hello {
+  public static void main (String args[]){
+    //For single line statement we can remove curly bracket as well 
+     A obj = i->System.out.println("New Show ::: " + i);
+     obj.show(8);
+  }
+}
+
+O/P :
+New Show ::: 8
+
+-----------------------------------------------------------------------
+lamda expression with parameters return type : int
+
+//Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
+@FunctionalInterface
+interface A{
+  public int show(int i , int j);
+}
+
+
+class Hello {
+  public static void main (String args[]){
+Here it had return statement , but it is not required as it is an expression after lamda expression it directly returns the value     
+A obj = (i , j ) -> (i+j);
+     int result = obj.show(8,9);
+     System.out.println(result);
+  }
+}
+
+Tips :
+*Lambda Expression works only with Functional Interface .
+
