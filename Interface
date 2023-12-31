@@ -10,8 +10,8 @@ interface - interface =>extends
 interface A{
   String name = "Ilakkiya";
   int age = 23;
-  public void show();
-  public void config();
+  public abstract void show();// public abstract is optional
+  public abstract void config();//public abstract is optional
 }
 
 
