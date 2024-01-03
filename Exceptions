@@ -1,0 +1,212 @@
+//Types of Errors : 
+1)Compile time error - syntatical errors .
+2)Runtime error - Stops the execution - Code is fine , but file not found .
+3)Logical error - Some logic is missing so that when we try to print the expected output is not printed .
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Runtime Exception - Here since this line ---> result = i/j; it throws exception when denominator is '0' . We are catching that error . Our java throws it as an object , so we should use Exception class with 
+'e' obj . ANy obj naming we can use .
+
+class Hello {
+  public static void main(String args[]){
+    int i = 10;
+    int j = 0;
+    try{
+    int result = i/j;
+    }
+    catch(Exception e){
+      System.out.println("ArithmeticException: / by zero");
+    }
+    System.out.println(i  + " " + j);
+
+  }
+}
+
+O/P :
+ArithmeticException: / by zero
+10 0
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+class Hello{
+  public static void main (String args[]){
+    int i = 10;
+    int j = 1;
+
+    int arr[] = new int[3];
+
+    String s = null ;
+
+    try {
+      System.out.println(s.length());
+      System.out.println(i/j);
+      arr[3] = 12;
+    } 
+    catch (ArithmeticException e) {
+      System.out.println(e);
+    }
+    catch(ArrayIndexOutOfBoundsException e){
+      System.out.println(e);
+    }
+    catch(Exception e){
+      System.out.println("Something went wrong ..." +  e);
+    }
+    
+System.out.println("End I m Here !!! ");
+  }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Diff Exceptions :
+
+
+class Hello{
+  public static void main (String args[]){
+    int i = 10;
+    int j = 1;
+
+    int arr[] = new int[3];
+
+    String s = null ;
+
+    try {
+      System.out.println(s.length());// suppose this line is error , it will directly go to exception block 
+      System.out.println(i/j);
+      arr[3] = 12;
+    } 
+    catch (ArithmeticException e) {
+      System.out.println(e);
+    }
+    catch(ArrayIndexOutOfBoundsException e){
+      System.out.println(e);
+    }
+    // Here Exception block should come at the last , bcoz it is parent class and if we put that before arithmetic and array bound exception , then Exception class handle those exception as well , So other 2 catch becomes useless .
+//To specifically Identify we should use exception class at the last .
+    catch(Exception e){
+      System.out.println("Something went wrong ..." +  e);
+    }
+    
+System.out.println("End I m Here !!! ");
+  }
+}
+
+***************************************************************************************************************
+                                           Exception Hierarchy :
+
+                                     Object 
+                                       |
+                                    Throwable
+                                       |
+             ----------------------------------------------------------
+             |                                                        |
+           Error                                                   Exception(many more Exceptions are also there )
+             |                                                        |
+  ---------------------------------                   -----------------------------------------------    
+  |                |              |                   |                      |                      | 
+ ThreadDeath       |            IO Error      Runtime Exception           SQL Exception          IO Exception
+                   |                                  |                              |             |
+             VirtualMachineError                1)ArithmeticException                ---------------
+            (Out Of Memory Error)               2)ArrayIndexOutOfBoundsException            |
+                                                3)NullPointerException                  (checked Exception)
+                                                (Unchecked Exception)
+
+Note : Checked Exception should be compulsorily Handled by the developer .
+
+
+***********************************************************************************************************************
+//Note : Here when we write i/j by giving i= 10 , j=0 , then quo is zero , res is zero =>java.lang.ArithmeticException: / by zero
+//Note : Here when we write i/j by giving i= 10 , j=20 , then also quo is zero , res is zero but now =>java.lang.ArithmeticException 
+class Hello{
+  public static void main (String args[]) {
+
+    int i = 10;
+    int j = 20;
+
+    try {
+      int res = i/j;
+      System.out.println(res);
+      if(res == 0) 
+        //line to create new object for ArithmeticException - trying to throw error
+         throw new ArithmeticException("When result is zero I am throwing Exception");//parametrized constructor
+    } 
+    catch (ArithmeticException e) {
+      System.out.println(i/1 + " Gives the numerator .... " + e);//Handling Exception instead just printing we are trying for another solution 
+    }catch(Exception e){
+      System.out.println("Something went wrong ..." +  e);
+    }
+    
+System.out.println("End I m Here !!! ");
+  }
+}
+
+************************************************************************************************************************
+Create My Own Exception : 
+
+class MyException extends Exception{
+ public MyException(String s){
+  //Exception Class has a constructor that prints the string , here Exception is the super class () 
+  super(s);
+ }
+}
+class Hello{
+  public static void main (String args[]) {
+
+    int i = 10;
+    int j = 20;
+
+    try {
+      int res = i/j;
+      System.out.println(res);
+      if(res == 0) 
+         throw new MyException("res is zero prints default value ... ");//parametrized constructor 
+    } 
+    catch (MyException e) {
+      System.out.println(i/1 + " Gives the numerator .... " + e);
+    }catch(Exception e){
+      System.out.println("Something went wrong ..." +  e);
+    }
+    
+System.out.println("End I m Here !!! ");
+  }
+}
+
+O/P :
+0
+10 Gives the numerator .... MyException: res is zero prints default value ... 
+End I m Here !!! 
+
+-------------------------------------------------------------------------------------------------
+class MyException extends Exception{
+    public MyException(String s){
+       super(s);
+    }
+}
+class Hello {
+  public static void main (String args[]){
+    int i = 10 ;
+    int j = 20 ;
+    int res = 0;
+   //I am trying to manually call a exception ...
+    try{
+      res = i/j;
+      if (res == 0) 
+           throw new MyException("Result zero I am printing... ");//throwing new exception by creating an object for MyException class 
+    }
+    catch(MyException e){
+          System.out.println(e);
+    }
+    catch(Exception e){
+       System.out.println(e);
+    }
+
+  }
+}
+
+O/P :
+MyException: Result zero I am printing... 
+                                     
+
+
+
+                                     
