@@ -55,6 +55,8 @@ class Hello {
     int num = bf.read();
   //int num = Integer.parseInt(bf.readLine());  we have readLine which gives the value in string now we are converting it into Integer .
     System.out.println(num-48);//for readLine we can directly give num value to print and not num - 48 
+System.out.println(num);
+bf.close();
   }
 }
 
@@ -63,4 +65,25 @@ Enter a num :
 5
 5
 
+Note : 
+BufferedReader --- > trying to access InputStream .It can take input from file , network .
+
 --------------------------------------------------------------------------------------------
+Scanner :
+
+import java.util.Scanner;
+
+class Hello {
+  public static void main(String[] args)  {
+    System.out.println("Enter a number : ");
+   Scanner sc = new Scanner(System.in);
+   int num = sc.nextInt();
+   System.out.println(num);
+  }
+}
+
+O/P :
+Enter a number : 
+5
+5
+
