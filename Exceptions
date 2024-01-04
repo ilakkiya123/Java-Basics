@@ -205,6 +205,18 @@ class Hello {
 
 O/P :
 MyException: Result zero I am printing... 
+
+***********************************************************************************************************************************
+Ducking Exception using throws keyword : 
+
+duck an exception - not handle an exception 
+Ducking means lower your head in order to avoid being hit or seen . Similar way duck an exception means to avoid your code from being hit from exception .
+
+My method not to be hit by exception , we use throws keyword and call a parent class which can handle the exception .
+If you dont duck, then you have to catch it . 
+
+Simple words ...
+Ducking an exception doesnt handles the exception , just throws the exception to the calling method .
                                      
 
 
