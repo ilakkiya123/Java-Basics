@@ -2,6 +2,8 @@
          ---> Every thread has a priority . 
          ---> Threads with higher priority is executed first when compared to Threads with lower priority .
 
+//Here start and run comes from a thread class .
+
 //It extends Thread class 
 class A extends Thread{
 //method with run
@@ -87,6 +89,125 @@ Hi
 Hello
 Hi
 Hello
+
+
+----------------------------------------------------------------------------------------------------------
+Alternate way for extend thread --- >
+Suppose we have another class as Z , then A cant be child for both Z and Thread class , as multiple inheritance is not possible in java .
+
+Thread with interface : (2 methods 2 threads checking simultanity )
+
+class A implements Runnable{
+  public void run(){
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hi");
+    try {
+      Thread.sleep(10);//It makes it wait for 10 millisecss
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    }
+  }
+}
+class B implements Runnable{
+  public void run(){
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hello");
+    try {
+      Thread.sleep(11);//It makes it wait for 10 millisecss
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    }
+  }
+}
+class Hello {
+  public static void main (String args[]){
+    Runnable obj = new A();
+    Runnable obj1 = new B();
+
+    Thread t1 = new Thread(obj);
+    Thread t2 = new Thread(obj1);
+
+    t1.start();
+    t2.start();
+    
+  }
+}
+
+O/P :
+Hello
+Hi
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+
+-------------------------------------------------------------------------------------------------
+Same Code Logic with Lamda Expression :
+
+class Hello {
+  public static void main (String args[]){
+    Runnable obj = () ->{
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hi");
+    try {Thread.sleep(10);} catch (InterruptedException e) 
+    {e.printStackTrace();}
+  }
+};
+    Runnable obj1 = () ->{
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hello");
+    try {Thread.sleep(10);} catch (InterruptedException e) 
+    {e.printStackTrace();}
+  }
+};
+
+    Thread t1 = new Thread(obj);
+    Thread t2 = new Thread(obj1);
+
+    t1.start();
+    t2.start();
+    
+  }
+}
+
+O/P :
+Hello
+Hi
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+
 Hi
 Hello
 Hi
