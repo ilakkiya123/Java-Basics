@@ -256,3 +256,74 @@ java.lang.ClassNotFoundException: Calc
         at Hello.main(Hello.java:14)
 End Of Statement : 
                                      
+************************************************************************************************************
+class Hello {
+  public static void main(String[] args)  {
+   int i = 0;
+   int j = 0;
+   int res;
+   //Exception is not caught but whatever there in finally block will execute irrespective of Exception .
+   try {
+    res = i/j;
+   }
+   finally{
+    System.out.println("End Of Statement ... ");
+   }
+  }
+}
+
+O/P :
+End Of Statement ... 
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at Hello.main(Hello.java:7)
+
+--------------------------------------------------------------------------------------------------------------------
+Buffered Reader along with finally block 
+
+//finally is usually dealt with resources ...
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class Hello {
+  public static void main(String[] args) throws NumberFormatException, IOException  {
+   int num = 0;
+   BufferedReader br = null;
+   try {
+    System.out.println("Enter a num : ");
+    InputStreamReader in = new InputStreamReader(System.in);
+    br = new BufferedReader(in);//br is a resource , resource should be closed in finally block 
+    num = Integer.parseInt(br.readLine());
+   }
+   finally{
+    br.close();
+    System.out.println("br is closed successfully ... ");
+   }
+  }
+}
+
+O/P :
+Enter a num : 
+7
+br is closed successfully ... 
+
+------------------------------------------------------------------------------------------------------------
+shortend some phrase of the above and it behaves as the same one  --- >
+
+//finally is usually dealt with resources ...
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+class Hello {
+  public static void main(String[] args) throws NumberFormatException, IOException  {
+   int num = 0;
+   try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+    System.out.println("Enter a num : ");
+    num = Integer.parseInt(br.readLine());
+   }
+  }
+}
+
