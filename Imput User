@@ -1,0 +1,66 @@
+*******************************************************************************
+ASCII Values -> American Standard Code for Information Interchange .
+48  0 
+49  1         
+50  2         
+51  3        
+52  4      
+53  5       
+54  6        
+55  7        
+56  8       
+57  9 
+65  A
+.
+.
+.
+.
+90  Z
+97  a
+.
+.
+.
+.
+122  z
+
+***********************************************************************************
+import java.io.IOException;//Not a good suggestion to throws exception in main method 
+
+class Hello {
+  public static void main(String[] args) throws IOException {
+    System.out.println("Please Enter a value : ");
+    int res = System.in.read();
+    System.out.println(res - 48);// It adds 48 to the given value (0->48 in Ascii values )
+  }
+}
+
+O/P :
+Please Enter a value : 
+4
+4
+
+-----------------------------------------------------------------------------------
+BufferedReader to input values :
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+class Hello {
+  public static void main(String[] args) throws IOException {
+    System.out.println("Enter a num : ");
+    InputStreamReader r1 = new InputStreamReader(System.in);
+    BufferedReader bf = new BufferedReader(r1);//It is a class which accepts an in object of Redaer Class.
+    int num = bf.read();
+  //int num = Integer.parseInt(bf.readLine());  we have readLine which gives the value in string now we are converting it into Integer .
+    System.out.println(num-48);//for readLine we can directly give num value to print and not num - 48 
+  }
+}
+
+O/P :
+Enter a num : 
+5
+5
+
+--------------------------------------------------------------------------------------------
