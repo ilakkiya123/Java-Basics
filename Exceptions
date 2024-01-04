@@ -217,8 +217,42 @@ If you dont duck, then you have to catch it .
 
 Simple words ...
 Ducking an exception doesnt handles the exception , just throws the exception to the calling method .
-                                     
 
+**************************************************************************************************************************************
 
+class A{
+  public void show() throws ClassNotFoundException { // we can write here try catch or throws
+   Class.forName("Calc");
+  }
+}
+class Hello {
+  static{
+    System.out.println("In Static Block ...");
+  }
+  public static void main (String args[]){
 
+    A obj = new A();
+    try {
+      obj.show();
+    } catch (ClassNotFoundException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    
+    System.out.println("End Of Statement : ");
+  }
+}
+
+O/P :
+
+In Static Block ...
+java.lang.ClassNotFoundException: Calc
+        at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+        at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+        at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+        at java.base/java.lang.Class.forName0(Native Method)
+        at java.base/java.lang.Class.forName(Class.java:375)
+        at A.show(Hello.java:3)
+        at Hello.main(Hello.java:14)
+End Of Statement : 
                                      
