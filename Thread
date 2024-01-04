@@ -1,0 +1,93 @@
+//Thread ---> Thread is a execution path of a program .JVM allows an appln to have multiple threads of execution running concurrently .
+         ---> Every thread has a priority . 
+         ---> Threads with higher priority is executed first when compared to Threads with lower priority .
+
+//It extends Thread class 
+class A extends Thread{
+//method with run
+  public void run(){
+    for (int i =0 ;i<50;i++){
+    System.out.println("Hi");
+    }
+  }
+}
+class B extends Thread{
+  public void run(){
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hello");
+    }
+  }
+}
+class Hello {
+  public static void main (String args[]){
+    A obj = new A();
+    B obj1 = new B();
+    obj.start(); // here start 
+    obj1.start();
+  }
+}
+
+O/P : output comes simultaneously but we couldnt visualize .
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Thread has some priority . It ranges from 1 - 10 
+
+-> obj.setPriority(Thread.MIN_PRIORITY)  - 1
+-> obj.setPriority(Thread.MAX_PRIORITY)  - 10
+-> obj.setPriority(Thread.NORM_PRIORITY) - 5
+
+class A extends Thread{
+  public void run(){
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hi");
+    try {
+      Thread.sleep(10);//It makes it wait for 10 millisecss
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    }
+  }
+}
+class B extends Thread{
+  public void run(){
+    for (int i =0 ;i<10;i++){
+    System.out.println("Hello");
+    try {
+      Thread.sleep(11);//It makes it wait for 10 millisecss
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    }
+  }
+}
+class Hello {
+  public static void main (String args[]){
+    A obj = new A();
+    B obj1 = new B();
+    obj.setPriority(9);// we have prioritised with value 9 
+    obj.start();
+    obj1.start();
+  }
+}
+
+O/P :
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
+Hi
+Hello
