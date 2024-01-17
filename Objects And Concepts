@@ -17,6 +17,17 @@ individual class instance and informs what state and behavior it should have .
 
 Tips : In simple terms class is like a blueprint , with the instruction given in class , we can create an object .
 
+--------------------------------------------------------------------------------------------------------------------------
+Flow :
+Example :
+
+Customer  <-------> Middle Man (mediator) <-------> Carpenter ===> CREATES TABLE 
+Java developer <---------> Class File  --------> compiler ----------> Bytecode -----------> JVM ===> CREATES OBJECT 
+                     (.java ---- > .class) 
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
 Create new Object 
 class Sum{
   public void Addition(int i,int j){
