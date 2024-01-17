@@ -1,3 +1,22 @@
+*****************************************************************************************************
+Object - In simple terms it is a copy of specific class , Instance of Java Class .
+It has 3 primary characteristics = > 
+       1)Identity - Unique Identifier - represents may be address , id or name .
+       2)State - State controls aspect of an object .State changes when behavior happens . State monitors behavior . eg - fan - on / off , low/medium/high
+       3)Behavior - It describes what an object can do .Fan turning on , off or changing speeds .
+All 3 terms are interrelated .
+
+Example :
+Car ...
+Identity - Vehicle make model , VIN number .
+State    - Car On/Off , Speed
+Behavior - Car start / shutdown ,  Accelerate / Decelarate.
+
+Java is an object oriented programming language . Everything in java is an object . Class is like a blueprint for objects . Class - unique name , 
+individual class instance and informs what state and behavior it should have .
+
+Tips : In simple terms class is like a blueprint , with the instruction given in class , we can create an object .
+
 Create new Object 
 class Sum{
   public void Addition(int i,int j){
