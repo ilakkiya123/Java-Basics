@@ -1,4 +1,4 @@
-
+//How we are adding char to integer and displaying b.
 class Hello{
     public static void main(String args[]){
         char c = 'a';
@@ -7,8 +7,7 @@ class Hello{
     }
 }
 
-O/P - b .
-But how we are adding char to integer .
+O/P -> b 
 ----------------------------------------------------------------------------------------------
 //Logical Doubts :
 1) JRE present in latest jdk 
