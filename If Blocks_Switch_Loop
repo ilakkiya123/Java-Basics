@@ -1,3 +1,33 @@
+//If and else Blocks
+class Hello {
+    public static void main(String args[]){
+       int x= 10 ;
+       if(x< 5){
+        System.out.println("Hi Came inside if");
+       }
+       else {
+        System.out.println("Oops you are out ...");
+       }
+    }
+}
+
+Tips : If() === > just check whether condition is true or false .You can directly give if(true) or if(false) , based on your need .
+
+//Here If we didnt give else if , then it will print for which if the condt is crct and else statement also .
+class Hello {
+    public static void main(String args[]){
+     int n=2 ;
+     if(n==1)
+        System.out.println("Monday");
+     if(n==2)
+        System.out.println("Tuesday");  
+     if(n==3)
+        System.out.println("Wednessday");
+     else
+        System.out.println("Enter proper value ... ");   
+    }
+}
+--------------------------------------------------------------------
 //Switch Statement 
 class Hello {
     public static void main (String arg[])
