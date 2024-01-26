@@ -1,6 +1,6 @@
 // Datatypes are of 2 types - (Primitive and Non-Primitive datatypes)
 Primitive datatypes - Predefined in Java
-1 byte = 8 bits (-128 to 127)
+1 byte = 8 bits (-128 to 127)  === > -2^(n-1) to 2^(n-1)-1
 Int , Double , Char , Boolean
 INT :
 Int - 4 bytes , Long - 8 bytes , short - 2 bytes , 1 byte 
