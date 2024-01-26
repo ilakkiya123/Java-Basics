@@ -19,7 +19,7 @@ class Hello{
 }
 
 PS C:\Users\Ilakkiya R\Desktop\Java Practise> javac Hello.java   ------> compile File 
-PS C:\Users\Ilakkiya R\Desktop\Java Practise> java Hello         ------> To execute we use jvm - java commnd followed by class name .
+PS C:\Users\Ilakkiya R\Desktop\Java Practise> java Hello         ------> To execute we need jvm - java commnd followed by class name .
 Hello World !!! 
 
 [Hardware[OS[JDK [Jre[  Java Programmer -------> Compiler --------> Byte Code ---------> Jvm]] ------> O/P ]]]
