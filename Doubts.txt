@@ -18,6 +18,7 @@ int i = 128;
 byte b = (byte) i;
 getting doubt - https://stackoverflow.com/questions/28351898/explicit-conversion-from-int-to-byte-in-java
 
+Guessing Soln : (value / given range) = (128/256)
 ************************************************************************
 
 //PreIncrement and PostIncrement
