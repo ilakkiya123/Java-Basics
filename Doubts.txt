@@ -1,3 +1,15 @@
+
+class Hello{
+    public static void main(String args[]){
+        char c = 'a';
+        c++;
+        System.out.println(c);
+    }
+}
+
+O/P - b .
+But how we are adding char to integer .
+----------------------------------------------------------------------------------------------
 //Logical Doubts :
 1) JRE present in latest jdk 
 2) Env Variable 
