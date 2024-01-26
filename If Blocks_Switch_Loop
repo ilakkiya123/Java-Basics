@@ -175,6 +175,6 @@ DAY : 5
 
 **************************************************************************
 For --- > For counting purpose and the values are defined then we can use this loop 
-While --- > Files concept , like execute until End Of File 
+While --- > Files concept , like execute until End Of File , database , Network .
 Do While --- > Rarely Used , to execute atleast once even though the condition failed
 
