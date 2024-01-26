@@ -207,6 +207,23 @@ O/P :
 A
 
 Example 4 :
+Tips : 
+=>When we like to store from high range datatype to small , (eg : int->byte) .It performs this in backend .
+(given value)%(full range)
+=>Integer can have negative values as well .
+
+class Hello{
+    public static void main(String args[]){
+       int a = 257 ;
+       byte b = (byte)a;
+       System.out.println(b);
+    }
+}
+
+O/P:
+1
+
+Example 5 :
 Doing some operation in small range , the result exceeds the range then we are trying to store in high range 
 
 class Hello{
