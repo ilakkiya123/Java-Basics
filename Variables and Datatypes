@@ -1,0 +1,74 @@
+// Datatypes are of 2 types - (Primitive and Non-Primitive datatypes)
+Primitive datatypes - Predefined in Java
+1 byte = 8 bits (-128 to 127)
+Int , Double , Char , Boolean
+INT :
+Int - 4 bytes , Long - 8 bytes , short - 2 bytes , 1 byte 
+
+int a = 10 ;
+long l = 1000000l;
+short s = 12 ;
+byte b = 10 ;
+
+DOUBLE :
+Double(Default) - 8 bytes , Float - 4 bytes
+double d = 10.0;
+float num = 10.2f;
+
+CHAR :
+Char - 2 bytes (Java supports unicode , Unicode uses Hexadecimal to express a character )
+char c = 'g';
+
+BOOLEAN :
+True / False 
+boolean b1 = true ;
+
+//literals :
+to play with this value 
+
+to display a binary value we use 0b or 0B - eg : 0b101
+to display an ocatl value we use 0 and followedd by values - eg :  0101
+to display a hexa decimal value we use 0x and followed by values - eg : 0x101 , 0x7E
+
+//to have visually clear values we can add underscore inbetween 
+class Hello{
+    public static void main(String args[]){
+        int num = 1_00_00_000;
+        System.out.println(num);
+    }
+}
+
+O/P : 10000000
+
+//Same with Float 
+class Hello{
+    public static void main(String args[]){
+        float num = 1_00_00_000f;
+        System.out.println(num);
+    }
+}
+
+O/P : 1.0E7
+
+//Exponential 
+class Hello{
+    public static void main(String args[]){
+        double num = 12e10;
+        System.out.println(num);
+    }
+}
+O/P :
+1.2E11
+
+e11 or E11 - simply means 10 to the power raised by 11 
+
+//When we need to calculate power , we should use below one 
+class Hello{
+    public static void main(String args[]){
+        double num = Math.pow(2, 3);
+
+        System.out.println(num);
+    }
+}
+
+O/P - 8.0
