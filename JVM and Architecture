@@ -1,0 +1,29 @@
+Note : 
+=>JVM is platform dependent . Different JVM available for different OS .
+=>Java is platform independent but JVM not .
+
+Hints
+Hints : Now the statement Java is platform independent may be contradict as Apple doesnt support jvm for ios .Java cant run on iphones and ipads .Apple makes sure that it only support 
+Swift and Objective C has 100 % vendor support on ios .
+
+But some options can be done as alternative .
+1)Tool called RoboVM - which allows developers to write java code and then compile it into native code , that can run on ios devices .
+2)Tool called J2ObjC - which translates java code to Objective C code , and which can be then compiled and then run on ios devices .
+
+
+//Hello World Program 
+class Hello{
+    public static void main(String args[]){
+        System.out.println("Hello World !!! ");
+    }
+}
+
+PS C:\Users\Ilakkiya R\Desktop\Java Practise> javac Hello.java   ------> compile File 
+PS C:\Users\Ilakkiya R\Desktop\Java Practise> java Hello         ------> To execute we use jvm - java commnd followed by class name .
+Hello World !!! 
+
+[Hardware[OS[JDK [Jre[  Java Programmer -------> Compiler --------> Byte Code ---------> Jvm]] ------> O/P ]]]
+
+JRE - Java Runtime Environment 
+JVM - Java Virtual Machine (libraries)
+JDK = [JRE  = JVM + libraries]
