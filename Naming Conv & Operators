@@ -59,13 +59,26 @@ To compare 2 Relational Operators we use Logical Operators :
 && ===> AND  ;; || ===> OR ;; ! ===> NOT 
 
 Bitwise Operator - Compares each bit and provides its decimal value as output 
+class Hello{
+    public static void main(String args[]){
+         int a = 7 ;
+         int b = 20 ;
+         System.out.println(a&b);
+
+    }
+}
+O/P : 4 
+7 ----> 0111
+20 --->10100
+ans -->00100 ---> 4
+------------------------------------------------------------------------------------
 Logical Operator - Copares 2 Relational Operators and based on that return boolean values 
 Note : 
-If the operands are integers the operator is bitwise 
-If the operands are boolean the operator is logical 
+If the operands are integers the operator is bitwise  '&', '|', '!'
+If the operands are boolean the operator is logical   '&&' , '||' , '!'
 
 *********
-Shorthand Operator :
+Shorthand/Shortcircuit Operator :
 It checks the first operand only .For AND If the first operand is false it doesnt check for the next and directly returns false or execute other block .
 AND 
 T F F
