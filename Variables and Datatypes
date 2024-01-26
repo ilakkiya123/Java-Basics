@@ -110,3 +110,113 @@ class Hello{
 
 O/P :
 b
+
+*****************************************************************************************************
+//Type casting and Conversion 
+
+Conversion - (Implicit conversion)
+class Hello{
+    public static void main(String args[]){
+       byte b = 33 ;
+       int a = 100 ;
+       a=b;
+       System.out.println(a);
+    }
+}
+
+O/P :
+33
+
+byte b = 129;
+Note : Byte is in range (-128 to 127 ) if we store value less than that , then compiler will throw error 
+Hello.java:3: error: incompatible types: possible lossy conversion from int to byte
+       byte b = 129 ;
+
+------------------------------------------------------------------------------------
+Casting - (Explicit Conversion)
+
+class Hello{
+    public static void main(String args[]){
+       int a = 100;
+       byte b = 5;
+       b=a;
+       System.out.println(b);
+    }
+}
+ 
+Error : Hello.java:5: error: incompatible types: possible lossy conversion from int to byte
+        b=a;
+Though int value 100 comes in byte range compiler throws error , So we should explicitly say to compiler to store value from bigger datatype range to 
+smaller datatype range . 
+
+class Hello{
+    public static void main(String args[]){
+       int a = 100;
+       byte b = 5;
+       b=(byte)a;
+       System.out.println(b);
+    }
+}
+
+Now we are able to store value from int -> byte 
+
+Example 2 :
+Float to Int
+
+class Hello{
+    public static void main(String args[]){
+       float f = 100.245f;
+       byte b = 5;
+       b=(byte)f;
+       System.out.println(b);
+    }
+}
+
+O/P:
+100 
+Here we have lost 0.245 value , but we only said compiler to explicitly do though we loose some values .
+
+Example 3 :
+Char to byte 
+
+class Hello{
+    public static void main(String args[]){
+       char c = 'k';
+       byte b = 5;
+       b=(byte)c;
+       System.out.println(b);
+    }
+}
+
+O/P :
+107 
+k ascii Value - 107
+
+Byte to Char 
+
+class Hello{
+    public static void main(String args[]){
+       byte b = 65;
+       char c = 'a';
+       c=(char)b;
+       System.out.println(c);
+    }
+}
+
+O/P :
+A
+
+Example 4 :
+Doing some operation in small range , the result exceeds the range then we are trying to store in high range 
+
+class Hello{
+    public static void main(String args[]){
+       byte b1 = 100;
+       byte b2 = 100;
+       int result = b1*b2;
+       System.out.println(result);
+    }
+}
+
+O/P :
+10000
