@@ -72,3 +72,41 @@ class Hello{
 }
 
 O/P - 8.0
+
+------------------------------------------------------------------------------------------
+
+ASCII Values -> American Standard Code for Information Interchange .
+48  0 
+49  1         
+50  2         
+51  3        
+52  4      
+53  5       
+54  6        
+55  7        
+56  8       
+57  9 
+65  A
+.
+.
+.
+.
+90  Z
+97  a
+.
+.
+.
+.
+122  z
+
+---------------------------------------------------------------------------
+class Hello{
+    public static void main(String args[]){
+        char c = 'a';
+        c++;
+        System.out.println(c);
+    }
+}
+
+O/P :
+b
