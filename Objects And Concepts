@@ -28,7 +28,7 @@ Java developer <---------> Class File  --------> compiler ----------> Bytecode -
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-Create new Object 
+Create new Object - Example 1 
 class Sum{
   public void Addition(int i,int j){
      System.out.println(i+j);
@@ -44,6 +44,30 @@ class Hello{
   }
 }
 
+Example 2 :
+class ToyStore{
+    int price1 = 10;
+    int price2 = 50 ;
+    public String showToys(String t1 , String t2){
+        if(price1 >= 70 && price2 >=25)
+            return t1 + " : " + price1 + " , " + t2 + " : " + price2;
+        return "Give a valid price " ;
+    }
+}
+class Hello {
+    public static void main(String args[]){
+       String toy1 = "water gun" ;
+       String toy2 = "Bubbles" ;
+       ToyStore t = new ToyStore();
+       String val = t.showToys(toy1,toy2);
+       System.out.println(val);
+    }
+}
+
+Hints : 
+In ToyStore Class , In showToys Method , 
+===> if block satisfies the condition , it returns the value in return statement and the other return is not executed .
+===> if block doesnt satisfy the condition , it returns the last return of the entire method . 
 **********************************************************
 Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
 
