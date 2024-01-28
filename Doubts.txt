@@ -161,6 +161,9 @@ java Hello
 
 But shortcut java Hello.java didnt work when after creating new class 
 
+****************************************************************************************
+JVM Stack and Heap Memory concept how the memory flow goes for the method which has void as return type
+
 ******************************************************************************************
 Doubt : We have given "static String stud_name" but havent assigned any value , but still it takes and assign the b.section value to both 'a' and 'b' object . Why not 'a' object .
 
