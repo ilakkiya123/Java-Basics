@@ -302,6 +302,21 @@ class Hello {
   }
 }
 
+//Drawbacks of Array 
+
+*Deleting/Inserting
+*Increasing Size
+*Storing Objects 
+*Processing Elements 
+*Modifying Elements 
+
+1)We can only insert or delete element from the end/start of the array , we cant do in the middle of the array .
+2)We cannot increase the size of the array , If need arise we can create a new array with the needed size and store the values in new array .
+This makes the original array object for garbage collection and wastage of memory occurs .
+3)We cant store objects of different size .
+4)Few operations provided by the array can only be processed .
+5)Traversing the array for updation or deletion , increases time complexity .
+
 Output :
 Kavs 25
 Ravi 60
