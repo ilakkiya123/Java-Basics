@@ -317,6 +317,8 @@ This makes the original array object for garbage collection and wastage of memor
 4)Few operations provided by the array can only be processed .
 5)Traversing the array for updation or deletion , increases time complexity .
 
+To overcome this we have Collection Concept .
+
 Output :
 Kavs 25
 Ravi 60
