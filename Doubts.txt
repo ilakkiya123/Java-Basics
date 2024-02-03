@@ -3,6 +3,7 @@ class Hello{
     public static void main(String args[]){
         char c = 'a';
         c++;
+        // c = c+1 ; // If we put this line instead of c++ , it is throwing error .
         System.out.println(c);
     }
 }
