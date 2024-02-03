@@ -163,6 +163,60 @@ In Static Block :
 In Constructor : 
 In Constructor : 
 
+
+Another Example :
+
+class Hi{
+   static{
+    System.out.println("In Hi static Block ::: ");
+   }
+
+   public Hi(){
+    System.out.println("In Hi constructor ::: ");
+   }
+}
+
+class Everyone{
+    static{
+        System.out.println("In Everyone Static Block ::: ");
+    }
+    public Everyone(){
+        System.out.println("In Everyone constructor ::: ");
+       }
+}
+
+class Excuse {
+    static{
+        System.out.println("In Excuse Static Block ::: ");
+    }
+    public Excuse(){
+        System.out.println("In Excuse constructor ::: ");
+       }
+}
+class Hello {
+    static{
+        System.out.println(" In Hello static Block ::: ");
+    }
+    public static void main(String args[]){
+        Hi h1 = new Hi();
+        Everyone e1 = new Everyone();
+        Excuse e2 = new Excuse();
+       
+    }
+}
+
+Here It checks and first executes static and then constructor of first object and then next objects static and constructor .
+
+O/P :
+In Hello static Block ::: 
+In Hi static Block ::: 
+In Hi constructor ::: 
+In Everyone Static Block ::: 
+In Everyone constructor ::: 
+In Excuse Static Block ::: 
+
+***********************************************************************************************
+
 **********************************************************************************************
 Execution Flow btw Static / Non Static and Default Constrauctor :
 
