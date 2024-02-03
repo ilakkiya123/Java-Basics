@@ -2,4 +2,7 @@
 2)Variables and datatypes - Primitive Datatypes ,literals, Type Casting and Conversion
 3)Naming Conv & Operators - Naming Convention , Arithmetic Operators ,Pre and Post Increment , Relational Operators , Logical Operator ,
 Shorthand/Shortcircuit Operator , Ternary Operator .
-4)If Blocks_Switch_Loop - If and else block , switch statement , while loop , do while loop , for loop ,
+4)If Blocks_Switch_Loop - If and else block , switch statement , while loop , do while loop , for loop ,Use of for , while and do while .
+5)Objects And Concepts - Object , Primary charatceristics ,Object Creation , Method overloading , Instance and local variable , Anonymous Object , 
+Method overriding , Annotations .
+6)
