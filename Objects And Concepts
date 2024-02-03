@@ -22,8 +22,8 @@ Flow :
 Example :
 
 Customer  <-------> Middle Man (mediator) <-------> Carpenter ===> CREATES TABLE 
-Java developer <---------> Class File  --------> compiler ----------> Bytecode -----------> JVM ===> CREATES OBJECT 
-                     (.java ---- > .class) 
+Java developer <------------- compiler ----------> Bytecode / MC Code  -----------> JVM ===> CREATES OBJECT 
+                           (.java ---- > .class) 
 
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -66,7 +66,8 @@ class Hello {
 
 Hints : 
 In ToyStore Class , In showToys Method , 
-===> if block satisfies the condition , it returns the value in return statement and the other return is not executed .
+===> if block satisfies the condition , it returns the value in return statement and the other return is not skipped , As compiler sees a return statement 
+it moves out of the particular block .
 ===> if block doesnt satisfy the condition , it returns the last return of the entire method . 
 **********************************************************
 Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
