@@ -162,6 +162,19 @@ class Hello{
 
 Now we are able to store value from int -> byte 
 
+Example 1 :
+class Hello {
+    public static void main(String args[])
+    {
+       int a = 257 ;
+       byte b = 10 ;
+       b = (byte)a ;
+       System.out.println(b);
+    }
+}
+257 % 256 = value (remainder).
+
+--------------------------------------------------------------
 Example 2 :
 Float to Int
 
