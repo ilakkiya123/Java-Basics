@@ -1,8 +1,9 @@
 1)JVM Architecture 
-2)Variables and datatypes - Primitive Datatypes ,literals, Type Casting and Conversion
+2)Variables and datatypes - Primitive Datatypes ,exponential , ASCII Values , literals, Type Casting and Conversion
 3)Naming Conv & Operators - Naming Convention , Arithmetic Operators ,Pre and Post Increment , Relational Operators , Logical Operator ,
 Shorthand/Shortcircuit Operator , Ternary Operator .
 4)If Blocks_Switch_Loop - If and else block , switch statement , while loop , do while loop , for loop ,Use of for , while and do while .
 5)Objects And Concepts - Object , Primary charatceristics ,Object Creation , Method overloading , Instance and local variable , Anonymous Object , 
 Method overriding , Annotations .
-6)
+6)Array_Concepts - Array , Declaration , Initialization , Update and Insert value , 1D Array , 2D array , 3D Array with enhanced forloop and normal for loop ,
+Jagged Array , Array of Objects , Drawbacks of Array .
