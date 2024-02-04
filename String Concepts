@@ -18,6 +18,36 @@ class Hello {
   }
 }
 
+-------------------------------------------------------------------------------------------------------------
+2 scenerios :
+Scenerio 1 : What happens if we save same string to 2 different object reference , by using new keyword 
+
+class Hello {
+  public static void main(String args[]){
+      String h1 = new String("Ilaks");
+      String h2 = new String("Ilaks");
+      System.out.println(h1==h2);
+  } 
+}
+
+O/P : false
+It returns false value , because when new keyword comes then object creates in runtime (heap memory) as well as string constant pool .
+In heap memory there is no rules like duplicate values shouldnt be created , hence 2 obj is created.
+
+Scenerio 2 : What happens if we save same string to 2 different object reference , without using new keyword 
+
+class Hello {
+  public static void main(String args[]){
+      String h1 = "Ilaks";
+      String h2 = "Ilaks";
+      System.out.println(h1==h2);
+  } 
+}
+
+O/P : true
+It returns true value , because new keyword is not present so object is not created in runtime (heap memory).It creates only in string constant pool .
+In String constant pool "Ilaks" String is already present , so no new Object is created ,If new Object ref is created with same string then it maps to 
+same object .
 -----------------------------------------------------------------------------------
 String Methods :
 
