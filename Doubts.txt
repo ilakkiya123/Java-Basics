@@ -37,7 +37,7 @@ class Hello {
 ------------------------------------------------------------------------------------------------------
 
 Array :
-How to detemine the length of jagged array using Math.random function and enhanced Forloop .
+1)How to detemine the length of jagged array using Math.random function and enhanced Forloop .
 
 class Hello {
   public static void main (String arg[]){
@@ -49,6 +49,8 @@ class Hello {
   }
 
 }
+
+2)If we are able to insert value at front and end of the array , which means we are resizing the length of the array ?
 -----------------------------------------------------------------------------------------------------
 While loop doubt : 
 class Hello {
