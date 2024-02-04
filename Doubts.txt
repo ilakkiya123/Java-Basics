@@ -34,7 +34,10 @@ class Hello {
 
     }
 }
-----------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+
+Array :
+How to detemine the length of jagged array using Math.random function and enhanced Forloop .
 
 class Hello {
   public static void main (String arg[]){
@@ -46,7 +49,7 @@ class Hello {
   }
 
 }
---------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
 While loop doubt : 
 class Hello {
   public static void main (String args[]){
