@@ -1,5 +1,5 @@
 //Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
-
+!imp --- > Once a var / method uses static keyword , then it becomes class member and not object member .It is stored in metaspace of nativ eheap .
 //Static Block contains Static variable 
 //Static Block Executes only once during the class loading .The static Block always executes first before the main method() in java ,because the compiler 
 stores them in memory at the time of class loading before the object creation .
@@ -120,7 +120,18 @@ The student name is : Ilakkiya And Section is : B And Standard is : X
 The student name is : Kavya And Section is : B And Standard is : XII
 
 ------------------------------------------------------------------------------------------------------------------
-//Whenever we create a new object the constructor gets called , but class loads only once and once class loads static block is also initialised only once .
+//Everytime we create Object , 2 steps happens 
+  ->Class Loads - [ Memory Space Class Loader in JVM ] 
+  ->Objects are instantiated .
+
+At this line --- > School a = new School();
+             --- > School b = new School();
+Execution Steps :
+   ->School class gets loads , once loaded it first calls static block , then 'a' obj created , that time it calls constructor of that respective class .
+   ->Since School Class is already loaded , Now 'b' obj gets created , again it calls constructor of that respective class .
+
+So static Block is executed first and only once when class loads for the first time and Constructor gets called whenever object gets created .
+
 class School{
     String std ;
     static String section;
@@ -205,7 +216,9 @@ class Hello {
     }
 }
 
-Here It checks and first executes static and then constructor of first object and then next objects static and constructor .
+Here It checks and first executes static and then constructor of first object and then for other objects as well .So For each class the static block executes
+first and only once then constructor gets called .
+
 
 O/P :
 In Hello static Block ::: 
@@ -216,6 +229,28 @@ In Everyone constructor :::
 In Excuse Static Block ::: 
 
 ***********************************************************************************************
+Class Loader :
+
+What Happens if Object is not created , whether it calls static block and constructor ?
+class Hi {
+  public Hi(){
+    System.out.println("In Hi Constructor ::: ");
+  }
+  static{
+    System.out.println("Hi Static Block ::: ");
+  }
+}
+class Hello {
+  public static void main (String args[]) throws ClassNotFoundException{
+     Class.forName("Hi");
+  }
+}
+ans : 
+Hi obj = new Hi();
+Suppose If the above line is not written then Hi class is not loaded , then static block is not gets called , and also since object is not created 
+constructor is not get called .
+
+We can explicitly load 'Hi' class by a class named "Class" and its method "forName" .
 
 **********************************************************************************************
 Execution Flow btw Static / Non Static and Default Constrauctor :
@@ -223,7 +258,8 @@ Execution Flow btw Static / Non Static and Default Constrauctor :
 //Hello Class created
 class Hello { 
 
-  //static block - present below class and above main method or in different class - Once class loads static block contents are stored in memory before obj creation .
+  //static block - present below class and above main method or in different class - Once class loads static block contents are stored in memory , 
+So class need not be loaded again ass it is there in memory .class loads before obj creation .
   static{
     System.out.println("In Static block :");
   }
@@ -245,57 +281,13 @@ class Hello {
   static{
     System.out.println("Hello class static block ::: ");
   }
-  public static void main (String args[]) throws ClassNotFoundException{
+  public static void main (String args[]){
     
   }
 }
 
 O/P :
 Hello class static block ::: 
-
------------------------------------------------------------------------------------------
-Assume we have another class as Hi and it also has static block ,
-=>Here print statement in "class Hi" is not executed .Because it executes when class file loads before main method (),but class Hi is not present in main method 
-in case object of this class present then it will execute static block first .
-
-class Hi{
-   static {
-    System.out.println("Hi class static block ::: ");
-  }
-}
-class Hello {
-  static{
-    System.out.println("Hello class static block ::: ");
-  }
-  public static void main (String args[]) throws ClassNotFoundException{
-
-  }
-}
-
-O/P :
-Hello class static block ::: 
-
----------------------------------------------------------------------------------------------------
-
-Manually writing code to load class with specifying class name :
-
-class Hi{
-   static {
-    System.out.println("Hi class static block ::: ");
-  }
-}
-class Hello {
-  static{
-    System.out.println("Hello class static block ::: ");
-  }
-  public static void main (String args[]) throws ClassNotFoundException{
-    Class.forName("Hi");//Class.class for this we want to write exception 
-  }
-}
-
-O/P :
-Hello class static block ::: 
-Hi class static block ::: 
 
 ---------------------------------------------------------------------------------------------------------
 Static Method :
@@ -383,7 +375,11 @@ class Hello{
   }
 }
 
------------------------------------------------------------------------------------------------
+Note :
+=>Static variables can be used inside a static method .
+=>Non Static variables can be used inside a static method indirectly by passing the objects , So Static method understand which object variables 
+we need to print .
+------------------------------------------------------------------------------------------------------------------------------------------
 Static Method :
 Note : main method is a static method , If we remove static , then it is a non static method ,to access non static method we need to create object .
 Since our main method is the starting point of execution , and if static keyword not present , then object cannot be created . So to avoid that we are using
