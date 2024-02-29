@@ -29,13 +29,36 @@ class Hello {
 --------------------------------------------------------------------------------------------------
 this Keyword in constructors :
 
+class Toys{
+private String n;
+private int price;
+
+public String getName(){
+   return n;
+}
+public void setName(String n){
+  this.n = n;
+}
+}
+class Hello{
+  public static void main(String args[]){
+    Toys t1 = new Toys();
+    t1.setName("Barbie Doll");
+    System.out.println(t1.getName());;
+  }
+}
+
+Here this.n = n , represents that value in local var 'n' should be assigned to instance variable n .If we have multiple object , our compiler to identify 
+if we give 'this' keyword then it represents the object by which the method is called and assign to that object 'n' ie; instance variable the value of the 
+local variable .
+
 class Colours{
   String color;
   public Colours(){
     System.out.println("In Default Constructor : ");
   }
   public Colours(String color){
-    this.color = color; // mistake which I did is not assigned local variable color to instance var
+    this.color = color; 
     System.out.println(this.color + " : In Para Constructor : ");//Directly printed only this.color
   }
   
