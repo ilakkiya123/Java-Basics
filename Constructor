@@ -109,6 +109,14 @@ First statement of constructor is super().
 super() --- > Calls the constructor of super class .Present inside a constructor .
 this() ---> calls the default constructor of existing class .
 
+************************************************************************************************************************
+Can we have both this() and super() in same constructor .
+
+1)The invocation of this() and super() must be the first line of the constructor .
+2)Both are responsible for invoking constructor , so they cannot be used in same constructor .
+3)this() can invoke constructors of same class , super() can invoke constructors of parent class .
+
+*************************************************************************************************************************
 class A {
    public A(){
     super();
