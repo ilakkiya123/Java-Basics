@@ -12,6 +12,14 @@ Method overloading and Method overriding are the two core concepts in java . The
 //A obj = new B() ; obj .show();  ---> B class show gets called .
 //A obj = new C() ; obj .show();  ---> C class show gets called .
 
+A obj = new A() ; // It creates obj ref for class A and creates new object for class A.
+A obj = new B() ; // It creates obj ref for class A and creates new object for class B. So the object connection between 'obj' refernce var and A object is now 
+cut and new connection between 'obj' reference and B object is made .
+
+Note : 
+By creating an object of class B and assigning it to a reference variable of class A, you can access the methods and variables of class B 
+through the reference variable obj.
+--------------------------------------------------------------------------------------------------------------------
 Dynamic Method Dispatch : 
 class A{
    int marks = 10 ;
