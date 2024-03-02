@@ -19,6 +19,7 @@ class Hello {
 }
 
 ****************************************************************************************************
+Example 1 : (Calculator function)
 Hello.java
 class Calc{
   public int add(int n1 , int n2){
@@ -63,7 +64,39 @@ java Hello
 O/P:
 30 30 60 3 25
 
-*******************************************************************
+----------------------------------------------------------------------------------------------------------------
+Example 2 (Tiffen and Drinks) 
+
+Hello.java 
+class Hello{
+  public static void main(String args[]){
+      Tiffen t1 = new Tiffen();
+      int Tiffenrate = t1.tiffenRate(0, 0);
+      int Drinksrate = t1.drinkRate(1,0);
+      System.out.println("Bill Amount for Table 5 : " + (Tiffenrate + Drinksrate));
+  }
+}
+
+Tiffen.java 
+public class Tiffen extends Drinks{
+    int idly_price = 30;
+    int dosa_price = 100;
+    public int tiffenRate(int idly_count , int dosa_count){
+        int rate = (idly_count*idly_price) + (dosa_count*dosa_price);
+        return rate;
+    }
+}
+
+Drinks.java 
+public class Drinks {
+        int coffee_price = 25;
+        int tea_price = 20;
+        public int drinkRate(int coffee_count , int tea_count){
+            int rate = (coffee_count*coffee_price) + (tea_count*tea_price);
+            return rate;
+    }
+}
+****************************************************************************************************************
 Single Inheritance : Consists of 1 parent class and 1 child class . Child Class Inheterits parent class's method and data variables .   Calc(parent Class) <- Advcalc(child class)
 Multi Level Inheritance : It has the involvement of atleast 2 or more than 2 classes .One class inherits methods and dats from parent class , And now the subclass becomes the base class for the newly created 
 class.  Calc(parent Class) <- Advcalc(child class)
