@@ -147,8 +147,32 @@ class Hello {
 ----------------------------------------------------------------------------------------
 Every class in java extends object class .
 super() --- > Calls the constructor of super class .
-this() ---> calls the default constructor of existing class .
 
+1)super() class can be used to invoke immediate parent class instance variable , immediate parent class methods , immediate parent class constructors .
+
+Invoke Immediate class instance variable :
+class A{
+  String color = "white";
+}
+class B extends A{
+  String color = "purple";
+  public void display(){
+    System.out.println(color);
+    System.out.println(super.color);
+  }
+}
+class Hello{
+  public static void main(String args[]){
+     B obj = new B();
+     obj.display();
+  }
+}
+***********************************************************************************
+
+this() ---> calls the constructor of existing class .To call parametrized constructor pass parameters in this(n) .
+Multi Level Inheritance .
+=>B extends A
+=>A extends Object Class
 
 class A extends Object{
    public A(){
