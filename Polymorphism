@@ -1,0 +1,140 @@
+Polymorphism : 
+Polymorphism ---> (Poly - Many) + (Morphism - Behavior )
+
+Method Overloading (Compile Time)
+class A {
+  int a , b , c;
+   public void add(int a,int b){
+    System.out.println(a+b);
+   }
+   public void add(int a,int b,int c){
+    System.out.println(a+b+c);
+   }
+}
+
+class Hello{
+  public static void main(String args[]){
+     A obj = new A();
+     obj.add(5,2);
+     obj.add(7,8,3);
+  }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+Method Overriding (Runtime Polymorphism or Dynamic method Dispatch )
+If we want to give new definition to some method in parent class , we use method overriding in Java ,to overide the methods .
+
+Defn : When different classes that follow inheritance have the same method with the same name, parameters, and/or return type, it is known as method overriding.
+
+Example - 1 : 
+class A {
+  public void show(){
+     System.out.println("In A show");
+  }
+  public void display(){
+    System.out.println("In A Display ::: ");
+  }
+}
+class B extends A{
+  public void show(){
+    System.out.println("In B show");
+  }
+}
+
+class Hello{
+  public static void main(String args[]){
+     B obj = new B();
+     obj.show();
+  }
+}
+
+// O/P :
+In B show
+In A Display ::: 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Example - 2 : 
+class A{
+   int marks = 10 ;
+   public void show(){
+    System.out.println("A Marks ::: " + marks);
+   }
+}
+
+class B extends A{
+   public void show(){
+    System.out.println("B Marks ::: " + (marks+10));
+   }
+}
+
+class C extends A{
+  public void show(){
+    System.out.println("C Marks ::: " + (marks+20));
+   }
+}
+
+class Hello {
+  public static void main (String args[]){
+      A obj = new A();
+      obj.show();
+
+      obj = new B();
+      obj.show();
+
+      obj = new C();
+      obj.show();
+  }
+}
+
+Note : 
+=>Methods can be overridden but not variables , So it is clear that A obj = new B() ,but still it points to parent class 'A' for variables .
+=>Method overriding is not possible for static methods .Because static methods are not associated with the instance var of a class but deals with the class itself .
+=>Dynamic Method Dispatch also known ass Runtime Polymorphism .
+=>Method overriding is dynamic binding , call to overriden is resolved at runtime.
+ie;  JVM cannot determine the method call just by looking at the reference variable only, so it has to wait till runtime to know the type of object and determine which method shall be invoked.
+
+------------------------------------------------------------------------------------------------------------------
+Dynamic method Dispatch :
+
+class A {
+  public void show(){
+     System.out.println("In A show");
+  }
+}
+class B extends A{
+  public void show(){
+    System.out.println("In B show");
+  }
+}
+class C extends A{
+  public void show(){
+    System.out.println("In C show");
+  }
+}
+
+class Hello{
+  public static void main(String args[]){
+     A obj = new A();
+     obj.show();
+
+     obj = new B();//based on this it decides in runtime what method to be called .
+     obj.show();
+
+     obj = new C();
+     obj.show();
+  }
+}
+
+----------------------------------------------------------------------------------------------------
+A obj = new B();
+
+=>A is a superclass of B .
+=>You are creating an object of B and assigning its reference to a variable called obj
+=>You are referencing your newly created object through the view of the class A, i.e. you will not be able to use any method that B has but A doesn’t have.
+
+A obj = new A() ; // It creates obj ref for class A and creates new object for class A.
+A obj = new B() ; // It creates obj ref for class A and creates new object for class B. So the object connection between 'obj' refernce var and A object is now 
+cut and new connection between 'obj' reference and B object is made .
+
+Note : 
+By creating an object of class B and assigning it to a reference variable of class A, you can access the methods and variables of class B 
+through the reference variable obj.
