@@ -8,3 +8,8 @@ Method overriding , Annotations .
 6)Array_Concepts - Array , Declaration , Initialization , Update and Insert value , 1D Array , 2D array , 3D Array with enhanced forloop and normal for loop ,
 Jagged Array , Array of Objects , Drawbacks of Array .
 7)String Concepts - Strings and its methods , 2 scenerio (Heap Memory and String Constant Pool) , String Buffer , String Builder and its methods .
+8)Static Keyword_var_method - Static keyword Defn , Class Loader , Static block and Constructor , Static vs Non Static vs Constructor , Static vs Non Static method .
+9)Encapsulation - Defn , private access , getters and setters .
+10)Constructor - Defn , Types Of constructor(Def , parametrized) , this keyword , this() and super() , Multi level Inheritance and why mutiple inheritance not possible ,Object class
+........
+11)
