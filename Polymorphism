@@ -88,7 +88,7 @@ class Hello {
 Note : 
 =>Methods can be overridden but not variables , So it is clear that A obj = new B() ,but still it points to parent class 'A' for variables .
 =>Method overriding is not possible for static methods .Because static methods are not associated with the instance var of a class but deals with the class itself .
-=>Dynamic Method Dispatch also known ass Runtime Polymorphism .
+=>Dynamic Method Dispatch also known as Runtime Polymorphism .
 =>Method overriding is dynamic binding , call to overriden is resolved at runtime.
 ie;  JVM cannot determine the method call just by looking at the reference variable only, so it has to wait till runtime to know the type of object and determine which method shall be invoked.
 
