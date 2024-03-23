@@ -1,3 +1,16 @@
+****************************************************************************************************
+Jshell command is introduced from java 9 .
+to clear screen - ctrl + L
+
+******************************************************************************************************
+JAVA Command :
+to compile - javac <filename.java>   , Once compiled a class file will be generated (which is a byte code)
+to execute we need JVM and JVM understands byte code which is present in class file .
+to execute - java <class name>
+
+
+
+
 Note : 
 =>JVM is platform dependent . Different JVM available for different OS .
 =>Java is platform independent but JVM not .
