@@ -25,6 +25,7 @@ boolean b1 = true ;
 
 //literals :
 to play with this value 
+//A constant value , which can be assigned to a variable either(int , char, float , String) is called literals .
 
 to display a binary value we use 0b or 0B - eg : 0b101
 to display an ocatl value we use 0 and followedd by values - eg :  0101
