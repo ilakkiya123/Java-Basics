@@ -204,4 +204,28 @@ The student name is : Kavya And Section is : A And Standard is : X
 The student name is : Kavya And Section is : C And Standard is : XII
 }
 
+//String Instance Doubts :
+class Hi{
+  int a;
+  int b;
 
+  public void show(){
+      a = 10 ;
+      System.out.println("show : " + a);
+  }
+
+  public void display(){
+    a = 15;
+    System.out.println("display : " + a);
+  }
+}
+class Hello{
+  public static void main(String args[]){
+    String name = new String("Hello Ilakkiya");
+    Hi h1 = new Hi();
+    h1.show();
+    h1.display();
+    h1.show();
+
+  }
+}
