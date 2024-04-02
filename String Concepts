@@ -1,4 +1,4 @@
-//Strings 
+//Strings - NON PRIMITIVE DATATYPE
 
 //String is an object that represents sequence of characters and not a primitive datatype so it starts with upper case unlike (int,double,boolean ...)
 //Normal way of storing string in a variable 
@@ -10,7 +10,7 @@ class Hello {
 }
 
 -----------------------------------------------------------------------------------
-//Since it comes under class type , usually we use 'new' keyword
+//Since it comes under class type , usually we need to use 'new' keyword , but java accepts simply w/o new keyword as well .
 class Hello {
   public static void main (String args[]){
     String name = new String("Ilakkiya") ;
@@ -34,7 +34,7 @@ O/P : false
 It returns false value , because when new keyword comes then object creates in runtime (heap memory) as well as string constant pool .
 In heap memory there is no rules like duplicate values shouldnt be created , hence 2 obj is created.
 
-Scenerio 2 : What happens if we save same string to 2 different object reference , without using new keyword 
+Scenerio 2 : What happens if we have same string to 2 different object reference , without using new keyword 
 
 class Hello {
   public static void main(String args[]){
@@ -61,6 +61,49 @@ class Hello {
     System.out.println(name.indexOf("my"));//indexOf helps to find the particular string position 
   }
 }
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Strings are immutable to overcome this we have String Buffer and String Builder .
+
+Strings - Immutable 
+String Buffer & String Builder - Mutable 
+
+Example to show String is Immutable :
+
+class Hello{
+  public static void main(String args[]) {
+    String s1 = "Ilaks";
+    String s2 = s1.concat(" Ravindran");
+    System.out.println(s1);
+    System.out.println(s2);
+    System.out.println(s1 == s2);
+  }
+}
+
+O/P :
+Ilaks
+Ilaks Ravindran
+false
+
+Example to show StringBuffer is Mutable :
+class Hello{
+  public static void main(String args[]) {
+    StringBuffer sb1 = new StringBuffer("Ilakkiya");
+    StringBuffer sb2 = sb1.append(" Ravindran");
+
+    System.out.println(sb1);
+    System.out.println(sb2);
+    System.out.println(sb1 == sb2);
+  }
+}
+
+O/P :
+Ilakkiya Ravindran
+Ilakkiya Ravindran
+true
+
+
 -------------------------------------------------------------------------------------
 String Buffer :(Usually StringBuffer capacity is 16 character capacity )
 //To make continous memory allocation , it creates 16 extra character space along with length of the string 
