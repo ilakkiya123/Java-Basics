@@ -133,4 +133,22 @@ class Hello {
   }
 }
 
+---------------------------------------------------------------------------------------------
+We can set length manually and then print the string which is above the given length , then the end of the strings will be removed 
+
+class Hello{
+  public static void main(String args[]){
+    
+    StringBuffer s1 = new StringBuffer("12345678");
+    s1.setLength(5);
+    System.out.println(s1.length());
+    System.out.println(s1);
+
+  }
+}
+
+O/P :
+5 
+12345
+
 
