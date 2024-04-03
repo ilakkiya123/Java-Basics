@@ -97,9 +97,51 @@ class Hello {
 }
 
 ---------------------------------------------------------------
-instance variable --- > It has scope inside the entire class , which means once you change a value in a method in a class then that change will reflect in 
-other method also if the particular instance is used .
-                  ---> Instance Variable part of Heap Memory .
+Instance variable 
+==> It has scope inside the entire class and it is declared below the class and above the method.
+==>It can be called or assigned values with object refernce variable .
+==>The life time of instance variable is decided based on the object creation , Once the object is deleted instance goes along with that .
+==>Instance variables have unique values for distinct object .
+==>Instance Variables part of Heap Memory .
+
+Example :
+class Calc{
+ int num = 3;
+ String value ;
+
+ public void show(){
+    System.out.println("show : " + num);
+ }
+
+ public void display(){
+    System.out.println("display : " + num);
+ }
+}
+class Hello{
+  public static void main(String args[]){
+      Calc c1 = new Calc();
+      c1.num = 10;
+      c1.display();
+      c1.show();
+
+      Calc c2 = new Calc();
+      c1.num = 15;
+      c1.display();
+      c1.show();
+
+      
+  }
+}
+
+O/P :
+display : 10
+show : 10
+display : 15
+show : 15
+
+
+
+
 
 
 local variable ---> It has scope inside the method of a particular class .
