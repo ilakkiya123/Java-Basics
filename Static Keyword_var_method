@@ -1,5 +1,13 @@
-//Static variable is a one which is shared by all objects --- > Static var should be access in a static way (to access with class name )
-!imp --- > Once a var / method uses static keyword , then it becomes class member and not object member .It is stored in metaspace of nativ eheap .
+//Static Variable 
+(Example -> 1 room 10 toys ...... Each toy have var - name , color , size .......and making size as static var ie, a common size for all 10 toys )
+==>Static Variable is a variable which belongs to the class itself and not to any specific instance .
+==>There is only one copy of the variable is present in memory regardless of how many instances are created .
+==>In simple terms , Static variable is a one which is shared by all objects 
+==>Static var should be access in a static way (to access with class name)
+==> Once a var / method uses static keyword , then it becomes class member and not object member .It is stored in metaspace of native heap .
+
+Non Static Method we can use Static variable , but the vice versa is not possible .
+
 //Static Block contains Static variable 
 //Static Block Executes only once during the class loading .The static Block always executes first before the main method() in java ,because the compiler 
 stores them in memory at the time of class loading before the object creation .
@@ -221,12 +229,13 @@ first and only once then constructor gets called .
 
 
 O/P :
-In Hello static Block ::: 
+ In Hello static Block ::: 
 In Hi static Block ::: 
-In Hi constructor ::: 
-In Everyone Static Block ::: 
-In Everyone constructor ::: 
-In Excuse Static Block ::: 
+In Hi constructor :::
+In Everyone Static Block :::
+In Everyone constructor :::
+In Excuse Static Block :::
+In Excuse constructor :::
 
 ***********************************************************************************************
 Class Loader :
@@ -252,6 +261,25 @@ constructor is not get called .
 
 We can explicitly load 'Hi' class by a class named "Class" and its method "forName" .
 
+class Hi{
+   static{
+      int age = 10;
+      System.out.println("In Static ");
+   }
+
+   public Hi(){
+      System.out.println("In Constructor ");
+   }
+}
+class Hello{
+   public static void main(String args[]) throws ClassNotFoundException{
+      // Hi h1 = new Hi();
+      Class.forName("Hi");
+   }
+}
+
+O/P:
+In Static
 **********************************************************************************************
 Execution Flow btw Static / Non Static and Default Constrauctor :
 
@@ -259,7 +287,7 @@ Execution Flow btw Static / Non Static and Default Constrauctor :
 class Hello { 
 
   //static block - present below class and above main method or in different class - Once class loads static block contents are stored in memory , 
-So class need not be loaded again ass it is there in memory .class loads before obj creation .
+So class need not be loaded again as it is there in memory .class loads before obj creation .
   static{
     System.out.println("In Static block :");
   }
@@ -380,6 +408,11 @@ Note :
 =>Non Static variables can be used inside a static method indirectly by passing the objects , So Static method understand which object variables 
 we need to print .
 ------------------------------------------------------------------------------------------------------------------------------------------
+How can we access Non Static method ?
+
+A non static method belongs to object of the class , And we have to create object reference or instance of the class to access non static method .
+
+
 Static Method :
 Note : main method is a static method , If we remove static , then it is a non static method ,to access non static method we need to create object .
 Since our main method is the starting point of execution , and if static keyword not present , then object cannot be created . So to avoid that we are using
