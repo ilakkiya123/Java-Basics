@@ -1,0 +1,10 @@
+1)Encapsulation : What is the benefit of having getters and setters , we can directly access object .
+2)
+//String Buffer 30 If give output getting as 34
+class Hello{
+  public static void main(String args[]){
+    StringBuffer s1 = new StringBuffer();
+    s1.ensureCapacity(30);
+    System.out.println(s1.capacity());
+  }
+}
