@@ -8,3 +8,39 @@ class Hello{
     System.out.println(s1.capacity());
   }
 }
+
+3)In Method Overloading , can we swap the two arguments because it is working for me , But as for as I know In method overloading we can have 2 parameters with different arguments count or different  
+datatype for the parameters .Similar doubt having in Parametrized Constructor .
+
+class Fruits{
+
+  String name ;
+  int price ;
+
+  //Default Constructor 
+public Fruits(){
+   name = "Apple";
+   price = 100 ; 
+}
+
+public Fruits(String name , int price){
+  this.name = name;
+  this.price = price;
+}
+
+public Fruits(int price , String name){
+  this.name = name;
+  this.price = price;
+}
+
+}
+class Hello{
+  public static void main(String args[]){
+      Fruits f1 = new Fruits();
+      Fruits f2 = new Fruits("Orange" , 80);
+      Fruits f3 = new Fruits(180 , "WaterMelon");
+      System.out.println(f1.name + " : " + f1.price);
+      System.out.println(f2.name + " : " + f2.price);
+      System.out.println(f3.price + " : " + f3.name);
+  }
+}
