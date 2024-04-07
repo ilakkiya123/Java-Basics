@@ -129,12 +129,10 @@ A obj = new B();
 
 =>A is a superclass of B .
 =>You are creating an object of B and assigning its reference to a variable called obj
-=>You are referencing your newly created object through the view of the class A, i.e. you will not be able to use any method that B has but A doesn’t have.
-
-A obj = new A() ; // It creates obj ref for class A and creates new object for class A.
-A obj = new B() ; // It creates obj ref for class A and creates new object for class B. So the object connection between 'obj' refernce var and A object is now 
+A obj = new A() ; // It creates obj ref for type A and creates new object for class A.
+A obj = new B() ; // It creates obj ref for type A and creates new object for class B. So the object connection between 'obj' refernce var and A object is now 
 cut and new connection between 'obj' reference and B object is made .
 
 Note : 
-By creating an object of class B and assigning it to a reference variable of class A, you can access the methods and variables of class B 
+By creating an object of class B and assigning it to a reference variable of type A, you can access the methods and variables of class B 
 through the reference variable obj.
