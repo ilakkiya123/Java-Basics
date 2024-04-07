@@ -45,4 +45,45 @@ class Hello{
   }
 }
 
-4)Compile Time(Method Overloading) and Runtime Polymorphism (Method Overriding) 
+4)Compile Time(Method Overloading) and Runtime Polymorphism (Method Overriding) . How we saying this method is resolced at compile time and runtime .
+5)In Dynamic method dispatch concept , 
+
+If we create 
+
+class A{
+int marks = 10 ;
+
+public void show(int marks){
+  System.out.println("In A show()" + marks);
+}
+
+// public void config(){
+//   System.out.println("In A config()");
+// }
+}
+
+class B extends A{
+  public void show(int marks){
+    System.out.println("In B show()" + marks);
+  }
+
+  public void config(){
+    System.out.println("In B config()");
+  }
+}
+
+class C extends A{
+  public void show(){
+    System.out.println("In C show()" + marks);
+  }
+}
+class Hello{
+  public static void main(String args[]){
+    A obj = new B();
+    obj.show(obj.marks);
+    obj.config();
+
+  }
+}
+
+why when compile it says config is undefined for the type A . 
