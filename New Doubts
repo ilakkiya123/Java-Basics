@@ -44,3 +44,5 @@ class Hello{
       System.out.println(f3.price + " : " + f3.name);
   }
 }
+
+4)Compile Time(Method Overloading) and Runtime Polymorphism (Method Overriding) 
