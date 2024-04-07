@@ -83,6 +83,44 @@ class Hello {
   }
 }
 
+
+***************************************************************************************************************************************************
+Methods called from constructor should generally be declared final .If a constructor calls a non-final method , a subclass may redefine that method 
+with unexpected surprising results .
+
+class Bank{
+  final int amount = 1000;
+
+  public Bank(){
+     this.show();
+  }
+
+  public void show(){
+    System.out.println("In Bank Show ");
+  }
+}
+
+class Sbi extends Bank{
+  public void show(){
+    System.out.println("In SBI Bank Show ");
+  }
+}
+ 
+class Hello{
+  public static void main(String args[]){
+    Bank b1 = new Sbi();
+    System.out.println(b1.amount+"$");
+  }
+}
+
+O/P :
+In SBI Bank Show 
+1000$
+
+--------------------------------------------------------------------------------------------------------------------------------
+final keyword - to make that particular variable constant throughout the entire code .
+final class - to stop inheritance 
+final method - to avoid method overriding 
 O/P :
 By Ilaks 
 In A ::: 15
