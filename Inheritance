@@ -1,5 +1,5 @@
 //Super - Sub Class , base - derived class , parent - child class
-Inheritance - Use the features of super class 
+Inheritance - Use the features of super class .It is a mechanism in which one object acquires all the properties and behavior of parent class .
 
 
 //Note : Like Below we have 2 classes Calc and Hello . But when we compile we can see only Hello.class file and not Calc.class file as its object is not present .
