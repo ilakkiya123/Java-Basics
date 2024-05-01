@@ -1,0 +1,70 @@
+Array :
+
+class Hello{
+    public static void main(String args[]){
+     String flowers[] = new String[4];
+     String flowers[] = {"rose","jasmine","lotus","hibiscus"};
+     System.out.println(flowers[2]);
+    }
+}
+
+O/P : 
+lotus
+
+Arrays :
+1)Size never changes once initialized .
+2)Arrays can hold primitive or objects .(String - objects , Primitive - int , char , float)
+3)To calculate the length of the array - System.out.println(flowers.length);
+4)To print any index value in array - System.out.println(flowers[2]);
+5)Cannot add new elements in an array . As array size is fixed .
+6)To replace an element in an array 
+     fruitsList.set(2,"papaya");
+     System.out.println(fruitsList.get(2));
+7)We cant remove elements in array .As array size is fixed .
+8)To print elements in array 
+
+  String flowers[] = {"rose","lotus","lily"};
+
+     for(int i=0;i<flowers.length;i++){
+        System.out.println(flowers[i]);
+     }
+
+**********************************************************************************************************************************************************
+ArrayList :
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Hello{
+    public static void main(String args[]){
+     
+     ArrayList<String> fruitsList = new ArrayList<>(Arrays.asList("banana" ,"mango","apple","grapes")); 
+     System.out.println(fruitsList.get(3));
+    }
+}
+
+O/P : 
+grapes 
+
+ArrayList :
+1)Size grows and shrinks automatically .
+2)ArralyList can hold objects .But supports wrapper types for primitive .
+3)To calculate the length of the ArrayList - System.out.println(fruitsList.size());
+4)To print any index value in array - System.out.println(fruitsList.get(3));
+5)In ArrayList we can add new elements 
+
+     fruitsList.add("watermelon");
+     System.out.println(fruitsList.get(4));
+6)To replace an element in an array 
+
+     fruitsList.set(2,"papaya");
+     System.out.println(fruitsList.get(2));
+7)To remove elements in array .Once removed the element , the size of the array decreases .
+
+System.out.println(fruitsList.size());
+     fruitsList.remove(2);
+     System.out.println(fruitsList.size());
+8)To print elements in ArrayList 
+
+  System.out.println(fruitsList);
+
