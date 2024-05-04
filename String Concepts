@@ -20,7 +20,7 @@ class Hello {
 
 -------------------------------------------------------------------------------------------------------------
 2 scenerios :
-Scenerio 1 : What happens if we save same string to 2 different object reference , by using new keyword 
+Scenerio 1 : What happens if we save same string to 2 different object reference , by using new keyword .'new' Keyword Objects are created in runtime .
 
 class Hello {
   public static void main(String args[]){
