@@ -106,7 +106,7 @@ that value as well .
 
 Note : Every Constructor(includes parametrized constructor) in java has a method in java and that is a super() method .It is the first statement in Every Constructor.
 First statement of constructor is super().
-super() --- > Calls the constructor of super class .Present inside a constructor .
+super() --- > Calls the constructor of super class .Present inside a constructor .Since Parent class Inheritance concept is mandatory to perform super().'extends' keyword is must .  
 this() ---> calls the default constructor of existing class .
 
 ************************************************************************************************************************
