@@ -241,6 +241,12 @@ class Hello {
   }
 }
 
+Note : 
+Which is called first constructor or object creation ? 
+
+Actually at this line , A obj = new A();
+A memory is allocated for obj of type 'A' , then it calls the constructor then the flow goes . 
+
 O/P :
 true
 Watermelon : 100
