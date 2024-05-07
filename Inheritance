@@ -112,3 +112,5 @@ x()               x()    ->Common Method in both A and B parent
 
 If suppose there is a common method in both A and B , then C.x() is a problem .Compiler doesnt know which super class method to execute ,and that leads to an ambiguity .
 So for that purpose , Java doesnt support Multiple Inheritance but multilevel inheritance is possible .
+
+Multiple Inheritance is similar to getting the genetics from different person at a same time for a single person 
