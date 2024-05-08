@@ -87,3 +87,14 @@ class Hello{
 }
 
 why when compile it says config is undefined for the type A . 
+
+*******************************************************************************************************************
+Doubt : Every class in java extends Object class . 
+So Whether it is mandatory to give toString Method retyrn type as String 
+And in equals method we are trying to create our own equals method to give simple logic .
+
+public boolean equals(B obj){
+    return (this.name.equals(obj.name) && this.age==obj.age) ;
+}
+
+This line again calls equals method .
