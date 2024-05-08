@@ -74,7 +74,7 @@ Method overloading :[Same method we are trying to call for example "add method" 
 
 //1)No of Arguments in method
 //2)Different datatypes for the argument 
-//3)But changing datatype of method just throws error 
+
 
 class Addition {
    public void add(int i,int j){
