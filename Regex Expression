@@ -1,1 +1,33 @@
+// Regular Expression :
+A regular expression is a sequence of character that creates a search pattern .When you search for a data in a text you can use this search pattern to identify what you are looking on .
 
+^[a-z0-9_-]{3-15}$
+^                -> start of the line
+[a-z0-9_-]       -> contains letters , numbers , underscore , hyphen 
+3-15             -> 3 - 5 characters long 
+$                -> End Of the line 
+
+So simple example : suppose if 'act' is my regex pattern then I will use this to search in a string which contains act
+Assume sentence : I love to act and interact with people but sometime I react quickly . 
+
+The above sentence contains act , interact , react which contains 'act' in it .
+
+Note : Regex always and mostly used by hackers to collect set of mail id's in any website . 
+
+Regex operation in java is not a builtin , It is available under package java.util.regex.* ;
+
+Regex in java provides 3 classes and 1 interface .
+
+=>Pattern class 
+=>Matcher class 
+=>PatternSyntaxException class 
+=>MatchResult Interface 
+
+Pattern class and its method :
+
+static Pattern compile(String regex)     ->  Suppose if I give act , backend there will be regex created .Compiles the given regex of user given to machine understandable and returns the instance of a pattern .
+Matcher matcher (charSequence input)
+static boolean matches(String regex)
+String split[]
+String pattern()
+int end()
