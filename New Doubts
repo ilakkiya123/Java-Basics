@@ -98,3 +98,7 @@ public boolean equals(B obj){
 }
 
 This line again calls equals method .
+
+***********************************************************************************************************************
+Pattern have no constructor in it :
+https://stackoverflow.com/questions/13758740/java-pattern-class-doesnt-have-a-public-constructor-why#:~:text=Generally%2C%20a%20class%20won't,it%20(for%20example%2C%20java.
