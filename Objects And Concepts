@@ -1,5 +1,5 @@
 *****************************************************************************************************
-Object - In simple terms it is a copy of specific class , Instance of Java Class .
+Object - In simple terms it is a copy of specific class , Instance of Java Class .Objects are created in Java to use the attributes / properties and Actions/Methos.
 It has 3 primary characteristics = > 
        1)Identity - Unique Identifier - represents may be address , id or name .
        2)State - State controls aspect of an object .State changes when behavior happens . State monitors behavior . eg - fan - on / off , low/medium/high
