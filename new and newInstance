@@ -1,0 +1,19 @@
+import java.lang.Class;
+class A{
+	public A(int a , int b) {
+		System.out.println(a+b);
+	}
+}
+class B{
+	
+}
+class Hello{
+	public static void fun(String val) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		@SuppressWarnings("deprecation")
+		Object obj = Class.forName(val).newInstance();
+		System.out.println("Object Created for Class " + obj.getClass().getName());
+	}
+	public static void main(String args[]) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	fun("A");
+	}
+}
