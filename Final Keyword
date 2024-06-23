@@ -1,4 +1,22 @@
 Final - variable , method , class 
+final variable should be initialized once declared or should be assigned value in the constructor or initialzation block .
+class A{
+final int price ;
+final int age ;
+public A(){
+price = 100 ;
+}
+{
+age = 25;
+}
+}
+
+class A{
+static final age ;
+static{
+age = 10;
+}
+}
 
 //Once we assigned value we cant reassign .The value is final .
 class Hello {
