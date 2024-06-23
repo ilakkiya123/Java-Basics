@@ -124,3 +124,12 @@ final method - to avoid method overriding
 O/P :
 By Ilaks 
 In A ::: 15
+
+*********************************************************************************************************************************
+
+Note Important :
+
+abstract and final class in Java
+In Java, you will never see a class or method declared with both final and abstract keywords. 
+For classes, final is used to prevent inheritance whereas abstract classes depend upon their child classes for complete implementation. 
+In cases of methods, final is used to prevent overriding whereas abstract methods need to be overridden in sub-classes.
