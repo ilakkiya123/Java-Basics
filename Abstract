@@ -36,10 +36,41 @@ class Hello {
   }
 }
 
+********************************************************************************************************************
+Example 2 :
+
+abstract class AncientHuman{
+    public abstract void draw();
+    public void dance(){
+        System.out.println("I am dancing ...");
+    }
+
+    public void sing(){
+        System.out.println("I am singing ...");
+    }
+}
+
+class Human extends AncientHuman{
+
+    public void draw() {
+        System.out.println("I am drawing ...");
+    }
+
+}
+class Hello{
+ public static void main(String[] args) {
+    Human h1 = new Human();
+    h1.dance();
+    h1.sing();
+    h1.draw();
+ }
+}
+
+************************************************************************************************************
+
+
 Note :
 Abstract class can have both abstract method and non abstract method .
-It can have only abstract method 
-It can have only non abstract method .
 
 --------------------------------------------------------------------------------------------------------------------
 Note Important :
@@ -48,4 +79,3 @@ abstract and final class in Java
 In Java, you will never see a class or method declared with both final and abstract keywords. 
 For classes, final is used to prevent inheritance whereas abstract classes depend upon their child classes for complete implementation. 
 In cases of methods, final is used to prevent overriding whereas abstract methods need to be overridden in sub-classes.
-
