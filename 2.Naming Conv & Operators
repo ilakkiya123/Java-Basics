@@ -73,6 +73,8 @@ O/P : 4
 ans -->00100 ---> 4
 ------------------------------------------------------------------------------------
 Logical Operator - Copares 2 Relational Operators and based on that return boolean values 
+
+
 Note : 
 If the operands are integers the operator is bitwise  '&', '|', '!'
 If the operands are boolean the operator is logical   '&&' , '||' , '!'
