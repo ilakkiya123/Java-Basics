@@ -82,6 +82,8 @@ Walking ...
 Sleeping ....
 
 ***********************************************************************************************************
+Example - 1
+
 class Instruments {
    public void playMusic(){
 
@@ -151,6 +153,40 @@ class Hello {
 
 O/P :
 Playing Violin ... 
+
+-------------------------------------------------------------------------------------------------------------------
+Example 2 :
+interface Animal {
+     void sound();
+}
+class Dog implements Animal{
+    public void sound(){
+        System.out.println("Bow Bow");
+    }
+}
+class Cat implements Animal{
+    public void sound(){
+        System.out.println("Meow Meow");
+    }
+}
+class SoundMachine{
+    public void generateSound(Animal d1){
+       d1.sound();
+    }
+}
+class Hello{
+    public static void main(String args[]){
+        SoundMachine sm = new SoundMachine();
+        Animal d1 = new Dog();
+        Animal c1 = new Cat();
+        sm.generateSound(c1);
+
+    }
+}
+
+O/P :
+Meow Meow
+-----------------------------------------------------------------------------------------------------------
 
 //Functional Interface :
 //Functional Interface - It contains only one abstract method in interface .Also known as Single Abstract Method Interface - SAM 
