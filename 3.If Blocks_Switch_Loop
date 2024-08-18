@@ -1,15 +1,5 @@
 //If and else Blocks
-class Hello {
-    public static void main(String args[]){
-       int x= 10 ;
-       if(x< 5){
-        System.out.println("Hi Came inside if");
-       }
-       else {
-        System.out.println("Oops you are out ...");
-       }
-    }
-}
+    
 
 Tips : If() === > just check whether condition is true or false .You can directly give if(true) or if(false) , based on your need .
 
