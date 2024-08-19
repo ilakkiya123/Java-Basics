@@ -99,7 +99,7 @@ class Hello {
 
 ---------------------------------------------------------------
 Instance variable 
-==> It has scope inside the entire class and it is declared below the class and above the method.
+==>It has scope inside the entire class and it is declared below the class and above the method.
 ==>It can be called or assigned values with object reference variable .
 ==>The life time of instance variable is decided based on the object creation , Once the object is deleted instance goes along with that .
 ==>Instance variables have unique values for distinct object reference.
