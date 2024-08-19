@@ -241,6 +241,42 @@ class Hello {
   }
 }
 
+------------------------------------------------------------------------------------------------------
+class Fruits {
+    String name ;
+    int price ;
+    
+    public void show(Fruits f2){
+        System.out.println("f1 object ref values :: " + name + " : "+price);
+        System.out.println("f2 object ref values :: " +f2.name + " : "+f2.price);
+        
+    }
+}
+
+class Hello{
+    public static void main(String args[]){
+        Fruits f1 = new Fruits();
+        f1.name = "Apple";
+        f1.price = 100 ;
+
+        Fruits f2 = new Fruits();
+        f2.name = "Orange";
+        f2.price = 80 ;
+
+        f1.show(f2);
+    }
+}
+
+Here In above example we are calling ---> f1.show(f2);
+
+O/P
+f1 object ref values :: Apple : 100
+f2 object ref values :: Orange : 80
+
+So to Fruits class we called show method with f1 obj ref ,So we can directly print the instance variable itself .
+And for f2 we are passing it as an object in parameter, so we need to print as f2.name and f2.price .
+--------------------------------------------------------------------------------------------------------
+
 Note : 
 Which is called first constructor or object creation ? 
 
