@@ -1,5 +1,6 @@
 *****************************************************************************************************
-Object - In simple terms it is a copy of specific class , Instance of Java Class .Objects are created in Java to use the attributes / properties and Actions/Methos.
+Object - In simple terms it is a copy of specific class , Instance of Java Class .Objects are created in Java by JVM .
+(Objects -> Properties and Behavior ) 
 It has 3 primary characteristics = > 
        1)Identity - Unique Identifier - represents may be address , id or name .
        2)State - State controls aspect of an object .State changes when behavior happens . State monitors behavior . eg - fan - on / off , low/medium/high
@@ -66,8 +67,8 @@ class Hello {
 
 Hints : 
 In ToyStore Class , In showToys Method , 
-===> if block satisfies the condition , it returns the value in return statement and the other return is not skipped , As compiler sees a return statement 
-it moves out of the particular block .
+===> if block satisfies the condition , it returns the value in return statement and the other return is skipped ,
+As compiler sees a return statement it moves out of the particular block .
 ===> if block doesnt satisfy the condition , it returns the last return of the entire method . 
 **********************************************************
 Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
@@ -99,10 +100,10 @@ class Hello {
 ---------------------------------------------------------------
 Instance variable 
 ==> It has scope inside the entire class and it is declared below the class and above the method.
-==>It can be called or assigned values with object refernce variable .
+==>It can be called or assigned values with object reference variable .
 ==>The life time of instance variable is decided based on the object creation , Once the object is deleted instance goes along with that .
-==>Instance variables have unique values for distinct object .
-==>Instance Variables part of Heap Memory .
+==>Instance variables have unique values for distinct object reference.
+==>Instance Variables are a part of Heap Memory .
 
 Example :
 class Calc{
@@ -128,8 +129,6 @@ class Hello{
       c1.num = 15;
       c1.display();
       c1.show();
-
-      
   }
 }
 
@@ -138,10 +137,6 @@ display : 10
 show : 10
 display : 15
 show : 15
-
-
-
-
 
 
 local variable ---> It has scope inside the method of a particular class .
@@ -167,9 +162,6 @@ class Hello {
 
      new A().show();
      new A().show();// if we use individually new A() , then we cant reuse this object .Everytime new Object gets created .
-
-
-
   }
 }
 
@@ -227,7 +219,7 @@ public void show(){
 }
 }
 class B extends A{
-  @Override //Indicates the compiler - suppose if we mistakenly given wrong name compilere guides us
+  @Override //Indicates the compiler - suppose if we mistakenly given wrong name compiler guides us
 public void show(){
   System.out.println("In show B");
 }
