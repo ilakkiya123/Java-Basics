@@ -28,7 +28,7 @@ class Hello {
   }
 }
 
-Final Class - To Stop Inherting data from parent class , we cant use extend of this class here after .
+Final Class - To Stop Inherting data from parent class .We cant use extend of this class here after .
 
 final class A {
   int price = 100;
@@ -101,6 +101,11 @@ class Hello {
   }
 }
 
+O/P :
+By Ilaks 
+In A ::: 15
+
+Here the credit is given to my name and they have used my add method by extending .
 
 ***************************************************************************************************************************************************
 Methods called from constructor should generally be declared final .If a constructor calls a non-final method , a subclass may redefine that method 
