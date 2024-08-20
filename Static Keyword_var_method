@@ -13,7 +13,7 @@ Non Static Method we can use Static variable , but the vice versa is not possibl
 stores them in memory at the time of class loading before the object creation .
 
 ----------------------------------------------------------------------------------------------------------------------
-static variable easy explanation :(static var means if a value is assigned to cost then that will be shared by all the object refernce which is having 
+static variable easy explanation :(static var means if a value is assigned to cost then that will be shared by all the object reference which is having 
 cost value or in simple terms it is shared by all objects )
 class Hi {
   String name ;
@@ -34,7 +34,7 @@ class Hello {
 
      Hi h2 = new Hi();
      h2.name = "Kavya";
-     h2.cost = 20 ;//Here 4)cost is assigned a final value after which nothing is assigned for this cost variable .So it will give an output of 20 for all 
+     h2.cost = 20 ;//Here 4)cost is again assigned a value after which nothing is assigned for this cost variable .So it will give an output of 20 for all 
 3 references (h1.cost , h2.cost , h3.cost)
 
      h1.showAmt();
@@ -201,7 +201,7 @@ class Hello {
 }
 
 Here It checks and first executes static and then constructor of first object and then for other objects as well .So For each class the static block executes
-first and only once then constructor gets called .
+first and then constructor gets called evertime when the object gets created.
 
 
 O/P :
@@ -256,6 +256,36 @@ class Hello{
 
 O/P:
 In Static
+
+And also in below example ,we are not having object creation line so class loading and object creation cannot be done for Fruits class.
+But since our compiler knows now Hello class in main , this class loads and since it is loaded static block in main method alone gets loaded . 
+
+class Fruits {
+    static String name = "PineApple";
+    int price;   
+    
+    public Fruits(){
+        System.out.println("In Fruits constructor ... ");
+    }
+
+    static{
+        System.out.println("In static block ... ");
+    }
+}
+    
+
+class Hello{
+    static{
+        System.out.println("In main static");
+    }
+    public static void main(String args[]) throws ClassNotFoundException{
+        
+    }
+}
+
+O/P :
+In main static
+
 **********************************************************************************************
 Execution Flow btw Static / Non Static and Default Constrauctor :
 
@@ -400,7 +430,7 @@ java <.classname> ===> here we are saying this is the class file which contains 
 
 public static void main(String args[])
 classname.main() ---> Since my main() method is a static method we can access it with a class name itself classname.main() .
-Suppose if it is non static method then object needs to be created to access main() method , that is not possible .
-
+Suppose if it is non static method then object needs to be created to access main() method , that is not possible .As after entering main method
+only object creation happens . 
 
 Note : static class is acceptable only when it comes as an inner class
