@@ -1,5 +1,5 @@
-Polymorphism ---> (Poly - Many) + (Morphism - Behavior )
-
+Polymorphism ---> (Poly - Many) + (Morphism - Forms )
+At different situation it behaves differently .
 Method Overloading - Compile time
 Method overriding - Runtime
 Method overloading and Method overriding are the two core concepts in java . They are the way to polymorphism in java .
@@ -7,10 +7,46 @@ Method overloading and Method overriding are the two core concepts in java . The
 -----------------------------------------------------------------------------------------------------------
 //Here the obj reference is same , method show() is same , but when it is called with diff object , the behaviour is different .
 //irrespective of the type of object .
-//And this is acceptable only when we chave inheritance concept , Parent class having child class .
+//And this is acceptable only when we have inheritance concept , Parent class having child class .
 //A obj = new A() ; obj .show();  ---> A class show gets called .
-//A obj = new B() ; obj .show();  ---> B class show gets called .
-//A obj = new C() ; obj .show();  ---> C class show gets called .
+//B obj = new B() ; obj .show();  ---> B class show gets called .
+//C obj = new C() ; obj .show();  ---> C class show gets called .
+
+class Animal{
+	public void sound() {
+		System.out.println("Animal " );
+	}
+}
+class Cat extends Animal{
+	public void sound() {
+		System.out.println("Meow meow " );
+	}
+}
+
+class Dog extends Animal{
+	public void sound() {
+		System.out.println("Bow Bow " );
+	}
+}
+
+class Hello{
+	public static void main(String args[]) {
+		
+		Animal ani = new Animal();
+		Cat c1 = new Cat();
+		Dog d1 = new Dog();
+		
+		ani.sound();
+		c1.sound();
+		d1.sound();
+		
+	}
+}
+
+Here with each Class Animal , Cat and Dog differnt sound method is getting called .So Differnt forms/ behavior hat is polymorphism .
+
+**************************************************************************************************************************************
+
 
 A obj = new A() ; // It creates obj ref for class A and creates new object for class A.
 A obj = new B() ; // It creates obj ref for class A and creates new object for class B. So the object connection between 'obj' refernce var and A object is now 
