@@ -4,6 +4,97 @@ Method Overloading - Compile time
 Method overriding - Runtime
 Method overloading and Method overriding are the two core concepts in java . They are the way to polymorphism in java .
 
+Method Overloading (Compile Time)
+class A {
+  int a , b , c;
+   public void add(int a,int b){
+    System.out.println(a+b);
+   }
+   public void add(int a,int b,int c){
+    System.out.println(a+b+c);
+   }
+}
+
+class Hello{
+  public static void main(String args[]){
+     A obj = new A();
+     obj.add(5,2);
+     obj.add(7,8,3);
+  }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+Method Overriding (Runtime Polymorphism or Dynamic method Dispatch )
+If we want to give new definition to some method in parent class , we use method overriding in Java ,to overide the methods .
+
+Defn : When different classes that follow inheritance have the same method with the same name, parameters, and/or return type, it is known as method overriding.
+
+Example - 1 : 
+class A {
+  public void show(){
+     System.out.println("In A show");
+  }
+  public void display(){
+    System.out.println("In A Display ::: ");
+  }
+}
+class B extends A{
+  public void show(){
+    System.out.println("In B show");
+  }
+}
+
+class Hello{
+  public static void main(String args[]){
+     B obj = new B();
+     obj.show();
+  }
+}
+
+// O/P :
+In B show
+In A Display ::: 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+Example - 2 : 
+class A{
+   int marks = 10 ;
+   public void show(){
+    System.out.println("A Marks ::: " + marks);
+   }
+}
+
+class B extends A{
+   public void show(){
+    System.out.println("B Marks ::: " + (marks+10));
+   }
+}
+
+class C extends A{
+  public void show(){
+    System.out.println("C Marks ::: " + (marks+20));
+   }
+}
+
+class Hello {
+  public static void main (String args[]){
+      A obj = new A();
+      obj.show();
+
+      obj = new B();
+      obj.show();
+
+      obj = new C();
+      obj.show();
+  }
+}
+
+Note : 
+=>Methods can be overridden but not variables , So it is clear that A obj = new B() ,but still it points to parent class 'A' for variables .
+=>Method overriding is not possible for static methods .Because static methods are not associated with the instance var of a class but deals with the class itself .
+=>Dynamic Method Dispatch also known as Runtime Polymorphism .
+=>Method overriding is dynamic binding , call to overriden is resolved at runtime.
+ie;  JVM cannot determine the method call just by looking at the reference variable only, so it has to wait till runtime to know the type of object and determine which method shall be invoked.
+
 -----------------------------------------------------------------------------------------------------------
 //Here the obj reference is same , method show() is same , but when it is called with diff object , the behaviour is different .
 //irrespective of the type of object .
