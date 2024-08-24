@@ -2,6 +2,8 @@ Enum - enum is  a special class , that represents group of constants similar to 
 ==> Enumeration is a short name for enum , specifically Listed.Enum Constants are public , static , final
 Enum with For loop :
 
+Example 1 :
+
 enum Status{
   Running , Completed , Pending , Waiting ;//Are all objects - named constants
 }
@@ -17,7 +19,26 @@ class Hello {
   }
 }
 
+Example 2 :
+
+enum TrafficLights{
+	// named constants or group of list under traffic lights or instance of traffic lights
+	RED , YELLOW , GREEN ;  
+}
+class Hello{
+	public static void main(String args[]) {
+		TrafficLights tf1 = TrafficLights.RED ;
+		TrafficLights tf2 = TrafficLights.YELLOW ;
+		TrafficLights tf3 = TrafficLights.GREEN ;
+		
+		for(TrafficLights t : TrafficLights.values()) {
+			System.out.println(t);
+		}
+	}
+}
+
 Enum with If Else Block 
+Example 1 :
 
 enum Status{
   Running , Completed , Pending , Waiting ;//Are all objects - named constants
@@ -48,8 +69,33 @@ O/P :
 Index of Completed : 1
 Hurray Completed!!! 
 
+Example 2 :
+
+enum TrafficLights{
+	// named constants or group of list under traffic lights or instance of traffic lights
+	RED , YELLOW , GREEN ;  
+}
+class Hello{
+	public static void main(String args[]) {
+		TrafficLights tf1 = TrafficLights.RED ;
+		TrafficLights tf2 = TrafficLights.YELLOW ;
+		TrafficLights tf3 = TrafficLights.GREEN ;
+		
+		if(tf3 == TrafficLights.RED) {
+			System.out.println("STOP ");
+		}
+		else if (tf3 == TrafficLights.YELLOW) {
+			System.out.println("PLS WAIT ABOUT To MOVE");
+		}
+		else {
+			System.out.println("GO");
+		}
+	}
+
 ----------------------------------------------------------------------------------
 Enum with switch ()
+
+Example 1 :
 
 enum Status{
   Running , Completed , Pending , Waiting ;//Are all objects - named constants
@@ -79,42 +125,53 @@ class Hello {
     }
   }
 
-Note : As like other classes in enum there is no inheritance , we cant use extend keyword .
-=== > we can define method , constructors , create own var is possible 
+Example 2 :
+
+enum TrafficLights{
+	// named constants or group of list under traffic lights or instance of traffic lights
+	RED , YELLOW , GREEN ;  
+}
+class Hello{
+	public static void main(String args[]) {
+		TrafficLights tf1 = TrafficLights.RED ;
+		TrafficLights tf2 = TrafficLights.YELLOW ;
+		TrafficLights tf3 = TrafficLights.GREEN ;
+		
+		switch(tf3) {
+		case RED : 
+			System.out.println("STOP");
+			break ;
+			
+		case YELLOW : 
+			System.out.println("WAIT");
+			break ;
+			
+		case GREEN : 
+			System.out.println("GO");
+			break ;
+			
+		default :
+			System.out.println("Please follow Traffic Rules ");
+		}
+	}
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+Note : As like other classes in enum there is no inheritance , we cant use extend keyword .Because Implicitly it has enum class extended .Ultimately in Java
+we cant extend 2 class .
+
 
 //Enum By default has a Enum Class 
 System.out.println(s.getClass().getSuperclass()); ------  class java.lang.Enum
 
----------------------------------------------------------------------------------------------------------------
-If we got doubt , How object() ---> is a constructor have the below example for reference .
 
-class Fruits{
-    public Fruits(){
+=== > we can define method , constructors , create own var is possible 
 
-    }
-}
-
-class Apple extends Fruits{
-    public Apple(String name ,String color){
-         System.out.println(name + " : " +color);
-    }
-}
-class Banana extends Fruits{
-    public Banana(String name,String color){
-       System.out.println(name + " : " +color);
-    }
-}
-
-class Hello {
-  public static void main (String args[]){
-    Fruits f1 = new Apple("Apple" , "red");
-    f1 = new Banana("Banana" , "yellow");
-    
-    
-  }
-}  
 -----------------------------------------------------------------------------------------------
 Enum Methods ,Constructors , private variables 
+
+Example 1 :
 
 //enum is a special class , class name - Fruits .So constructor creates with Fruits
 enum Fruits {
@@ -146,8 +203,42 @@ class Hello{
 //O/P :
 Grapes : green
 
+
+Example 2 :
+
+enum TrafficLights{
+	// named constants or group of list under traffic lights or instance of traffic lights
+	RED("STOP") , YELLOW("WAIT") , GREEN("GO") ;  
+	
+	private String command ;
+	
+	private TrafficLights(String command) {
+		this.command = command ;
+	}
+
+	public String getCommand() {
+		return command;
+	}
+}
+class Hello{
+	public static void main(String args[]) {
+		TrafficLights tf1 = TrafficLights.RED;
+		TrafficLights tf2 = TrafficLights.YELLOW;
+		TrafficLights tf3 = TrafficLights.GREEN ;
+		
+		System.out.println(tf3.getCommand());
+
+	}
+}
+
+O/P : 
+GO
+
 *******************************************************************
 To get all values in the List :
+
+Example 1 :
+
 //enum is a special class , class name - Fruits .So constructor creates with Fruits
 enum Fruits {
   Apple("red"),Orange("orange"),Banana("yellow"),Grapes("green") ;
@@ -180,7 +271,6 @@ class Hello{
     for(Fruits n:arr){
       System.out.println(n + " : " + n.getColour());
     }
-
   }
 }
 
@@ -190,6 +280,39 @@ Orange : orange
 Banana : yellow
 Grapes : green
 
+Example 2 :
+
+enum TrafficLights{
+	// named constants or group of list under traffic lights or instance of traffic lights
+	RED("STOP") , YELLOW("WAIT") , GREEN("GO") ;  
+	
+	private String command ;
+	
+	private TrafficLights(String command) {
+		this.command = command ;
+	}
+
+	public String getCommand() {
+		return command;
+	}
+}
+class Hello{
+	public static void main(String args[]) {
+		TrafficLights tf1 = TrafficLights.RED;
+		TrafficLights tf2 = TrafficLights.YELLOW;
+		TrafficLights tf3 = TrafficLights.GREEN ;
+		
+		for ( TrafficLights  t : TrafficLights.values()) {
+			System.out.println(t + " : " + t.getCommand());
+		}
+
+	}
+}
+
+O/P :
+RED : STOP
+YELLOW : WAIT
+GREEN : GO
 ************************************************************************************
 
 //enum is a special class , class name - Fruits .So constructor creates with Fruits
@@ -221,7 +344,7 @@ enum Fruits {
 
 class Hello{
   public static void main(String[] args) {
-    // Fruits f1 = Fruits.Grapes;
+    // Fruits i 0 = Fruits.Grapes;
     // System.out.println(f1 + " : " + f1.getColour());
 
     Fruits arr[] = Fruits.values();
