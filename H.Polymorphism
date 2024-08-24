@@ -195,7 +195,7 @@ Downcasting :
 *This is explicitly done in java.
 *It allows specific methods and properties of subclass that are not available in the super class .
 
-Example : 
+Example 1 : 
 
 
 interface Insects{
@@ -246,6 +246,61 @@ O/P :
 
 Buzz Buzz
 Bees Flying ..
+
+------------------------------------------------------------------------------------------------------------------------------
+Example 2 :
+
+Downcasting might lead to a CastClassException . If the object ref casted is not actually the refernce of the respective instance of the subclass ,
+then we face CastClassException . For doing downcasting java takes developer/user approval so we explicitly mention the downcast subclass , If the ref passed
+is not the instance of the subclass , then java which believed us is now betrayed and throws CastClassException .
+
+interface Insects{
+	void sound();
+}
+class Bee implements Insects{
+	public void sound() {
+		System.out.println("Buzz Buzz");
+	}
+	
+	public void fly() {
+		System.out.println("Bees Flying ..");
+	}
+	
+}
+
+class Ant implements Insects{
+	public void sound() {
+		System.out.println("Chirp Chirp");
+	}
+	
+	public void move() {
+		System.out.println("Ants Moving ..");
+	}
+}
+
+class Sound{
+	public void generateSound(Insects insects) {
+		insects.sound();
+		
+		if(insects instanceof Bee) {
+			Bee b2 = (Bee)insects;
+			b2.fly();
+		}
+		
+	}
+}
+class Hello{
+	public static void main(String args[]) {
+		
+		Insects b1 = new Bee();
+		Insects a1 = new Ant();
+		Sound s1 = new Sound();
+		s1.generateSound(b1);
+		
+		
+	}
+}
+
 
 *************************************************************************************************
 
