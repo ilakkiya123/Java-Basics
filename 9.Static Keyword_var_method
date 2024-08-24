@@ -433,4 +433,31 @@ classname.main() ---> Since my main() method is a static method we can access it
 Suppose if it is non static method then object needs to be created to access main() method , that is not possible .As after entering main method
 only object creation happens . 
 
-Note : static class is acceptable only when it comes as an inner class
+Note :
+static class is acceptable only when it comes as an inner class  - As because then only we can access that method with the class name .
+static method in a super class cannot be extenden by the same static method in subclass . In simple words we cant inherit or overide static methods ,
+instead the subclass methods will be hidden by the super class . 
+
+class A{
+    public static void show(){
+        System.out.println("In A show");
+    }
+}
+
+class B extends A {
+    public static void show(){
+        System.out.println("In B show");
+    }
+}
+class Hello{
+	public static void main(String args[]){
+        A obj = new B();
+        obj.show();
+        }
+    }
+
+O/P :
+In A show
+
+
+
