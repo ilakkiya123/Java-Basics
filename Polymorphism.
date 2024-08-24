@@ -93,47 +93,68 @@ class Hello {
 
 ********************************************************************************
 Upcasting and Downcasting :
-class A{
-   public void show(){
-     System.out.println("In A show : ");
-   }
+
+Upcasting :
+*Process of converting a child class object to a super class reference in java .  (Child Obj-> Parent Refernce)
+*This is implcitly done in java .
+*Purpose - Allows you to use polymorphism , where single interface can be used for different datatypes .
+
+Downcasting :
+*Process of converting a super class refernce to a child class reference in java . (Parent reference -> Child Reference)
+*This is explicitly done in java.
+*It allows specific methods and properties of subclass that are not available in the super class .
+
+Example : 
+
+
+interface Insects{
+	void sound();
 }
-class B extends A{
-    public void show2(){
-    System.out.println("In B show : ");
-    }
+class Bee implements Insects{
+	public void sound() {
+		System.out.println("Buzz Buzz");
+	} 
+	
+	public void fly() {
+		System.out.println("Bees Flying ..");
+	}
+	
 }
 
-************************************************************************************************
-Class Leader and Assistant own example :
+class Ant implements Insects{
 
-class A{
-  int age ;
-  String name ;
-  public void show(){
-    System.out.println("In show ::: " + name + " : " + age );
-  }
-}
-class B extends A{
-  public void display(){
-    System.out.println("In display ::: " + name + " : " + age );
-  }
-}
-class Hello {
-  public static void main(String args[]){
-    A obj = new B();
-    obj.age = 10 ;
-    obj.name = "Ilaks" ;
-    obj.show();
-
-    B obj1 = (B)obj ;
-    obj1.age = 15;
-    obj1.name="Kavs";
-    obj1.display();
-    
-  }
+//sound is overided by the parent sound method 
+	public void sound() {
+		System.out.println("Chirp Chirp");
+	}
+	
+	public void move() {
+		System.out.println("Ants Moving ..");
+	}
 }
 
+class Sound{
+	public void generateSound(Insects i1) {
+		i1.sound();
+	}
+}
+class Hello{
+	public static void main(String args[]) {
+		
+		Insects b1 = new Bee(); // Upcasting 
+		Insects a1 = new Ant();
+		Sound s1 = new Sound();
+		s1.generateSound(b1);
+		
+		Bee b2 = (Bee)b1; // Downcasting 
+		b2.fly();
+	}
+}
+
+O/P :
+
+Buzz Buzz
+Bees Flying ..
 
 *************************************************************************************************
 
