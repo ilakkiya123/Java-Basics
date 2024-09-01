@@ -175,6 +175,80 @@ O/P :
 71
 
 //Now we get a sorted List , using TreeSet implemented class for Set interface 
+
+---------------------------------------------------------------------------------------------------------------------
+Map and HashMap :
+
+Map interface contains a key and value pair .
+
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Map;
+import java.util.HashMap;;
+
+class Hello{
+    public static void main(String args[]){
+        Map<String,Integer> students = new HashMap<>();
+        students.put("Ilaks" , 32);
+        students.put("Kavs" , 4);
+        students.put("Sundari" ,71);
+        students.put("Ravi",71);
+        students.put("Meenu",23);
+        
+        System.out.println(students);
+        System.out.println(students.keySet());
+        System.out.println(students.values());
+        System.out.println(students.size());
+        
+    }
+}
+
+O/P :
+{Kavs=4, Ilaks=32, Ravi=71, Meenu=23, Sundari=71}
+[Kavs, Ilaks, Ravi, Meenu, Sundari]
+[4, 32, 71, 23, 71]
+5
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Map;
+import java.util.HashMap;;
+
+class Hello{
+    public static void main(String args[]){
+        Map<String,Integer> students = new HashMap<>();
+        students.put("Ilaks" , 32);
+        students.put("Kavs" , 4);
+        students.put("Sundari" ,71);
+        students.put("Ravi",71);
+        students.put("Meenu",23);
+        
+        // System.out.println(students.keySet());
+        for(String name : students.keySet()){
+            System.out.println(name + " : " + students.values());
+        }
+    }
+}
+
+O/P :
+Kavs : [4, 32, 71, 23, 71]
+Ilaks : [4, 32, 71, 23, 71]
+Ravi : [4, 32, 71, 23, 71]
+Meenu : [4, 32, 71, 23, 71]
+Sundari : [4, 32, 71, 23, 71]
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
