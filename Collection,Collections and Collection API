@@ -255,6 +255,47 @@ Map<String,Integer> students = new Hashtable<>();
 
 If we have multiple threads and to make it synchronized we can use HashTable .
 ------------------------------------------------------------------------------------------------------------------------------------------------
+Collections Class :
+
+Sorting :
+Here we are sorting elements based on the length of the String .
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+// Ilaks , Kavs , Pri , Meenuu
+
+class Hello{
+    public static void main(String args[]){
+
+        List<String> names = new ArrayList<>();
+        names.add("Ilaks");
+        names.add("Kavs");
+        names.add("Pri");
+        names.add("Meenuu");
+
+        Comparator<String> com = new Comparator<>(){
+
+            public int compare(String o1, String o2) {
+                if(o1.length() > o2.length()){
+                    return 1;
+                }
+                else 
+                    return -1;
+            }
+        };
+
+       Collections.sort(names, com);
+       System.out.println(names);
+    }
+}
+
+O/P :
+
+[Pri, Kavs, Ilaks, Meenuu]
+------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
 class Hello{
