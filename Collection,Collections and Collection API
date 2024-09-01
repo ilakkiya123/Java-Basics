@@ -341,6 +341,195 @@ class Hello{
 O/P :
 [23, 71, 85, 94]
 
+Example 3 :
+Sorting a developer developed class Fruits with the price 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Fruits {
+    String name ;
+    int price;
+//to have the instance value assigned with a value 
+    public Fruits(String name, int price) {
+        this.name = name ;
+        this.price = price;
+    }
+
+//to print a format , as usual when we print object it prints as object.toString
+    @Override
+    public String toString() {
+        return "name=" + name + ", price=" + price ;
+    }
+}
+
+class Hello{
+    public static void main(String args[]){
+
+        Comparator<Fruits> com = new Comparator<>(){
+
+            public int compare(Fruits p1, Fruits p2) {
+                if(p1.price > p2.price){
+                    return 1;
+                }
+                else 
+                    return -1;
+            }
+        };
+
+        List<Fruits> fruitsarr = new ArrayList<>();
+        fruitsarr.add(new Fruits("Banana" , 50));
+        fruitsarr.add(new Fruits("Apple" , 250));
+        fruitsarr.add(new Fruits("PineApple" , 80));
+        fruitsarr.add(new Fruits("GreenGrapes" , 280));
+      
+       Collections.sort(fruitsarr,com);
+
+       for(Fruits n : fruitsarr){
+        System.out.println(n);
+       }
+    }
+}
+
+O/P :
+
+name=Banana, price=50
+name=PineApple, price=80
+name=Apple, price=250
+name=GreenGrapes, price=280
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Example 4 :
+We are going to use implements Comparable interface with Student Class and have the unimplemented compareTo method within the class .By using this we can have 
+comparision within the class itself , No need to call Comparator Class .
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+//Here it is very important to specify <Student> to specify it as ArrayList
+class Student implements Comparable<Student>{
+    int age;
+    String name ;
+    
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+    public int compareTo(Student that) {
+        if(this.age > that.age){
+                        return 1;
+                    }
+                    else 
+                        return -1;
+    }
+  
+}
+
+class Hello{
+    public static void main(String args[]){
+
+        // Comparator<Student> com = new Comparator<>(){
+
+        //     public int compare(Student i, Student j) {
+        //         if(i.age > j.age){
+        //             return 1;
+        //         }
+        //         else 
+        //             return -1;
+        //     }
+        // };
+
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(21, "Ilaks"));
+        studs.add(new Student(32, "Kavs"));
+        studs.add(new Student(49, "Pri"));
+        studs.add(new Student(18, "Meenu"));
+      
+       Collections.sort(studs);
+
+       for(Student n : studs){
+        System.out.println(n);
+       }
+    }
+}
+
+O/P:
+Student [age=18, name=Meenu]
+Student [age=21, name=Ilaks]
+Student [age=32, name=Kavs]
+Student [age=49, name=Pri]
+
+//Here in the above example if we comment out Comparator lines and in here if we pass comparator object - Collections.sort(studs) 
+then the above compareTo will be overrided .
+
+//Below Code we have removed the commented lines and compareTo method will be now overriden .To show I have changed the condition in Comparator and 
+it behaves as per the Comparator condition .
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Student implements Comparable<Student>{
+    int age;
+    String name ;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+
+   
+    public int compareTo(Student that) {
+        if(this.age > that.age){
+                        return 1;
+                    }
+                    else 
+                        return -1;
+    }
+  
+}
+
+class Hello{
+  
+    public static void main(String args[]){
+
+        Comparator<Student> com = new Comparator<>(){
+
+            public int compare(Student i, Student j) {
+                if(i.age < j.age){
+                    return 1;
+                }
+                else 
+                    return -1;
+            }
+        };
+
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(21, "Ilaks"));
+        studs.add(new Student(32, "Kavs"));
+        studs.add(new Student(49, "Pri"));
+        studs.add(new Student(18, "Meenu"));
+      
+       Collections.sort(studs,com);
+
+       for(Student n : studs){
+        System.out.println(n);
+       }
+    }
+}
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
@@ -373,6 +562,12 @@ Arrays :
         System.out.println(flowers[i]);
      }
 
+O/P :
+
+Student [age=49, name=Pri]
+Student [age=32, name=Kavs]
+Student [age=21, name=Ilaks]
+Student [age=18, name=Meenu]
 **********************************************************************************************************************************************************
 ArrayList :
 
