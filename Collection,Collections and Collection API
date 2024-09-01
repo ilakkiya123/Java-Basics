@@ -216,6 +216,8 @@ O/P :
 5
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
+//To print as Key value pairs in Hashmap 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -258,7 +260,7 @@ If we have multiple threads and to make it synchronized we can use HashTable .
 Collections Class :
 
 Sorting :
-Here we are sorting elements based on the length of the String .
+Example 1 : Here we are sorting elements based on the length of the String .
 
 import java.util.ArrayList;
 import java.util.List;
@@ -295,6 +297,50 @@ class Hello{
 O/P :
 
 [Pri, Kavs, Ilaks, Meenuu]
+-------------------------------------------------------------------
+Example 2 : Here we are sorting nums in asc order
+
+import java.util.ArrayList;
+// import java.util.Collection;
+// import java.util.Iterator;
+import java.util.List;
+// import java.util.HashSet;
+// import java.util.Set;
+// import java.util.TreeSet;
+// import java.util.Map;
+// import java.util.HashMap;
+import java.util.Collections;
+import java.util.Comparator;
+
+
+
+class Hello{
+    public static void main(String args[]){
+
+        List<Integer> nums = new ArrayList<>();
+        nums.add(23);
+        nums.add(71);
+        nums.add(85);
+        nums.add(94);
+
+        Comparator<Integer> com = new Comparator<>(){
+
+            public int compare(Integer o1, Integer o2) {
+                if(o1 > o2){
+                    return 1;
+                }
+                else 
+                    return -1;
+            }
+        };
+
+       Collections.sort(nums, com);
+       System.out.println(nums);
+    }
+}
+O/P :
+[23, 71, 85, 94]
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
