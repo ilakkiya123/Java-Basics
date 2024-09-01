@@ -249,6 +249,11 @@ Ravi : [4, 32, 71, 23, 71]
 Meenu : [4, 32, 71, 23, 71]
 Sundari : [4, 32, 71, 23, 71]
 
+
+Hashtable :
+Map<String,Integer> students = new Hashtable<>(); 
+
+If we have multiple threads and to make it synchronized we can use HashTable .
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
