@@ -530,6 +530,113 @@ class Hello{
        }
     }
 }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+We can use lambda expression as Comparator is a functional interface .On doing lambda expression and changing the condition as ternary operator , 
+Code looks like below one ,
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Student {
+    int age;
+    String name ;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+
+   
+}
+
+class Hello{
+  
+    public static void main(String args[]){
+
+        Comparator<Student> com = (i, j) -> (i.age > j.age) ? 1 : -1 ;
+                // if(i.age < j.age){
+                //     return 1;
+                // }
+                // else 
+                //     return -1;
+         
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(21, "Ilaks"));
+        studs.add(new Student(32, "Kavs"));
+        studs.add(new Student(49, "Pri"));
+        studs.add(new Student(18, "Meenu"));
+      
+       Collections.sort(studs,com);
+
+       for(Student n : studs){
+        System.out.println(n);
+       }
+    
+}
+}
+
+O/P :
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
+
+class Student {
+    int age;
+    String name ;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+
+   
+}
+
+class Hello{
+  
+    public static void main(String args[]){
+
+        Comparator<Student> com = (i, j) -> (i.age > j.age) ? 1 : -1 ;
+                // if(i.age < j.age){
+                //     return 1;
+                // }
+                // else 
+                //     return -1;
+         
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(21, "Ilaks"));
+        studs.add(new Student(32, "Kavs"));
+        studs.add(new Student(49, "Pri"));
+        studs.add(new Student(18, "Meenu"));
+      
+       Collections.sort(studs,com);
+
+       for(Student n : studs){
+        System.out.println(n);
+       }
+    
+}
+}
+
+O/P :
+
+Student [age=49, name=Pri]
+Student [age=32, name=Kavs]
+Student [age=21, name=Ilaks]
+Student [age=18, name=Meenu]
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
