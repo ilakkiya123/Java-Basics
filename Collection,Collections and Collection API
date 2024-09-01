@@ -638,6 +638,11 @@ Student [age=32, name=Kavs]
 Student [age=21, name=Ilaks]
 Student [age=18, name=Meenu]
 ------------------------------------------------------------------------------------------------------------------------------------------------
+Comparator vs Comparable :
+
+Comparartor - If u want to specify which logic you want to sort element , then use comparator . 
+Comparable - If we want to compare the object itself in the same class .
+
 Array :
 
 class Hello{
