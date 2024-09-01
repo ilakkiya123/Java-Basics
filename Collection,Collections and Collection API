@@ -78,6 +78,104 @@ Value at index 1 is : 4
 Index of element 4 is : 1
 
 ----------------------------------------------------------------------------------------------------------------------------------------
+We can also use iterator to traverse among the ArrayList w/o using forEach
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;;
+
+class Hello{
+    public static void main(String args[]){
+        List<Integer> values = new ArrayList<>();
+        values.add(3);
+        values.add(4);
+        values.add(7);
+        values.add(7);
+
+        Iterator<Integer> v = values.iterator();
+        while(v.hasNext()){
+            System.out.println(v.next());
+        }
+    }
+}
+
+O/P :
+3
+4
+7
+7
+
+//Here List gives all the values includes duplicate values .
+
+----------------------------------------------------------------------------------------------------------------
+Set :
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
+class Hello{
+    public static void main(String args[]){
+        Set<Integer> values = new HashSet<>();
+        values.add(32);
+        values.add(4);
+        values.add(71);
+        values.add(71);
+        values.add(23);
+        
+        
+        Iterator<Integer> v = values.iterator();
+        while(v.hasNext()){
+            System.out.println(v.next());
+        }
+    }
+}
+
+O/P :
+32
+4
+71
+23
+
+//here in set we get only unique values , though we have 71 twice duplicate values will not be printed in SET .But it is not sorted though .
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+class Hello{
+    public static void main(String args[]){
+        Set<Integer> values = new TreeSet<>();
+        values.add(32);
+        values.add(4);
+        values.add(71);
+        values.add(71);
+        values.add(23);
+        
+        
+        Iterator<Integer> v = values.iterator();
+        while(v.hasNext()){
+            System.out.println(v.next());
+        }
+    }
+}
+
+O/P :
+
+4
+23
+32
+71
+
+//Now we get a sorted List , using TreeSet implemented class for Set interface 
+------------------------------------------------------------------------------------------------------------------------------------------------
 Array :
 
 class Hello{
