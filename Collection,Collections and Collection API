@@ -180,7 +180,9 @@ O/P :
 ---------------------------------------------------------------------------------------------------------------------
 Map and HashMap :
 
-Map interface contains a key and value pair .
+=>Map interface contains a key and value pair.
+=>In Maps for adding a element we use put method , it is bcoz need to check whether the key present if present just replace the key .
+=>key - set(unique elements) , value - list(duplicate elements allowed)
 
 
 import java.util.ArrayList;
