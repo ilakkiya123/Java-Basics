@@ -371,6 +371,8 @@ class Hello{
 O/P :
 [23, 71, 85, 94]
 
+--------------------------------------------------------------------------------------------------------------------
+
 Example 3 :
 Sorting a developer developed class Fruits with the price 
 
@@ -430,6 +432,146 @@ name=PineApple, price=80
 name=Apple, price=250
 name=GreenGrapes, price=280
 
+
+Example 3.1
+
+Sorting a developer developed class Fruits with the price 
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Fruits{
+    String name;
+    int price;
+
+    public Fruits(String name, int price) {
+       this.name = name;
+       this.price = price;
+    }
+
+    // @Override
+    // public String toString() {
+    //     return name + " : " + price;
+    // }
+
+    public String show(){
+       return (name + " : " + price);
+    }
+ 
+}
+
+class Hello{
+    public static void main(String args[]){
+
+        Comparator<Fruits> com = new Comparator<Fruits>() {
+            public int compare(Fruits o1,Fruits o2){
+                if(o1.price > o2.price){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            }
+        };
+
+        // Fruits f1 = new Fruits("Apple",100);
+        // Fruits f2 = new Fruits("Banana",50);
+        // Fruits f3 = new Fruits("Orange",120);
+        
+        // Fruits fruitarr[] = new Fruits[3];
+        // fruitarr[0] = f1;
+        // fruitarr[1] = f2;
+        // fruitarr[2] = f3;
+
+        List<Fruits> fruitlist = new ArrayList<>();
+
+        //Instead of doing this seperately as above we have directly written as fruitlist.add(new Fruits("Apple",100)) in same line .
+        fruitlist.add(new Fruits("Apple",100));
+        fruitlist.add(new Fruits("Banana",50));
+        fruitlist.add(new Fruits("Orange",120));
+
+        Collections.sort(fruitlist, com);
+        // System.out.println(fruitlist);
+
+        for(Fruits f : fruitlist){
+            System.out.println(f.show());
+        }
+    }
+}
+
+Here the line   // System.out.println(fruitlist)  --------> It directly calls the toString method of each Fruits.
+
+Or By this Line we can call any of the methods in Fruits class 
+        for(Fruits f : fruitlist){
+                        System.out.println(f.show());
+                  }
+
+O/P :
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class Fruits{
+    String name;
+    int price;
+
+    public Fruits(String name, int price) {
+       this.name = name;
+       this.price = price;
+    }
+
+    // @Override
+    // public String toString() {
+    //     return name + " : " + price;
+    // }
+
+    public String show(){
+       return (name + " : " + price);
+    }
+ 
+}
+
+class Hello{
+    public static void main(String args[]){
+
+        Comparator<Fruits> com = new Comparator<Fruits>() {
+            public int compare(Fruits o1,Fruits o2){
+                if(o1.price > o2.price){
+                    return 1;
+                }
+                else{
+                    return -1;
+                }
+            }
+        };
+
+        // Fruits f1 = new Fruits("Apple",100);
+        // Fruits f2 = new Fruits("Banana",50);
+        // Fruits f3 = new Fruits("Orange",120);
+        
+        // Fruits fruitarr[] = new Fruits[3];
+        // fruitarr[0] = f1;
+        // fruitarr[1] = f2;
+        // fruitarr[2] = f3;
+
+        List<Fruits> fruitlist = new ArrayList<>();
+        fruitlist.add(new Fruits("Apple",100));
+        fruitlist.add(new Fruits("Banana",50));
+        fruitlist.add(new Fruits("Orange",120));
+
+        Collections.sort(fruitlist, com);
+        // System.out.println(fruitlist);
+        for(Fruits f : fruitlist){
+            System.out.println(f.show());
+        }
+    }
+}
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Example 4 :
