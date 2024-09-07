@@ -509,7 +509,9 @@ Or By this Line we can call any of the methods in Fruits class
                   }
 
 O/P :
-
+Banana : 50
+Apple : 100
+Orange : 120
 
 -------------------------------------------------------------------------------------------------------------------------------------
 import java.util.ArrayList;
