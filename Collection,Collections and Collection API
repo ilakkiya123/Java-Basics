@@ -1,7 +1,8 @@
 collection API :
-Collection represents a single unit of objects (grp) .
+Collection represents a single unit of objects (grp) .It is a set of classes and interfaces that provide a framwork to store
+and manipulate group of objects .It is part of the java.util package .
 =>It provides readymade Architecture .
-=>It reprsents set of classes and interfaces .
+=>It represents set of classes and interfaces .
 
 Collection framework - unified architecture - storing , sorting , inserting , updating and manipulating a grp of objects .
 Collection - Interfaces and its implementation (Classes ())
