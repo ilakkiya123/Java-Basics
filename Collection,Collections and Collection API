@@ -219,13 +219,8 @@ O/P :
 -----------------------------------------------------------------------------------------------------------------------------------------------
 //To print as Key value pairs in Hashmap 
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+Example 1 :
+
 import java.util.Map;
 import java.util.HashMap;;
 
@@ -240,19 +235,51 @@ class Hello{
         
         // System.out.println(students.keySet());
         for(String name : students.keySet()){
-            System.out.println(name + " : " + students.values());
+            System.out.println(name + " : " + students.get(name));
         }
     }
 }
 
 O/P :
-Kavs : [4, 32, 71, 23, 71]
-Ilaks : [4, 32, 71, 23, 71]
-Ravi : [4, 32, 71, 23, 71]
-Meenu : [4, 32, 71, 23, 71]
-Sundari : [4, 32, 71, 23, 71]
+Kavs : 4
+Ilaks : 32
+Ravi : 71
+Meenu : 23
+Sundari : 71
+
+----------------------------------------------------------------------------------------------------------------------------------
+Example 2 :
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Hello{
+    public static void main(String args[]){
+        Map<String,String> fruits = new HashMap<>();
+        fruits.put("Apple", "Red");
+        fruits.put("Pineapple", "Yellow");
+        fruits.put("Grapes", "Green");
+        fruits.put("Orange", "Orange");
+        fruits.put("Kiwi", "Green");
+
+        // System.out.println(fruits);
+
+        for(String key : fruits.keySet()){
+            System.out.println(key + " : " + fruits.get(key));
+        }
+    }
+}
+
+O/P :
+
+Apple : Red
+Kiwi : Green
+Grapes : Green
+Pineapple : Yellow
+Orange : Orange
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------
 Hashtable :
 Map<String,Integer> students = new Hashtable<>(); 
 
