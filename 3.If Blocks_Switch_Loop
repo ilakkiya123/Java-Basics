@@ -46,6 +46,9 @@ class Hello {
 }
 //******************************************************************************
 //While Loop
+
+Example 1 :
+
 class Hello {
   public static void main(String arg [])
   { 
@@ -82,7 +85,20 @@ Iteration i : 1
    Out Of while j : 4
 Out Of while : 0
 
-//********************************************************************************
+//Example 2 :
+
+Note : Though while(true) is always a positive condition , we can stop the flow by adding a break to stop the condition .
+
+while (true) {
+    System.out.println("Inside the loop");
+    if (someCondition) {
+        break; // Exit the loop when someCondition is true
+    }
+}
+System.out.println("Outside the loop");
+
+
+********************************************************************************
 Do While - Though if the condt fails it executes atleast once 
 class Hello {
   public static void main (String arg []){
@@ -164,7 +180,7 @@ DAY : 5
    HRS : 17-18
 
 **************************************************************************
-For --- > For counting purpose and the values are defined then we can use this loop 
+For --- > For counting purpose , iteration and when the values are defined then we can use this loop 
 While --- > Files concept , like execute until End Of File , database , Network .
 Do While --- > Rarely Used , to execute atleast once even though the condition failed
 
