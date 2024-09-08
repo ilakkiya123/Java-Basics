@@ -229,6 +229,7 @@ Example 4 :
 Tips : 
 =>When we like to store from high range datatype to small , (eg : int->byte) .It performs this in backend .
 (given value)%(full range)
+Here -> 257 % 256 ===> 1
 =>Integer can have negative values as well .
 
 class Hello{
