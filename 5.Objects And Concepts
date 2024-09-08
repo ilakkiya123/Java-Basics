@@ -70,7 +70,27 @@ In ToyStore Class , In showToys Method ,
 ===> if block satisfies the condition , it returns the value in return statement and the other return is skipped ,
 As compiler sees a return statement it moves out of the particular block .
 ===> if block doesnt satisfy the condition , it returns the last return of the entire method . 
-**********************************************************
+*************************************************************************************************************************
+Note :
+
+If we want to check whether our object is created we can use the below method to check .
+
+Example 1 :
+Toys t1 = new Toys();
+//Toys Class == Toys Class
+      if(t1.getClass() == Toys.class)
+      {
+        System.out.println("Object Created ...");
+      }
+O/P :
+"Object Created ..."
+
+//Here this line can be replaced with  below 
+1)  if(t1.getClass().getName() == Toys.class.getName())  --- Toys == Toys
+2)  if (t1 instanceof Toys) then print Object created 
+3)Null Check - t1!=null
+4)Using a constructor 
+*************************************************************************************************************************
 Method overloading :[Same method we are trying to call for example "add method" but with differnt count of arguments]
 
 //1)No of Arguments in method
@@ -97,7 +117,7 @@ class Hello {
 }
 }
 
----------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 Instance variable 
 ==>It has scope inside the entire class and it is declared below the class and above the method.
 ==>It can be called or assigned values with object reference variable .
