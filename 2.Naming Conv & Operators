@@ -17,6 +17,55 @@ Arithmetic Operators :
        int b = b - 1 ; // b--
        //Increment the same number by differnt value 
         int c = c+10 ; // c+=10
+
+---------------------------------------------------------
+Example 1 :
+
+class Hello{
+    public static void main(String args[]){
+      int a = 10 ;
+      System.out.println(a + " first time"); //a=10
+      int b = ++a;  // b = a+1 b=11 , a=11
+      System.out.println(a + " second time");//a=11 
+      int c = a++;  // c = a = (a+1) , c=11 , a=12
+      System.out.println(a + " third time"); //a=12 
+      System.out.println(b);//b=11
+      System.out.println(c);//c=11
+    }
+}
+
+O/P :
+
+10 first time
+11 second time
+12 third time
+11
+11
+
+-------------------------------------------------------------
+Example 2 :
+
+class Hello{
+    public static void main(String args[]){
+      int a = 10 ;
+      System.out.println(a + " first time"); // a = 10
+      int b = a++;  // b = a = (a+1) b=10 , a =11
+      System.out.println(a + " second time");// a = 11
+      int c = ++a;  // c = (a+1) c=12 , a = 12
+      System.out.println(a + " third time"); // a = 12 
+      System.out.println(b);//b=10
+      System.out.println(c);//c=12
+    }
+}
+
+O/P :
+
+10 first time
+11 second time
+12 third time
+10
+12
+
 *******************************************************
 //Pre and Post Increment 
 class Hello {
@@ -76,8 +125,16 @@ Logical Operator - Copares 2 Relational Operators and based on that return boole
 
 
 Note : 
-If the operands are integers the operator is bitwise  '&', '|', '!'
-If the operands are boolean the operator is logical   '&&' , '||' , '!'
+
+Bitwise and Logical Operators Difference :
+Bitwise :
+===>If the operands are integers the operator is bitwise  '&', '|', '!','^','~' ,'<<' , '>>' 
+===>It works on Integer types .
+
+Logical :
+===>If the operands are boolean the operator is logical   '&&' , '||' , '!'
+===>It works on Booelan types 
+===>It uses shortcircuit evaluation
 
 *********
 Shorthand/Shortcircuit Operator :
