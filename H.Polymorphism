@@ -95,6 +95,13 @@ Note :
 =>Method overriding is dynamic binding , call to overriden is resolved at runtime.
 ie;  JVM cannot determine the method call just by looking at the reference variable only, so it has to wait till runtime to know the type of object and determine which method shall be invoked.
 
+
+------------------------------------------------------------------------------------------------------------
+Note - important 
+
+Compile-Time: The compiler ensures the types and method availability are correct.
+
+Run-Time: The actual object is created, and the appropriate method is invoked based on the object's type.
 -----------------------------------------------------------------------------------------------------------
 //Here the obj reference is same , method show() is same , but when it is called with diff object , the behaviour is different .
 //irrespective of the type of object .
