@@ -115,7 +115,7 @@ Note : Checked Exception should be compulsorily Handled by the developer .
 
 
 ***********************************************************************************************************************
-//Note : Here when we write i/j by giving i= 10 , j=0 , then quo is zero , res is zero =>java.lang.ArithmeticException: / by zero
+//Note : Here when we write i/j by giving i= 10 , j=0 , we get infinity =>java.lang.ArithmeticException: / by zero
 //Note : Here when we write i/j by giving i= 10 , j=20 , then also quo is zero , res is zero but now =>java.lang.ArithmeticException 
 class Hello{
   public static void main (String args[]) {
