@@ -327,3 +327,72 @@ class Hello {
   }
 }
 
+---------------------------------------------------------------------------------------------------------------
+Using all 5 keywords (try, catch , throw , throws , finally )
+
+Demo.java
+
+package com.testing;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Demo{
+	public static void main(String args[])  {
+		try {
+			getCredentials();
+		}
+		catch (IlakException e){
+			System.out.println(e);;
+		}
+		
+		System.out.println("I am alive ... ");
+		
+	}
+
+	public static void getCredentials() throws IlakException   {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter username : ");
+		String username = scan.next();
+		System.out.println("Enter password : ");
+		String password = scan.next();
+		
+		authenticate(username,password);
+		
+	}
+
+	public static void authenticate(String username, String password) throws IlakException  {
+		
+		if(username == null || password == null){
+			throw new IllegalArgumentException("Please enter a valid username or password");
+		}
+		
+//		if(!username.equals("admin") || !password.equals("password123")) {
+//			throw new IOException("Username or password entered is incorrect");
+//		}
+		
+		if(!username.equals("admin") || !password.equals("password123")) {
+		throw new IlakException("Username or password entered is incorrect");
+	    }
+		
+		System.out.println("Successfully Authenticated ... ");
+	}
+}
+
+IlakException.java 
+
+package com.testing;
+import java.io.IOException;
+
+public class IlakException extends Exception{
+	
+	public IlakException(String str) {
+  	  super(str);
+    }
+    public static void main(String[] args) {
+      
+    }
+}
+
+
