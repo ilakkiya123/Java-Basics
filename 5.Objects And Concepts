@@ -8,6 +8,12 @@ It has 3 primary characteristics = >
 All 3 terms are interrelated .
 
 Example :
+House obj = new House(); I want to build a house for that I need a blueprint which is the class House{} , And the line new House() is creates a memory for House object , 
+that is like finding a place for my house to build . And obj is the reference variable , So after I build a house someone should be knowing the house so that
+I can open and fetch some things in my house , Similar way with obj reference variable I can access my methods and fields .
+
+
+Example :
 Car ...
 Identity - Vehicle make model , VIN number .
 State    - Car On/Off , Speed
