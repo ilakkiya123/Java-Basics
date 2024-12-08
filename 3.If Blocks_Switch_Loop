@@ -111,6 +111,64 @@ class Hello {
   }
 }
 
+do while loop another example 
+
+package com.testing;
+
+import java.util.Scanner;
+
+class Demo{
+	public static void main(String args[]) {
+	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a number ");
+		int value = scan.nextInt();
+		
+		 do{
+			
+			switch(value) {
+			case 1 :
+				if(value == 1) {
+					System.out.println("The entered value is " + value );
+					break;
+				}
+			case 2 :
+				if(value == 2) {
+					System.out.println("The entered value is " + value );
+					break;
+				}
+			case 3 :
+				if(value == 3) {
+					System.out.println("The entered value is " + value );
+				}
+				break;
+			case 4 :
+				if(value == 4) {
+					System.out.println("The entered value is " + value );
+					break;
+				}
+			default :
+				System.out.println("Please enter a valid number");
+				break;
+			}
+			System.out.println("Enter a number ");
+			value = scan.nextInt();
+		}while (value !=0);
+		System.out.println("Outside the loop");
+		}
+}
+
+O/P :
+Enter a number 
+0
+Please enter a valid number
+Enter a number 
+0
+Outside the loop
+
+Here I give the value as '0' . If it is 0 it should come out of the loop , but since it is a do - while loop it executes atleast once , So at that thime 0 comes under the category default , So it prints 
+that message "Please enter a valid number" , nexttime when I give '0' it checks the while loop condition and comes out of the while loop .
+
 ************************************************************************************
 //For Loop - To print 5 working days and the working hrs 
 class Hello {
