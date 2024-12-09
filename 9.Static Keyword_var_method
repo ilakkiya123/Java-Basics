@@ -460,4 +460,16 @@ O/P :
 In A show
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
+Static in Different Places :
+
+1)When calling static method within the class name , it is not necessary to mention the class name when calling the method .But If we call a static method outside the class , 
+then classname.method pattern should be used . 
+
+2)this() and super() are present in the first line of the constructor .
+
+So this(value) will call a parametrized constructor . Here value is an instance variable it can be accessed only when the object is fully constructed . Since this(value) will be present in first line , 
+So value will not be fully initialized as object is not fully constructed . So making this as static . Static will be intialized when the class is loaded . So we can use it as this(value) , where value is now a 
+static variable .This can be done without creating an instance .
+
 
