@@ -473,3 +473,13 @@ So value will not be fully initialized as object is not fully constructed . So m
 static variable .This can be done without creating an instance .
 
 
+1)Static constants 
+2)Static Methods 
+3)Static Variables 
+4)Static Blocks
+5)Static Nested Classes 
+6)Static Methods in Utility Class 
+7)Calling Sttaic variables / methods across Classes 
+8)Static Import 
+9)Singleton Pattern
+10)Static Initializers for Complex Initialization
