@@ -197,7 +197,88 @@ Object created :
 In show method 
 Object created : 
 In show method 
-               
+
+
+Example :
+
+package com.testing ;
+import com.flowers.*;
+
+class A{
+	private static int counter = 0;
+	int id ;
+	
+	public A() {
+		counter ++ ;
+		this.id = counter ;
+		System.out.println("Object Created ... " + this.id);
+	}
+	
+	public void show() {
+		System.out.println("In A show ... " + id);
+	}
+}
+class Demo{
+	public static void main(String args[]) {
+		A obj = new A();
+		obj.show();
+		obj.show();
+		obj.show();
+		
+		A obj1 = new A();
+		obj1.show();
+		obj1.show();
+		obj1.show();
+	}
+}
+
+O/P :
+
+Object Created ... 1
+In A show ... 1
+In A show ... 1
+In A show ... 1
+Object Created ... 2
+In A show ... 2
+In A show ... 2
+In A show ... 2
+
+For each Object we have unique id , as count is increamented with each object creation .With that instance when I call show method the count remains the same .
+But if I create an anonymous object and call show method everytime it calls a new object and a show method .
+
+package com.testing ;
+import com.flowers.*;
+
+class A{
+	private static int counter = 0;
+	int id ;
+	
+	public A() {
+		counter ++ ;
+		this.id = counter ;
+		System.out.println("Object Created ... " + this.id);
+	}
+	
+	public void show() {
+		System.out.println("In A show ... " + id);
+	}
+}
+class Demo{
+	public static void main(String args[]) {
+		new A().show();
+		new A().show();
+	}
+}
+
+O/P :
+
+Object Created ... 1
+In A show ... 1
+Object Created ... 2
+In A show ... 2
+
+
+
 ***********************************************************************************************************
 Method Overriding :(Overriding is a feature that allows a subclass to provide a different behaviour for a method which is already present in super class , 
 The method present in subclass has the same name , same method and same return type as super class , then the subclass overrides the method in super class .
