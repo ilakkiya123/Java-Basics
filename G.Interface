@@ -301,6 +301,50 @@ Tips :
 
 Types Of Interface :
 1)Normal Interface -Interface which has two or more than two abstract methods in Interface .
-2)Functional Interface or SAM - Interface which has only one abstract method .
-3)Marker Interface - serialization and deserialization concept comes .
+2)Functional Interface or SAM(Single Abstract Method) - Interface which has only one abstract method .
+3)Marker Interface - Interface with no methods .
+If we want to give some permission to some to execute a method we can use Marker Interface .
+
+Example :
+
+Demo.java
+
+package com.testing ;
+import com.flowers.*;
+
+class Demo{
+	public static void main(String args[]) {
+		Rose r1 = new Rose();
+//instanceof operator in java checks whether it belongs to either respective class or interface
+		if(r1 instanceof Rose) {
+			r1.display();
+		}
+	}
+}
+
+Flowers.java
+package com.flowers;
+//Interface with no methods 
+public interface Flowers {
+
+}
+
+Rose.java
+package com.flowers;
+
+public class Rose implements Flowers{
+	public void display() {
+		System.out.println("Red Rose " );
+	}
+}
+
+O/P
+Red Rose 
+
+Here we are saying like whichever class implements Flowers for those alone execute display method .
+
+Serializable interface -> Save only when implements serializable .
+
+
+serialization and deserialization concept comes .
 object datas are stored in hardware and if required we can get our data from hardware .(Game restart)
