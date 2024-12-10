@@ -189,6 +189,59 @@ class Hello {
   }
 }
 
+Example Of Dynamic Method Dispatch :
+
+Demo.java
+
+package com.testing ;
+import com.flowers.*;
+
+class Demo{
+	public static void main(String args[]) {
+		Flowers f = new Rose() {
+
+			@Override
+			public void display() {
+				System.out.println("In Anonymous Inner Class Display");
+			}
+			
+		};
+		printFlowers(f);
+	}
+	
+	public static void printFlowers(Flowers f) {
+		f.display();
+	}
+}
+
+Flowers.java
+package com.flowers;
+
+@FunctionalInterface
+public interface Flowers {
+
+	void display();
+}
+
+Rose.java
+package com.flowers;
+
+public class Rose implements Flowers{
+
+	@Override
+	public void display() {
+		System.out.println(f);
+		System.out.println("Red Rose " );
+	}
+}
+
+O/P :
+com.testing.Demo$1@433c675d
+In Anonymous Inner Class Display
+
+Here though we are extending Flowers with Rose type and overriding the method display , At runtime the object is actually instance of inner class . It agains overrides the method display in Rose .
+Best example of dynamic method dispatch .
+
 ********************************************************************************
 Upcasting and Downcasting :
 
