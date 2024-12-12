@@ -87,3 +87,18 @@ Enter a number :
 5
 5
 
+------------------------------------------------------------------------------------------------------
+Note :
+
+When using scanner 
+Scanner scan = new Scanner(System.in);
+//this line gets the age value and leaves \n nextline 
+int age = scan.nextInt() ;
+
+//user will not be able to enter the name because previous empty line is considered by nextLine() as null 
+String name = scan.nextLine();
+
+to avoid this we should write like this 
+int age = scan.nextInt() ;
+scan.nextLine(); //this takes empty line as input  
+String name = scan.nextLine(); // this will take name as input
