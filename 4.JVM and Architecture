@@ -38,3 +38,27 @@ JDK - Java Development Kit
 JRE - Java Runtime Environment 
 JVM - Java Virtual Machine (libraries)
 JDK = [JRE  = JVM + libraries]
+
+***********************************************************************************************************************************
+class Demo{
+public static void main(String args[])
+{
+System.out.println("Hello World");
+}
+}
+
+Here , 
+
+public ----> Easily accessible by java code .
+static ----> JVM to access main method without creating objects , as objects are created after main method .So using static we can access with class name itself . 
+void   ----> Return type of method is void 
+main   ----> default name java knows to start the program , it searches for the method name as Demo.main
+String args[] -----> It is string of values which we can pass via CLI (Command Line Arguments) or In Run Configuration changing arguments .
+
+If it inside package when running in cmd line need to give proper project details .
+
+C:\Users\Ilakkiya R\eclipse-workspace\FileDemo\src>javac com\ilaks\Demo.java
+C:\Users\Ilakkiya R\eclipse-workspace\FileDemo\src>java com.ilaks.Demo ravi sundari
+hello in Demo
+ravi
+sundari
