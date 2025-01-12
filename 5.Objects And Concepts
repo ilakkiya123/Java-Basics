@@ -340,4 +340,23 @@ class Hello{
   }
 }
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Stack and Heap Memory 
 
+Stack :
+=>Used for Static Memory Allocation (memory allocated at compile time)
+=>Stores Primitive datatype and reference to objects
+=>Managed by the JVM and Follows FILO and LIFO
+=>Each mmethod has its own stack and the var ---> local var is accessible only within the method .
+=>Faster than Heap Memory because it is added and deleted in a predictable LIFO manner .
+
+Heap :
+=>Used for Dynamic Memory Allocation (memory allocated at runtime)
+=>Stores Objects and Array 
+=>Managed by garbage collector , free ups memory occupied by objects no longer in use .
+=>Global access - Objects stored in heap memory accessed anywhere in the application .
+=>Slower compared to stack memory due to garbage collection and dynamic memory allocation .
+
+Garbage Collection algorithm involves 2 phases
+1.mark - marks the objects reachable 
+2.sweep - sweeps the object which are not reachable .
