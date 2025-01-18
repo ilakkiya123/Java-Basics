@@ -1,0 +1,133 @@
+Normal For Loop :
+
+package com.ilaks.DemoProj;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+class Demo{
+	public static void main(String args[]) {
+		List<Integer> nums = Arrays.asList(3,4,2,8,9,11,10);
+
+//normal for loop
+//		for(int i=0;i<nums.size();i++) {
+//			System.out.println(nums.get(i));
+//		}
+
+//Enhanced for loop
+//		for(int n : nums) {
+//			System.out.println(n);
+//		}
+
+ForEach Loop 
+		nums.forEach(n->System.out.println(n));
+		
+	}
+}
+
+
+Stream :
+Contains the value as similar to list in streams . Once used Stream cannot be reused .Take like Stream of water , once touched water cant be touched again .
+
+package com.ilaks.DemoProj;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+class Demo{
+	public static void main(String args[]) {
+		List<Integer> nums = Arrays.asList(3,4,2,8,9,11,10);
+		
+		Stream<Integer> s1 = nums.stream();
+		Stream<Integer> s2 = s1.filter(n -> n%2 == 0);
+		Stream<Integer> s3 = s2.map(n -> n*2);
+		int value = s3.reduce(0 ,(c,e) -> (c+e));
+		
+//		s3.forEach(n -> System.out.println(n));
+		System.out.println(value);
+	}
+}
+
+Here now we will deep dive into each method and how it is derived ,
+
+----------------------------------------------------------------------
+  Predicate<Integer> p = new Predicate<>() {
+
+			@Override
+			public boolean test(Integer n) {
+				return n%2 == 0 ;
+			}
+			
+		};
+
+After doing lambda expression the above becomes as , 
+
+Predicate<Integer> p = n ->  n%2 == 0 ;
+
+Since p is that value we are placing the value directly here ,
+Stream<Integer> s2 = s1.filter(n -> n%2 == 0);
+
+--------------------------------------------------------------------
+
+Function<Integer , Integer> f = new Function<>() {
+			@Override
+			public Integer apply(Integer n) {
+				 return n*2;
+			}
+		};
+
+After doing lambda expression the above becomes as , 
+
+Function<Integer , Integer> f = n -> n*2;
+Since f is that value , we are placing the value directly here , 
+
+Stream<Integer> s3 = s2.map(n -> n*2);
+
+-----------------------------------------------------------------------
+
+BinaryOperator<Integer> accumulator = new BinaryOperator<>() {
+
+			@Override
+			public Integer apply(Integer c, Integer e) {
+				// TODO Auto-generated method stub
+				return c+e;
+			}
+		};
+
+After doing lambda expression the above becomes as , 
+
+BinaryOperator<Integer> accumulator = (c, e) -> c+e;
+
+Since accumulator is that value , we are placing the value directly here , 
+int value = s3.reduce(0 ,(c, e) -> c+e);
+
+-----------------------------------------------------------------------------
+Now after knowing it deeply we can combine everything in a single line 
+
+package com.ilaks.DemoProj;
+
+import java.util.Arrays;
+import java.util.List;
+
+class Demo{
+	public static void main(String args[]) {
+		List<Integer> nums = Arrays.asList(3,4,2,8,9,11,10);
+		
+		
+		
+		int value = nums.stream()
+				.filter(n -> n%2 == 0)
+				.map(n -> n*2)
+				.reduce(0 ,(c, e) -> c+e) ;
+		System.out.println(value);
+		
+ }
+}
+
+O/P :
+
+48
