@@ -1,5 +1,25 @@
 Enum - enum is  a special class , that represents group of constants similar to Final(unchangeable var). 
-==> Enumeration is a short name for enum , specifically Listed.Enum Constants are public , static , final
+==> Enumeration is a short name for enum , named constants .Enum Constants are public , static , final .
+
+Here , 
+enum Color { 
+RED , GREEN , YELLOW ; 
+} 
+
+Here Color is a class and RED , GREEN and YELLOW is the named constants or instances .
+
+Regular class :
+A obj = new A() ;
+obj.show() ;
+
+Enum :
+==> We refer color as a class , but we cant create an obj like Color obj = new Color(); , because RED , GREEN , YELLOW are created automatically when enum type is loaded .And these are the instances for Color .
+And also in regular class we say obj.methods , but here first to refer the instance and that also since these instances are static , we call as Color.RED (Enumtype.instnace) which means the RED instance and with which you can 
+call the methods like Color.RED.methods .No other instance can be created .
+
+==> Enum is type safe to work with fixed set of constants .
+==> Other than Enum (java.lang.Enum) I cant extend any other class in java .
+
 Enum with For loop :
 
 Example 1 :
@@ -158,13 +178,10 @@ class Hello{
 
 ---------------------------------------------------------------------------------------------------------------
 
-Note : As like other classes in enum there is no inheritance , we cant use extend keyword .Because Implicitly it has enum class extended .Ultimately in Java
-we cant extend 2 class .
-
+Note : As like other classes in enum there is no inheritance , we cant use extend keyword .Because Implicitly it has enum class extended .
 
 //Enum By default has a Enum Class 
 System.out.println(s.getClass().getSuperclass()); ------  class java.lang.Enum
-
 
 === > we can define method , constructors , create own var is possible 
 
