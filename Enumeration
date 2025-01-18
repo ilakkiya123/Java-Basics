@@ -54,6 +54,7 @@ class Hello{
 		for(TrafficLights t : TrafficLights.values()) {
 			System.out.println(t);
 		}
+
 	}
 }
 
