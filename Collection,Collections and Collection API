@@ -915,12 +915,6 @@ Student [age=32, name=Kavs]
 Student [age=21, name=Ilaks]
 Student [age=18, name=Meenu]
 **********************************************************************************************************************************************************
-Stream API :
-
-
-
-
-
 ArrayList :
 
 import java.util.ArrayList;
