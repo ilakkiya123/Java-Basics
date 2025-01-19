@@ -97,6 +97,43 @@ while (true) {
 }
 System.out.println("Outside the loop");
 
+Example :
+
+package com.ilaks;
+
+import java.util.Scanner;
+
+class Demo{
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Please enter a colour and Enter Exit to stop ");
+		String input = scan.nextLine() ;
+		while((!input.equals("Exit"))){
+			showColor(scan , input);
+			System.out.println("Please enter a colour and Enter Exit to stop ");
+			input = scan.nextLine() ;
+		}
+		System.out.println("Pls visit again");
+	}
+	
+	public static void showColor(Scanner scan , String input) {
+		switch(input) {
+		case "RED" :
+			System.out.println("STOP");
+			break;
+		case "YELLOW" :
+			System.out.println("WAIT");
+			break ;
+		case "GREEN" :
+			System.out.println("GO");
+			break ;
+		default :
+			System.out.println("Pls Enter A Proper Color");
+			break ;
+		}
+	}
+}
 
 ********************************************************************************
 Do While - Though if the condt fails it executes atleast once 
@@ -169,7 +206,47 @@ Outside the loop
 Here I give the value as '0' . If it is 0 it should come out of the loop , but since it is a do - while loop it executes atleast once , So at that thime 0 comes under the category default , So it prints 
 that message "Please enter a valid number" , nexttime when I give '0' it checks the while loop condition and comes out of the while loop .
 
-************************************************************************************
+******************************************************************************************************************************************************
+package com.ilaks;
+
+import java.util.Scanner;
+
+class Demo{
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+//		System.out.println("Please enter a colour and Enter Exit to stop ");
+//		String input = scan.nextLine() ;
+		String input = null ;
+		do{
+			System.out.println("Please enter a colour and Enter Exit to stop ");
+			input = scan.nextLine() ;
+			if((!input.equals("Exit"))) {
+				showColor(scan , input);
+			}
+		}while((!input.equals("Exit")));
+		System.out.println("Pls visit again");
+	}
+	
+	public static void showColor(Scanner scan , String input) {
+		switch(input) {
+		case "RED" :
+			System.out.println("STOP");
+			break;
+		case "YELLOW" :
+			System.out.println("WAIT");
+			break ;
+		case "GREEN" :
+			System.out.println("GO");
+			break ;
+		default :
+			System.out.println("Pls Enter A Proper Color");
+			break ;
+		}
+	}
+}
+
+************************************************************************************************************************************************************
 //For Loop - To print 5 working days and the working hrs 
 class Hello {
   public static void main (String arg []){
