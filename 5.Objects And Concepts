@@ -360,3 +360,36 @@ Heap :
 Garbage Collection algorithm involves 2 phases
 1.mark - marks the objects reachable 
 2.sweep - sweeps the object which are not reachable .
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Stack Memory and its Execution :
+
+Stack Memory is used to store method call frames which includes local variables and method parameters .
+LIFO ---> Last In First Out ,
+
+=>When a method is called a stack frame is created and pushed into the stack .This frame contains method parameters , local variables and return address .
+=>When a method execution is completed , the method's stack frame is popped off the stack .
+=>The memory associated with local variables and parameters is freed .
+=>Control returns to the point of the calling method .
+
+public class MemoryExample {
+    public static void main(String[] args) {
+        int result = add(5, 10);
+        System.out.println("Result: " + result);
+    }
+
+    public static int add(int a, int b) {
+        int sum = a + b;
+        return sum;
+    }
+}
+
+1)Stack Frame is created for main method.
+2)result is stored in the main stack frame.
+3)new stack frame is created for add .
+4)add stack frame stores a , b and sum .
+5)Add method completes execution . stack frame is popped off the stack, and memory used by result is freed.
+6)Control returns to main .
+7)When main completes, its stack frame is popped off the stack, and memory used by result is freed.
+
