@@ -4,7 +4,7 @@
 ==>There is only one copy of the variable is present in memory regardless of how many instances are created .
 ==>In simple terms , Static variable is a one which is shared by all objects 
 ==>Static var should be access in a static way (to access with class name)
-==> Once a var / method uses static keyword , then it becomes class member and not object member .It is stored in metaspace of native heap .
+==> Once a var / method uses static keyword , then it becomes class member and not object member .It is stored in special area in heap called meta space or method area .
 
 Non Static Method we can use Static variable , but the vice versa is not possible .
 
