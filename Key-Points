@@ -1,2 +1,6 @@
 Variables declared inside a static block are local variables.
 Variables declared at the class level are class variables (if static) or instance variables (if not static).
+
+!= and .equals()
+!=       ----> Used to compare primitive types and object references .
+.equals  ----> Used for comparing the actual content or state of the object . 
