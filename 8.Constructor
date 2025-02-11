@@ -286,3 +286,9 @@ A memory is allocated for obj of type 'A' , then it calls the constructor then t
 O/P :
 true
 Watermelon : 100
+
+************************************************************************************************************************************
+Note :
+
+When you extend a class , the constructor of the subclass must call one of the constructor of the parent class . If the parent class doestnt have default constructor , 
+then it throws compile time error . So to avoid in subclass we create a para constructor and provide super();
