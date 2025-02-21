@@ -1,3 +1,40 @@
+Stream :
+It is a series of Elements that can be processed in series or parallel to perform various operations .It is a part of java.util.Stream package and performs various functional 
+approach to process the collection of Objects .
+
+For a Stream a source can be a Collection , Arrays , I/O Channel .
+Intermediate Operations : Operations that turn a stream to an another stream like filter() , map() , sorted() .These operations are called lazy meaning they are not exectued , until a terminal operation is 
+invoked .
+
+Terminal Operations : Operations that produce result / side effects such as collect() , forEach() , reduce() .Once a terminal operation is performed the stream is considered as consumed and 
+can no longer be used again .
+
+Stateless : Operations like filter() , map() does on rely on any state from previous element .
+Stateful  : Operations like sorted() , distinct that may require processing all elements to produce a result .
+
+Intermediate Operations :
+filter(Predicate) - Filter Elements based on a condition
+map(Function) 	  - Transform Elements to another form 
+distinct()        - Removes Duplicate Elements 
+sorted()          - Sorts Elements by a natural order or by a comparator .
+limit(long n)     - Truncates the Stream to the First n Elements 
+skip(long n)      - Skips the first n Elements 
+
+Terminal Operations :
+forEach(Consumer) - Performs an operation for Each Element .
+reduce(BinaryOperator) - Combines element to produce a single result .
+collect(Collector)     - Converts stream into List , Map , Set and other DataStructure .
+count()                - Counts the number of Elements in the Stream 
+findFirst()            - Finds the First Element in the Stream
+findAny()              - Finds Any Element in the Stream
+
+Benefits of using Streams :
+
+--->Simplifies code by removing the needd for using explicit loops and conditionals .
+--->Lazy Evaluation - Intermediate Operations are not executed until a terminal operation is invoked which can improve performance .
+--->Streams are clean , concise and have efficient code to process collection of Objects .
+--->They are particulary powerful when combined with lambda expressions and functional interface .
+
 Normal For Loop :
 
 package com.ilaks.DemoProj;
@@ -165,3 +202,36 @@ O/P :
 9
 10
 11
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Stream Creation from Collection , 
+
+package com.ilaks;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+public class Main {
+	public static void main(String args[]) {
+		List<Integer> nums = Arrays.asList(8,3,9,4,2,1,6,5,6);
+		
+		Stream<Integer> s1 = nums.stream();    
+		Stream<Integer> s2 = s1.filter(n -> n%2 == 0);
+		Stream<Integer> s3 = s2.map(n-> n*2);
+		Stream<Integer> s4 = s3.distinct(); 
+		
+		long value = s4.count();
+		System.out.println(value);
+		
+	}
+}
+
+
+Stream Creation from Arrays , 
+
+
