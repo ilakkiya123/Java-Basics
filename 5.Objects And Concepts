@@ -393,3 +393,35 @@ public class MemoryExample {
 6)Control returns to main .
 7)When main completes, its stack frame is popped off the stack, and memory used by result is freed.
 
+-----------------------------------------------------------------------------------------------------------------------
+
+SingleTon Class :
+
+Characteristics of Singleton Class
+--->Private Constructor: Prevents other classes from instantiating the class.
+--->Static Instance: A static field that holds the single instance of the class.
+--->Public Method: Provides a global access point to get the instance.
+
+public class Singleton {
+    // Static field to hold the single instance
+    private static Singleton instance;
+
+    // Private constructor to prevent instantiation
+    private Singleton() {
+        // Initialize any resources if needed
+    }
+
+    // Public method to provide access to the instance
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    // Example method
+    public void showMessage() {
+        System.out.println("Hello from Singleton!");
+    }
+}
+
