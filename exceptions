@@ -395,4 +395,11 @@ public class IlakException extends Exception{
     }
 }
 
+Notes :
 
+--->try is where you write code that might throw exceptions.
+--->catch is where you handle exceptions that occur in the try block.
+--->throw is used to manually create and throw an exception.
+--->throws is used in a method declaration to indicate that the method might throw exceptions, which the caller must handle.
+
+Ultimately, catch is indeed the keyword where the actual handling of exceptions occurs.
