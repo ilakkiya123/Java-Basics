@@ -151,4 +151,19 @@ O/P :
 5 
 12345
 
+------------------------------------------------------------------------------------------------------------------------
+String Concatenation :
+
+String str = "Hello";
+str.concat("World");
+System.out.println(str);
+
+Concatenation just joins the word , given inside concat().String is immutable.Concat method creates a new String rather joining with the original String .
+
+To confirm this , you can use 
+String str1 = "Hello";
+String str2 = str1.concat("World");
+System.out.println(str1 == str2);
+
+==>this gives output as 'false' as address is different 
 
