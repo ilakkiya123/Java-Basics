@@ -1,8 +1,7 @@
 Interface - It is a blueprint of Class .It has final and static , abstract methods.
           - It uses implements keyword , which gets the abstract methods only.
           - Suppose If we want to have access variables , then it should be static and final .static so that with class name itself we can access .
-          -It is not necessary that the method should be an unimplemented method , It may contain both .
-
+         
 Tips :
 class - class =>extends
 class - interface =>implements
