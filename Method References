@@ -1,1 +1,44 @@
+List<String> names = Arrays.asList("banana" , "apple" , "grapes" , "orange");
+
+//Using Anonymous Class that implements Consumer<String> Interface ,
+
+Consumer<String> con = new Consumer<>(){
+  public void accept(String t){
+    System.out.println(t);
+    }
+};
+
+//Now shortening that to lambda expression , 
+Consumer<String> con = t -> System.out.println(t);
+
+//Now we can use Method Reference which is even a concised version of lambda expression ,
+Consumer<String> con = System.out::println;
+
+The above method reference works only because method signature of println(String) and accept(String) of Consumer Interface matches .
+ie,  void println(String x) ----> void accept(String t) 
+
+Here Java Checks , 
+  ---> Does System.out::println refers to a method that takes a String and returns a void ?
+  ---> Yes System.out is a PrintStream and it has a method ,
+
+void println(String x)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+NOTE : The referencing method need not be a java standard's library method , Instead it can be from a developer created method also . 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+public class MyPrinter(){
+  public void printMessage(String message){
+    {
+        System.out.println("Message : " + message) ;
+    }
+}
+
+MyPrinter printer = new MyPrinter();
+Consumer<String> con = printer::printMessage;
+
+
+
+
+
 
