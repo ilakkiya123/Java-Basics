@@ -62,3 +62,9 @@ C:\Users\Ilakkiya R\eclipse-workspace\FileDemo\src>java com.ilaks.Demo ravi sund
 hello in Demo
 ravi
 sundari
+
+JVM calls main method without args, ----> Demo.main(new String[0]);
+
+JVM calls main method with args , ----> Demo.main(new String[]{"apple", "banana"});
+
+
