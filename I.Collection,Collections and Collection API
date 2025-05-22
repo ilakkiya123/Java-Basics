@@ -8,19 +8,19 @@ Collection framework - unified architecture - storing , sorting , inserting , up
 Collection - Interfaces and its implementation (Classes ())
 
 
-                                            Iterable (interface)
-                                                    |
-                                            Collection (interface)
-                                                    |
-                ------------------------------------------------------------------------------
-                |                                   |                                        |  
-            List(interface)                    Queue (interface)                        Set (interface)
-            |                                       |                                        |-->HashSet(classes) 
-            |-->ArrayList(classes)                  |                                        |-->LinkedHashSet(classes) 
-            |-->LinkedList(classes)                 |                                        |
-            |-->vector(classes)                     |                                        |
-            |-->Stack(classes)                      |                                        |
-            
+                Iterable (interface)
+                         |
+              Collection (interface)
+                         |
+  --------------------------------------------------------------------
+  |                         |                                         |
+List (interface)      Queue (interface)                         Set (interface)
+  |                         |                                         |
+  |--> ArrayList (class)    |--> PriorityQueue (class)         |--> HashSet (class)
+  |--> LinkedList (class)   |--> Deque (interface)             |--> LinkedHashSet (class)
+  |--> Vector (class)       |   |--> ArrayDeque (class)        |--> TreeSet (class)
+  |--> Stack (class)        |
+
 
 Array List :
 
@@ -930,6 +930,7 @@ class Hello{
 
 O/P : 
 grapes 
+
 
 ArrayList :
 1)Size grows and shrinks automatically .
