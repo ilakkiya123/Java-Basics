@@ -483,3 +483,14 @@ static variable .This can be done without creating an instance .
 8)Static Import 
 9)Singleton Pattern
 10)Static Initializers for Complex Initialization
+
+--------------------------------------------------------------------------------------------------------------------
+
+Why Static Methods Can't Be Truly Overridden:
+
+Binding happens at compile time:
+For static methods, the method that gets called is determined at compile time based on the reference type—not the actual object type.
+This is known as static binding (also called early binding).
+No polymorphism with static:
+Overriding is a core piece of polymorphism, where method behavior depends on the object's actual type at runtime.
+Static methods don’t support polymorphism because they’re not tied to instances—they don’t get dynamically dispatched.
