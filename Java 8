@@ -1,0 +1,15 @@
+************************************************************************************************************************
+
+Great question! The ArrayList and LinkedList classes are actually not new to Java 8—they've been part of the Java Collections Framework since Java 1.2, which was released way back in 1998. So they’ve been helping developers juggle lists for quite a while!
+
+What Java 8 introduced were some powerful new features that significantly enhanced how you work with collections, including:
+
+Streams API – A major addition that allows you to process collections in a functional style.
+
+Lambda Expressions – Makes it easier to write concise code, especially when working with collections.
+
+Default Methods – Interfaces (like List) could now have default method implementations.
+
+Functional Interfaces – Interfaces with a single abstract method, like Predicate, Function, etc.
+
+Optional Class – A container that may or may not hold a value, used to avoid NullPointerException.
