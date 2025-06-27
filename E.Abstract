@@ -1,5 +1,5 @@
 Abstract : 
-1)Abstarct method - only the declaration of the method is present .To indicate that we provide an abstract keyword .
+1)Abstract method - only the declaration of the method is present .To indicate that we provide an abstract keyword .
           -> abstract public void drive();
 2)Abstract method should be present in an abstract class 
           ->abstract class Car { }
@@ -7,6 +7,29 @@ Abstract :
 4)The newly created class which extends from Car should mandatoriy define the abstract method of parent class .If it cannot define then it also should given with prefix of abstract.
 5)Abstract class - method declaration is present . Concrete class - method definition of abstract method is present 
 
+Note :
+Perspective  What is abstracted?
+End User ---> Entire code and logic
+Developer	---> Internal implementation of libraries, frameworks, or abstract classes
+
+Example :
+
+List<String> names = new ArrayList<>();
+names.add("Alice");
+
+We know add() adds an item.
+But you don’t need to know how ArrayList manages memory or resizes its internal array.
+That internal logic is abstracted — hidden inside the Java library.
+
+We're seeing the interface or abstract class, which tells you what needs to be done.
+But the actual implementation (the how) is in the subclass or library, which may be:
+
+In another file
+In a compiled .jar file
+Or even in native code (C/C++)
+So you don’t always see the full implementation, especially in large systems or frameworks.
+
+--------------------------------------------------------------------------------------------------------------------------
 abstract class Car{
 abstract public void drive();
 abstract public void accelerate();
