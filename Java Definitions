@@ -1,0 +1,7 @@
+4 Pillars Of OOPS :
+
+DATA ABSTRACTION :
+---> It hides the internal implementation and shows only the essential functionality to the user .
+---> It can be achieved through Interface and Abstract Classes .
+---> Increases Security and Confidentiality .
+---> Cellphone - How call is made is abstracted and only the green button to make Call is visible .
