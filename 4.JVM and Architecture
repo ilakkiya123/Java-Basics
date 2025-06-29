@@ -3,11 +3,26 @@ Jshell command is introduced from java 9 .
 to clear screen - ctrl + L
 to exit screen - ctrl + D
 
+
+Terms to be known :
+
+JSE - Java Standard Edition 
+JEE - Java Enterprise Edition / Jakarta Edition  
+JME - Java Mobile Edition 
+
+*****************************************************************************************************
+
+Java Application Flow :
+                                
+.java (code written by developer) -----(Compiler)----> .class (byte code) ---- JVM (Jit Compiler) ---> Native Machine Code ----> RAM ----> CPU ----> O/P 
+
 ******************************************************************************************************
 JAVA Command :
 to compile - javac <filename.java>   , Once compiled a class file will be generated (which is a byte code)
 to execute we need JVM and JVM understands byte code .This byte code is present in class file .
 to execute - java <class name> which contains main method 
+
+*********************************************************************************************************
 
 Note : 
 =>JVM is platform dependent . Different JVM available for different OS .
