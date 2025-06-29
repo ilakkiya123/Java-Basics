@@ -153,6 +153,15 @@ cut and new connection between 'obj' reference and B object is made .
 Note : 
 By creating an object of class B and assigning it to a reference variable of class A, you can access the methods and variables of class B 
 through the reference variable obj.
+
+--------------------------------------------------------------------------------------------------------------------
+Feature	Method Overloading	Method Overriding
+
+Polymorphism Type	Compile-time	Run-time
+Decision Based On	Reference type	Object type
+Inheritance Needed?	No	Yes
+Method Signature	Must be different	Must be same
+
 --------------------------------------------------------------------------------------------------------------------
 Dynamic Method Dispatch : 
 class A{
