@@ -114,3 +114,61 @@ If suppose there is a common method in both A and B , then C.x() is a problem .C
 So for that purpose , Java doesnt support Multiple Inheritance but multilevel inheritance is possible .
 
 Multiple Inheritance is similar to getting the genetics from different person at a same time for a single person 
+
+
+----------------------------------------------------------------------------------------------------------------------------
+Is - A and Has - A relationship 
+
+Is-a Relationship (Inheritance)
+---> This represents inheritance — a subclass inherits from a superclass.
+
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+Dog is an Animal — this is an is-a relationship.
+Dog inherits properties and behaviors of Animal.
+
+-----------------------------------------------------------------------------------
+Has-a Relationship (Association)
+--->This represents association, which can be either aggregation or composition.
+
+Composition (Strong Has-a)
+  --->The contained object cannot exist independently of the container.
+  --->Lifespan of the contained object is tied to the container.
+
+class Room {}
+
+class House {
+    Room room = new Room(); // Composition
+}
+
+  --->House has-a Room
+  --->If House is destroyed, Room is also destroyed.
+  --->Library has-a Book
+  --->Book can exist even if Library is destroyed.
+
+class Book {}  // ✅ This is the definition of the Book class
+
+class Library {
+    Book book;
+
+    public Library(Book book) {
+        this.book = book; // Aggregation
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Book book = new Book(); // ✅ Object creation
+        Library library = new Library(book); // ✅ Passing it to Library
+    }
+}
