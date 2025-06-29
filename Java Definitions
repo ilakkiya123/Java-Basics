@@ -5,3 +5,30 @@ DATA ABSTRACTION :
 ---> It can be achieved through Interface and Abstract Classes .
 ---> Increases Security and Confidentiality .
 ---> Cellphone - How call is made is abstracted and only the green button to make Call is visible .
+
+ENCAPSULATION :
+---> Encapsulation bundles the data and code working on that in a single unit called class .
+---> Also known as Data Hiding .
+---> Steps to achieve Encapsulation ,
+    ---> declare a variable as private 
+    ---> provide public getters and setters to modify and view the value of the variable 
+---> Loosely Coupled Code and Better access control & security .
+
+INHERITANCE :
+---> Capacity of a Class to inherit the properties from a Parent Class .
+---> It can inherit both method and variables from the parent , so no need to rewrite again .
+---> It can be achieved through extends keyword or through interface .
+---> Types :
+      -> Single Inheritance 
+      -> Multiple Inheritance 
+      -> Hierarchial Inheritance 
+      -> Multilevel Inheritance (Diamond problem issue is resolved by interface )
+---> Code Reusability and polymorphism is achieved by Inheritance. 
+
+POLYMORPHISM :
+---> Poly means many , Morphism means Form 
+---> A same method behaves differently in different situation .
+---> A person can be a Father , Friend , Husband plays different role .Similar water - solid , liquid , gas .
+---> Types 
+      -> Compile Time Polymorphism 
+      -> Run Time Polymorphism 
